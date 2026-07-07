@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "originalPrice": {
+      "type": "decimal"
+    },
+    "totalStudents": {
+      "type": "integer",
+      "default": 0
+    },
+    "averageRating": {
+      "type": "decimal",
+      "default": 0
+    },
+    "totalReviews": {
+      "type": "integer",
+      "default": 0
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "courses"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "course"
+    },
+    "language": {
+      "type": "string"
+    },
+    "lessons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lesson.lesson",
+      "mappedBy": "course"
+    },
+    "enrollments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enrollment.enrollment",
+      "mappedBy": "course"
+    },
+    "instructor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::instructor.instructor",
+      "inversedBy": "courses"
+    }
+  }
+}

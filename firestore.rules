@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. Users Profile
+    match /users/{userId} {
+      // Anyone can read profiles (e.g. for instructors or leaderboard)
+      allow read: if isAuthenticated();
+      // Only the user themselves can write to their profile
+      allow write: if isOwner(userId);
+
+      // 2. Enrollments Subcollection
+      match /enrollments/{courseId} {
+        // Users can only read and write their own enrollments
+        allow read, write: if isOwner(userId);
+      }
+
+      // 3. Progress Subcollection
+      match /progress/{courseId} {
+        allow read, write: if isOwner(userId);
+      }
+      
+      // 4. Notes Subcollection
+      match /notes/{lessonId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // 5. Quiz Attempts Subcollection
+      match /quizAttempts/{quizId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+    
+    // Leaderboard (global)
+    match /leaderboard/{userId} {
+      allow read: if isAuthenticated();
+      // Only cloud functions or the specific user should update this
+      allow write: if isOwner(userId); 
+    }
+
+    // Wishlist (global)
+    match /wishlist/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+  }
+}

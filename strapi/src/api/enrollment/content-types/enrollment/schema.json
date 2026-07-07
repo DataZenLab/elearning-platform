@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrollments",
+  "info": {
+    "singularName": "enrollment",
+    "pluralName": "enrollments",
+    "displayName": "Enrollment "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firebaseUid": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "email"
+    },
+    "enrolledAt": {
+      "type": "datetime"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "enrollments"
+    },
+    "enrollmentStatus": {
+      "type": "enumeration",
+      "default": "active",
+      "enum": [
+        "active",
+        "completed",
+        "cancelled"
+      ]
+    }
+  }
+}

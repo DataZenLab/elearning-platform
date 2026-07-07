@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "question_options",
+  "info": {
+    "singularName": "question-option",
+    "pluralName": "question-options",
+    "displayName": "QuestionOption "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "isCorrect": {
+      "type": "boolean"
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "options"
+    }
+  }
+}

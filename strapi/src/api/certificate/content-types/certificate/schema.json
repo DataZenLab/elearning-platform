@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "certificates",
+  "info": {
+    "singularName": "certificate",
+    "pluralName": "certificates",
+    "displayName": "Certificate "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "certificateId": {
+      "type": "string"
+    },
+    "firebaseUid": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "courseTitle": {
+      "type": "string"
+    },
+    "courseThumbnail": {
+      "type": "string"
+    },
+    "instructorName": {
+      "type": "string"
+    },
+    "issuedAt": {
+      "type": "datetime"
+    },
+    "completionPercentage": {
+      "type": "integer"
+    },
+    "downloadUrl": {
+      "type": "string"
+    }
+  }
+}
