@@ -9,6 +9,9 @@ import { APP_NAME } from '@/lib/constants';
 import { authService } from '@/services/firebase/auth.service';
 import { SocialAuthButtons } from '@/components/auth/social-auth-buttons';
 
+/**
+ * Trang Đăng Ký: Form đăng ký tài khoản học viên mới.
+ */
 export default function RegisterPage() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');

@@ -14,6 +14,9 @@ interface StickySidebarProps {
   course: Course;
 }
 
+/**
+ * Thanh Sidebar cố định bên phải (hiển thị giá, nút Đăng ký học) trượt theo khi cuộn trang.
+ */
 export function StickySidebar({ course }: StickySidebarProps) {
   const router = useRouter();
   const { user, isAuthenticated } = useAuthStore();

@@ -9,6 +9,9 @@ interface QuizTimerProps {
   onTimeUp: () => void;
 }
 
+/**
+ * Đồng hồ đếm ngược thời gian làm bài kiểm tra trắc nghiệm.
+ */
 export function QuizTimer({ initialMinutes, onTimeUp }: QuizTimerProps) {
   const [timeLeft, setTimeLeft] = useState(initialMinutes * 60);
 

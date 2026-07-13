@@ -10,6 +10,9 @@ import type { Course } from '@/types';
 
 type Filter = 'all' | 'published' | 'draft';
 
+/**
+ * Trang Quản Lý Khóa Học (Admin): Phê duyệt, xóa hoặc ẩn các khóa học trên toàn hệ thống.
+ */
 export default function AdminCoursesPage() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [search, setSearch] = useState('');

@@ -26,6 +26,9 @@ const values = [
   },
 ];
 
+/**
+ * Trang Giới Thiệu: Thông tin chi tiết về nền tảng E-Learning và đội ngũ.
+ */
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">

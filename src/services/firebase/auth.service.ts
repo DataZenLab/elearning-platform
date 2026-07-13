@@ -14,6 +14,9 @@ import { firestoreService } from '@/services/firebase/firestore.service';
 import type { LoginCredentials, RegisterCredentials } from '@/types';
 
 class AuthService {
+  /**
+   * Gửi email khôi phục mật khẩu (reset password) cho người dùng.
+   */
   async resetPassword(email: string): Promise<void> {
     try {
       await sendPasswordResetEmail(auth, email);
@@ -22,6 +25,10 @@ class AuthService {
       throw new Error(this.getAuthErrorMessage(error.code));
     }
   }
+  /**
+   * Xử lý đăng nhập bằng Email và Mật khẩu thông qua Firebase.
+   * Đồng thời kiểm tra xem tài khoản (đối với học viên) đã được xác minh email hay chưa.
+   */
   async loginWithEmail(credentials: LoginCredentials): Promise<FirebaseUser> {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -30,7 +37,14 @@ class AuthService {
         credentials.password!
       );
       
-      if (!userCredential.user.emailVerified) {
+      const { role } = await firestoreService.getOrCreateUserProfile(
+        userCredential.user.uid,
+        userCredential.user.email || '',
+        userCredential.user.displayName || 'Học viên',
+        userCredential.user.photoURL || undefined
+      );
+
+      if (role === 'student' && !userCredential.user.emailVerified) {
         await signOut(auth);
         throw new Error('Vui lòng kiểm tra hộp thư email (và mục Spam) để xác minh tài khoản trước khi đăng nhập.');
       }
@@ -45,6 +59,10 @@ class AuthService {
     }
   }
 
+  /**
+   * Đăng ký tài khoản học viên mới bằng Email và Mật khẩu.
+   * Sau khi tạo tài khoản, hệ thống sẽ tự động gửi một email yêu cầu xác minh.
+   */
   async registerWithEmail(credentials: RegisterCredentials): Promise<FirebaseUser> {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -67,6 +85,9 @@ class AuthService {
     }
   }
 
+  /**
+   * Xử lý luồng đăng nhập nhanh bằng tài khoản Google (hiển thị popup).
+   */
   async loginWithGoogle(): Promise<FirebaseUser> {
     try {
       const provider = new GoogleAuthProvider();
@@ -79,11 +100,9 @@ class AuthService {
   }
 
   /**
-   * Admin-only: Create a new instructor account.
-   * Creates a Firebase Auth user + sets their role to 'instructor' in Firestore.
-   * NOTE: This uses createUserWithEmailAndPassword which SWITCHES the current session.
-   * To avoid that, a real production app would use Firebase Admin SDK (server-side).
-   * Here we store the admin's credential and re-sign-in after creation.
+   * (Chỉ dành cho Admin): Tạo một tài khoản mới có quyền Giảng viên (Instructor).
+   * Lưu ý: Do dùng Client SDK, khi tạo xong Firebase sẽ tự động đổi sang session của user mới.
+   * Hàm này sẽ lưu lại thông tin Admin và đăng nhập lại sau khi tạo xong để giữ session.
    */
   async createInstructorAccount(
     email: string,
@@ -121,6 +140,9 @@ class AuthService {
     }
   }
 
+  /**
+   * Đăng xuất người dùng hiện tại, xóa bỏ phiên đăng nhập (session).
+   */
   async logout(): Promise<void> {
     try {
       await signOut(auth);

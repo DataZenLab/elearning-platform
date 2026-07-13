@@ -20,6 +20,9 @@ interface StudentEnrollment {
   totalLessons: number;
 }
 
+/**
+ * Trang Quản Lý Học Viên (Giảng viên): Xem danh sách học viên đang tham gia các khóa học của mình.
+ */
 export default function InstructorStudentsPage() {
   const [students, setStudents] = useState<StudentEnrollment[]>([]);
   const [search, setSearch] = useState('');

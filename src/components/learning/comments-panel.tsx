@@ -19,6 +19,9 @@ interface CommentsPanelProps {
   lessonId: string;
 }
 
+/**
+ * Khung thảo luận: Nơi học viên hỏi đáp và bình luận bên dưới mỗi bài học.
+ */
 export function CommentsPanel({ lessonId }: CommentsPanelProps) {
   const { user } = useAuthStore();
   const [commentContent, setCommentContent] = useState('');

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { PlayCircle, CheckCircle, FileText, HelpCircle, ArrowLeft, ArrowRight, BookOpen, Trophy } from 'lucide-react';
+import { PlayCircle, CheckCircle, FileText, HelpCircle, ArrowLeft, ArrowRight, BookOpen, Trophy, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuthStore } from '@/stores/auth-store';
 import { enrollmentService } from '@/services/firebase/enrollment.service';
@@ -146,11 +146,49 @@ export function LessonViewClient({
           </div>
 
           <div
-            className="prose prose-neutral dark:prose-invert max-w-none mb-16 prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-lg"
+            className="prose prose-neutral dark:prose-invert max-w-none mb-10 prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-lg"
             dangerouslySetInnerHTML={{
               __html: currentLesson.content || '<p class="text-muted-foreground italic">Chưa có mô tả cho bài học này.</p>',
             }}
           />
+
+          {/* Attachments Section */}
+          {currentLesson.attachments && currentLesson.attachments.length > 0 && (
+            <div className="mb-16">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-foreground">
+                <FileText className="w-5 h-5 text-primary" />
+                Tài liệu đính kèm
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {currentLesson.attachments.map((file) => (
+                  <a
+                    key={file.id}
+                    href={file.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center p-3 rounded-lg border border-border/50 bg-card hover:bg-muted/50 hover:border-primary/50 transition-all group"
+                  >
+                    <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary shrink-0 mr-3">
+                      <FileText className="w-5 h-5" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-foreground truncate group-hover:text-primary transition-colors">
+                        {file.name || 'Tài liệu'}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        {file.ext?.replace('.', '').toUpperCase()} • {(file.size || 0).toFixed(2)} KB
+                      </p>
+                    </div>
+                    <Button variant="ghost" size="icon" className="shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors" asChild>
+                      <span>
+                        <Download className="w-4 h-4" />
+                      </span>
+                    </Button>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Bottom navigation */}
           <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-border gap-4">

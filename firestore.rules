@@ -1,7 +1,7 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Helper functions
+    // Các hàm hỗ trợ kiểm tra quyền hạn (Helper functions)
     function isAuthenticated() {
       return request.auth != null;
     }
@@ -9,44 +9,52 @@ service cloud.firestore {
     function isOwner(userId) {
       return isAuthenticated() && request.auth.uid == userId;
     }
+    function isAdmin() {
+      return isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
 
-    // 1. Users Profile
+    // Cấp quyền cho Admin đọc mọi dữ liệu enrollments trên hệ thống
+    match /{path=**}/enrollments/{courseId} {
+      allow read: if isAdmin();
+    }
+
+    // 1. Hồ sơ người dùng (Users Profile)
     match /users/{userId} {
-      // Anyone can read profiles (e.g. for instructors or leaderboard)
+      // Bất kỳ ai đã đăng nhập đều có thể đọc profile (dùng để hiển thị giảng viên, bảng xếp hạng)
       allow read: if isAuthenticated();
-      // Only the user themselves can write to their profile
+      // Chỉ có chính chủ mới có quyền sửa đổi profile của họ
       allow write: if isOwner(userId);
 
-      // 2. Enrollments Subcollection
+      // 2. Danh sách khóa học đã mua (Enrollments Subcollection)
       match /enrollments/{courseId} {
-        // Users can only read and write their own enrollments
+        // User chỉ được quyền xem và cập nhật dữ liệu khóa học của riêng mình
         allow read, write: if isOwner(userId);
       }
 
-      // 3. Progress Subcollection
+      // 3. Tiến độ học tập khóa học (Progress Subcollection)
       match /progress/{courseId} {
         allow read, write: if isOwner(userId);
       }
       
-      // 4. Notes Subcollection
+      // 4. Ghi chú cá nhân của học viên (Notes Subcollection)
       match /notes/{lessonId} {
         allow read, write: if isOwner(userId);
       }
 
-      // 5. Quiz Attempts Subcollection
+      // 5. Lịch sử làm bài trắc nghiệm (Quiz Attempts Subcollection)
       match /quizAttempts/{quizId} {
         allow read, write: if isOwner(userId);
       }
     }
     
-    // Leaderboard (global)
+    // Bảng xếp hạng điểm số toàn hệ thống (Leaderboard)
     match /leaderboard/{userId} {
       allow read: if isAuthenticated();
-      // Only cloud functions or the specific user should update this
+      // Chỉ Cloud Functions hoặc chính chủ mới có quyền cập nhật điểm xếp hạng
       allow write: if isOwner(userId); 
     }
 
-    // Wishlist (global)
+    // Danh sách khóa học yêu thích (Wishlist)
     match /wishlist/{userId} {
       allow read, write: if isOwner(userId);
     }

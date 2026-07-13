@@ -10,6 +10,9 @@ interface EmptyStateProps {
   onAction?: () => void;
 }
 
+/**
+ * Giao diện trống: Hiển thị khi không có dữ liệu (VD: Không tìm thấy kết quả tìm kiếm).
+ */
 export function EmptyState({ icon: Icon, title, description, actionLabel, onAction }: EmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center p-8 text-center min-h-[300px] border border-dashed border-border rounded-xl bg-card">

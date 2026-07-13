@@ -15,6 +15,9 @@ interface NotesPanelProps {
   lessonId: string;
 }
 
+/**
+ * Khung ghi chú: Cho phép học viên ghi chép lại kiến thức cá nhân trong lúc xem video.
+ */
 export function NotesPanel({ lessonId }: NotesPanelProps) {
   const [noteContent, setNoteContent] = useState('');
   const [notes, setNotes] = useState<Note[]>([

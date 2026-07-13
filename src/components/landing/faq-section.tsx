@@ -9,6 +9,9 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
+/**
+ * Khu vực hiển thị Các câu hỏi thường gặp (Accordion) trên trang chủ.
+ */
 export function FAQSection() {
   return (
     <section id="faq" className="py-24 lg:py-32 bg-muted/30 border-y border-border">

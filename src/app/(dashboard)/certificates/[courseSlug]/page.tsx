@@ -11,6 +11,14 @@ import { coursesApi } from '@/services/api/courses.api';
 import type { Course } from '@/types';
 import Link from 'next/link';
 
+/**
+ * Trang Chi Tiết Chứng Chỉ: Hiển thị và in chứng chỉ nếu học viên đã hoàn thành 100% tiến độ khóa học.
+ * (Yêu cầu đăng nhập, thuộc nhóm Route Dashboard).
+ * Cơ chế:
+ * 1. Gọi API kiểm tra xem học viên đã học đủ 100% số bài của khóa này chưa.
+ * 2. Nếu CHƯA ĐỦ: Hiện cảnh báo và nút bắt quay lại trang học tập.
+ * 3. Nếu ĐÃ ĐỦ: Hiển thị giao diện Chứng Chỉ trang trọng. Cung cấp tính năng In / Xuất PDF bằng window.print().
+ */
 export default function CertificateDetailPage() {
   const params = useParams();
   const router = useRouter();

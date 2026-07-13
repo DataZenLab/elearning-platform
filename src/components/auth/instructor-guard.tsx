@@ -5,6 +5,9 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useAuthStore } from '@/stores/auth-store';
 import { LoadingSkeleton } from '@/components/shared/loading-skeleton';
 
+/**
+ * Component bảo vệ Route Giảng viên (Chỉ cho phép tài khoản có role='instructor' truy cập).
+ */
 export function InstructorGuard({ children }: { children: React.ReactNode }) {
   const { user, initialized } = useAuthStore();
   const router = useRouter();

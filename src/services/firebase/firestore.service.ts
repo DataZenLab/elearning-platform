@@ -52,6 +52,22 @@ class FirestoreService {
   }
 
   /**
+   * Fetch multiple documents from a collection group with optional query constraints
+   */
+  async getCollectionGroupDocuments<T = DocumentData>(collectionId: string, constraints: QueryConstraint[] = []): Promise<T[]> {
+    try {
+      // Import here to avoid needing it in the top level if not used often, or use top level
+      const { collectionGroup } = await import('firebase/firestore');
+      const q = query(collectionGroup(db, collectionId), ...constraints);
+      const querySnapshot = await getDocs(q);
+      return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }) as T);
+    } catch (error) {
+      console.error(`Error fetching documents from collection group ${collectionId}:`, error);
+      throw error;
+    }
+  }
+
+  /**
    * Create or overwrite a document
    */
   async setDocument(collectionName: string, id: string, data: any): Promise<void> {

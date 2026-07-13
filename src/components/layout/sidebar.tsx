@@ -17,6 +17,9 @@ import { authService } from '@/services/firebase/auth.service';
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * Thanh Menu điều hướng bên trái mặc định của Dashboard học viên.
+ */
 export function Sidebar({ className, ...props }: SidebarProps) {
   const pathname = usePathname();
 

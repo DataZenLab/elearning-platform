@@ -7,6 +7,9 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
+/**
+ * Thanh phân trang (Next/Prev) dùng cho các danh sách dài.
+ */
 export function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
   if (totalPages <= 1) return null;
 

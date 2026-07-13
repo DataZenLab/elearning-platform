@@ -1,0 +1,2559 @@
+STT
+Nhu cầu
+(user requirements)
+Nghiệp vụ
+(System requirements)
+Mức độ ưu tiên
+Ai
+Mức độ hỗ trợ
+Phân loại yêu cầu
+Lãnh đạo
+Bộ phận thực hành
+Bộ phận liên quan
+Hệ thống ngoài
+User Đăng ký thành viên
+Tạo tài khoản qua Email
+High
+Quản trị viên
+Học viên
+Strapi
+Bán tự động
+Lưu trữ
+Học viên Đăng nhập hệ thống
+Xác thực thông qua JWT Token
+High
+Quản trị viên
+Học viên
+Strapi
+Bán tự động
+Xử lý
+Học viên Đăng xuất tài khoản
+Hủy phiên và xóa Cookies trình duyệt
+High
+Quản trị viên
+Học viên
+Browser
+Bán tự động
+Xử lý
+Học viên Xem hồ sơ cá nhân
+Hiển thị trang thông tin Profile
+High
+Quản trị viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Xem danh mục học
+Hiển thị tất cả khóa học 
+High
+Quản trị viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Xem chi tiết bài học
+Hiển thị trang thông tin Course
+High
+Quản trị viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Xem danh sách bài
+Hiển thị Lessons trong khóa học
+High
+Quản trị viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Xem thông tin về khóa học
+Hiển thị nội dung chữ dưới video
+High
+Quản trị viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Xem tổng số bài
+Hiển thị số lượng bài trong khóa
+Medium
+Quản trị viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Xem gợi ý học
+Hiển thị khóa học cùng chủ đề
+Low
+Giảng viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Tìm kiếm khóa học
+Tìm nội dung theo từ khóa tiêu đề
+High
+Quản trị viên
+Học viên
+Strapi
+Bán tự động
+Tìm kiếm
+Học viên Xác thực Email
+Gửi mã kích hoạt 
+Medium
+Quản trị viên
+Học viên
+Email
+Bán tự động
+Xử lý
+Học viên Sửa tên hiển thị
+Cập nhật thông tin trong Profile
+Medium
+Quản trị viên
+Học viên
+Strapi
+Bán tự động
+Lưu trữ
+Học viên Thống kê số khóa
+Tổng số khóa học đã tham gia
+Medium
+Quản trị viên
+Học viên
+Firebase
+Tự động
+Tìm kiếm
+Học viên Gửi bình luận
+Tương tác dưới mỗi video bài học
+Low
+Giảng viên
+Học viên
+Strapi
+Bán tự động
+Lưu trữ
+Học viên lọc theoo lộ trình
+Sắp xếp bài học theo thứ tự
+High
+Giảng viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Lưu xem dở
+Ghi nhớ giây video đang xem
+Low
+Quản trị viên
+Học viên
+Firebase
+Tự động
+Lưu trữ
+Giảng viên Đăng bài giảng
+Đưa khóa học mới lên hệ thống
+High
+Quản trị viên
+Giảng viên
+Strapi
+Bán tự động
+Lưu trữ
+Học viên Tải file đính kèm
+Lưu trữ tài liệu học tập (PDF/Doc)
+High
+Quản trị viên
+Học viên
+Cloudinary
+Bán tự động
+Lưu trữ
+Học viên Đổi mật khẩu mới
+Cập nhật mật khẩu bảo mật
+High
+Quản trị viên
+Học viên
+Strapi
+Bán tự động
+Xử lý
+Học viên Báo lỗi hệ thống
+Gửi báo cáo lỗi về bộ phận Tech
+Medium
+Quản trị viên
+Học viên
+Email
+Bán tự động
+Xử lý
+Học viên Nhận chứng chỉ
+Cấp file chứng nhận hoàn thành
+Medium
+Quản trị viên
+Học viên
+Firebase
+Tự động
+Xử lý
+Học viên Lưu yêu thích
+Đánh dấu khóa học cần học sau
+Low
+Quản trị viên
+Học viên
+LocalStorage
+Bán tự động
+Tìm kiếm
+Học viên Ghi chú cá nhân
+Lưu Note riêng tại mỗi video
+Medium
+Quản trị viên
+Học viên
+Firebase
+Bán tự động
+Lưu trữ
+Học viên Làm trắc nghiệm
+Thực hiện Quiz kiểm tra kiến thức
+High
+Giảng viên
+Học viên
+Strapi
+Bán tự động
+Xử lý
+Học viên Thấy Leaderboard
+Xếp hạng thành tích sinh viên
+Low
+Quản trị viên
+Học viên
+Firebase
+Tự động
+Tìm kiếm
+Học viên Biết lý lịch GV
+Xem kinh nghiệm người dạy
+Medium
+Quản trị viên
+Học viên
+Giảng viên
+Strapi
+Tự động
+Tìm kiếm
+Học viên Xem tổng giờ học
+Thống kê thời gian thực tế học
+Medium
+Quản trị viên
+Học viên
+Firebase
+Tự động
+Tìm kiếm
+Học viên Đánh giá khóa học (Rating)
+Đánh giá chất lượng khóa học
+Low
+Giảng viên
+Học viên
+Strapi
+Bán tự động
+Lưu trữ
+Học viên Thấy bài phù hợp
+Hiện gợi ý theo lịch sử học
+Medium
+Quản trị viên
+Học viên
+Strapi
+Tự động
+Tìm kiếm
+Usecase UC01: User Đăng ký thành viên
+Name
+User Đăng ký thành viên
+Code
+UC01
+Description
+Cho phép người dùng mới tạo tài khoản học viên trên hệ thống E-Learning thông qua Email và mật khẩu. Sau khi đăng ký, hệ thống gửi Email xác thực để kích hoạt tài khoản.
+Actor
+Người dùng chưa đăng ký (Guest)
+Trigger
+Người dùng nhấn nút "Đăng ký" trên trang chủ hoặc trang đăng nhập.
+Pre-condition
+Người dùng chưa có tài khoản trong hệ thống; hệ thống Email SMTP đang hoạt động.
+Post condition
+Tài khoản được tạo với trạng thái "Chưa xác thực"; hệ thống gửi Email kích hoạt đến địa chỉ Email đã đăng ký.
+Business Rules
+UC01 sử dụng QD01.1 → QD01.5
+Activities
+Actor
+System
+Main Flow: Đăng ký thành công
+1
+Người dùng truy cập trang Đăng ký.
+2
+Hệ thống hiển thị form: Họ tên, Email, Mật khẩu, Xác nhận mật khẩu, ô chấp nhận Điều khoản.
+3
+Người dùng điền đầy đủ thông tin và nhấn "Đăng ký".
+4
+Hệ thống validate dữ liệu theo QD01.1 → QD01.4.
+5
+Hệ thống kiểm tra Email chưa tồn tại trong database (QD01.2).
+6
+Hệ thống tạo tài khoản với trạng thái "Inactive".
+7
+Hệ thống gửi Email chứa link kích hoạt (token hết hạn sau 24h).
+8
+Hệ thống hiển thị thông báo: "Đăng ký thành công! Vui lòng kiểm tra Email để kích hoạt tài khoản."
+9
+Người dùng mở Email và nhấn link kích hoạt.
+10
+Hệ thống cập nhật trạng thái tài khoản thành "Active".
+Actor
+System
+Alternative Flow: Email sai định dạng.
+1
+Email sai định dạng.
+2
+Hệ thống hiển thị lỗi ngay tại trường nhập: “Email không hợp lệ.”
+Alternative Flow: Email đã tồn tại.
+1
+Email đã tồn tại.
+2
+Không tạo tài khoản mới, hiển thị thông báo lỗi 
+Alternative Flow: Xác nhận mật khẩu không khớp. 
+1
+Xác nhận mật khẩu không khớp.
+2
+Hệ thống hiển thị lỗi Xác nhận mật khẩu không khớp.  
+Alternative Flow: Hệ thống Email gặp sự cố
+1
+Hệ thống Email gặp sự cố.
+2
+Hệ thống hiển thị lỗi Hệ thống Email gặp sự cố. 
+Tên quy định
+Nội dung
+QD01.1
+Email không được để trống, phải chứa ký tự "@" và tên miền hợp lệ (vd: abc@gmail.com).
+QD01.2
+Email đã được đăng ký trong hệ thống thì không được tạo tài khoản mới.
+QD01.3
+Mật khẩu dài từ 8–32 ký tự, phải có ít nhất 1 chữ hoa, 1 chữ thường và 1 chữ số.
+QD01.4
+Họ tên từ 2–100 ký tự, không chứa ký tự đặc biệt (<, >, script, SQL injection...).
+QD01.5
+Tài khoản chỉ được kích hoạt và cho phép đăng nhập sau khi người dùng xác thực Email qua link kích hoạt.
+Usecase UC02: Học viên Đăng nhập hệ thống
+Name
+Học viên Đăng nhập hệ thống
+Code
+UC02
+Description
+Cho phép học viên đã có tài khoản đăng nhập vào hệ thống E-Learning bằng Email và mật khẩu, nhận JWT Token để duy trì phiên làm việc.
+Actor
+Học viên đã đăng ký tài khoản
+Trigger
+Người dùng nhấn nút "Đăng nhập" hoặc truy cập trang yêu cầu xác thực.
+Pre-condition
+Tài khoản đã được tạo và xác thực Email thành công.
+Post condition
+Người dùng được xác thực, nhận JWT Token, chuyển hướng đến trang Dashboard.
+Business Rules
+UC02 sử dụng QD02.1 → QD02.5
+Activities
+Actor
+System
+Main Flow: Đăng nhập thành công
+1
+Người dùng truy cập trang Đăng nhập 
+2
+Hệ thống hiển thị form: Email, Mật khẩu.
+3
+Người dùng nhập Email và mật khẩu, nhấn “Đăng nhập”.
+4
+Hệ thống kiểm tra các trường không để trống (QD02.1).
+5
+Hệ thống xác thực Email và mật khẩu với Strapi.
+6
+Hệ thống kiểm tra trạng thái tài khoản “Active” (QD02.2).
+7
+Hệ thống tạo JWT Token và lưu vào HttpOnly Cookie (QD02.4, QD02.5).
+8
+Hệ thống chuyển hướng người dùng đến trang Dashboard.
+Actor
+System
+Alternative Flow: Người dùng chưa có tài khoản
+1
+Người dùng chưa có tài khoản
+2
+nhấn “Đăng ký” để chuyển sang UC01.
+Alternative Flow: Người dùng quên mật khẩu
+1
+Người dùng quên mật khẩu
+2
+nhấn “Quên mật khẩu” để chuyển sang UC20.
+Tên quy định
+Nội dung
+QD02.1
+Cả hai trường Email và mật khẩu đều không được để trống.
+QD02.2
+Chỉ tài khoản có trạng thái "Active" mới được phép đăng nhập.
+QD02.3
+Sau 5 lần nhập sai mật khẩu liên tiếp, tài khoản bị khóa tạm thời 15 phút.
+QD02.4
+Token xác thực có hiệu lực tối đa 7 ngày kể từ thời điểm đăng nhập.
+QD02.5
+Token được lưu trong HttpOnly Cookie để ngăn chặn tấn công XSS.
+Usecase UC03: Học viên Đăng xuất tài khoản
+Name
+Học viên Đăng xuất tài khoản
+Code
+UC03
+Description
+Cho phép học viên kết thúc phiên làm việc, hủy token xác thực và xóa dữ liệu phiên khỏi trình duyệt.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên nhấn nút "Đăng xuất" trên giao diện.
+Pre-condition
+Học viên đang trong phiên đăng nhập hợp lệ.
+Post condition
+Token bị vô hiệu hóa, Cookie bị xóa, người dùng bị chuyển hướng về trang chủ.
+Business Rules
+UC03 sử dụng QD03.1 → QD03.5
+Activities
+Actor
+System
+Main Flow: Đăng xuất thành công
+1
+Học viên nhấn nút “Đăng xuất” trên thanh điều hướng.
+2
+Hệ thống hiển thị popup xác nhận: “Bạn có chắc chắn muốn đăng xuất?” (QD03.3).
+3
+Học viên nhấn “Xác nhận”.
+4
+Hệ thống gửi yêu cầu đăng xuất đến server, vô hiệu hóa JWT Token (QD03.1).
+5
+Hệ thống xóa Cookie phiên khỏi trình duyệt (QD03.2).
+6
+Hệ thống chuyển hướng về trang chủ (QD03.4).
+Actor
+System
+Alternative Flow: Học viên nhấn “Đăng xuất” trên popup
+1
+Học viên nhấn “Đăng xuất” trên popup
+2
+Hệ thống đăng xuất trở về trang đăng nhập
+Exception Flow: Lỗi kết nối server
+1
+Lỗi kết nối server
+2
+Hệ thống vẫn xóa Cookie cục bộ và chuyển hướng về trang chủ, log lỗi phía server.
+Tên quy định
+Nội dung
+QD03.1
+Khi đăng xuất, JWT Token phải bị vô hiệu hóa tại server (thêm vào blacklist hoặc xóa khỏi store).
+QD03.2
+Cookie lưu token phải được xóa hoàn toàn khỏi trình duyệt.
+QD03.3
+Hệ thống hiển thị popup xác nhận để tránh đăng xuất nhầm.
+QD03.4
+Sau khi đăng xuất thành công, hệ thống chuyển hướng về trang chủ.
+QD03.5
+Sau khi đăng xuất, mọi yêu cầu truy cập trang yêu cầu xác thực đều bị từ chối và chuyển hướng về trang đăng nhập.
+Usecase UC04: Học viên Xem hồ sơ cá nhân
+Name
+Học viên Xem hồ sơ cá nhân
+Code
+UC04
+Description
+Cho phép học viên xem toàn bộ thông tin cá nhân của mình bao gồm tên, email, ảnh đại diện và thống kê học tập.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên nhấn vào mục "Hồ sơ" hoặc ảnh đại diện trên thanh điều hướng.
+Pre-condition
+Học viên đang trong phiên đăng nhập hợp lệ.
+Post condition
+Trang hồ sơ cá nhân được hiển thị với thông tin cập nhật mới nhất.
+Business Rules
+UC04 sử dụng QD04.1 → QD04.5
+Activities
+Actor
+System
+Main Flow: Xem hồ sơ cá nhân
+1
+Học viên nhấn vào “Hồ sơ cá nhân”.
+2
+Hệ thống kiểm tra phiên đăng nhập (QD04.1).
+3
+Hệ thống gọi API Strapi để lấy thông tin người dùng (QD04.4).
+4
+Hệ thống hiển thị: Họ tên, Email, ảnh đại diện, ngày tham gia, số khóa học (QD04.2).
+5
+Nếu chưa có ảnh, hiển thị ảnh mặc định (QD04.5).
+Actor
+System
+Alternative Flow: Học viên muốn chỉnh sửa thông tin
+1
+Học viên muốn chỉnh sửa thông tin
+2
+nhấn “Chỉnh sửa hồ sơ” để chuyển sang UC13.
+Exception Flow: Phiên đăng nhập hết hạn
+1
+Phiên đăng nhập hết hạn
+2
+Chuyển hướng về trang đăng nhập.
+Tên quy định
+Nội dung
+QD04.1
+Chỉ người dùng đang đăng nhập mới được xem hồ sơ cá nhân của mình.
+QD04.2
+Trang hồ sơ phải hiển thị: Họ tên, Email, ảnh đại diện, ngày tham gia, số khóa học đã đăng ký.
+QD04.3
+Người dùng chỉ xem được hồ sơ của chính mình, không xem được hồ sơ người khác qua URL.
+QD04.4
+Thông tin hiển thị phải được lấy từ server (Strapi), không dùng dữ liệu cache cũ quá 5 phút.
+QD04.5
+Nếu chưa có ảnh đại diện, hiển thị ảnh mặc định (avatar placeholder).
+Usecase UC05: Học viên Xem danh mục học
+Name
+Học viên Xem danh mục học
+Code
+UC05
+Description
+Cho phép người dùng xem toàn bộ danh sách khóa học đang có trên hệ thống tại trang chủ.
+Actor
+Học viên / Khách (Guest)
+Trigger
+Người dùng truy cập trang chủ hoặc trang danh mục khóa học.
+Pre-condition
+Hệ thống có ít nhất một khóa học ở trạng thái "Published".
+Post condition
+Danh sách khóa học được hiển thị đầy đủ theo phân trang.
+Business Rules
+UC05 sử dụng QD05.1 → QD05.5
+Activities
+Actor
+System
+Main Flow: Xem danh mục học
+1
+Người dùng truy cập trang chủ / danh mục khóa học.
+2
+Hệ thống gọi API lấy danh sách khóa học Published từ Strapi.
+3
+Hệ thống hiển thị danh sách với phân trang (QD05.2, QD05.4).
+4
+Mỗi thẻ khóa học hiển thị đủ thông tin tối thiểu (QD05.3).
+5
+Người dùng có thể nhấn vào thẻ để xem chi tiết khóa học.
+Actor
+System
+Alternative Flow: Không có khóa học nào
+1
+Không có khóa học nào
+2
+Hiển thị thông báo: “Hiện chưa có khóa học nào.”
+Exception Flow: Phiên đăng nhập hết hạn
+1
+Người dùng muốn lọc
+2
+Sử dụng UC16 (lọc theo trình độ) hoặc UC18 (lọc theo chủ đề).
+Tên quy định
+Nội dung
+QD05.1
+Chỉ hiển thị các khóa học có trạng thái "Published" (đã được Admin phê duyệt).
+QD05.2
+Danh sách khóa học phải phân trang, mỗi trang hiển thị tối đa 12 khóa học.
+QD05.3
+Mỗi thẻ khóa học phải hiển thị: thumbnail, tiêu đề, tên giảng viên, số bài học, trình độ.
+QD05.4
+Danh sách được sắp xếp theo ngày xuất bản mới nhất (newest first).
+QD05.5
+Trang danh mục có thể xem mà không cần đăng nhập (public access).
+Usecase UC06: Học viên Xem chi tiết bài học
+Name
+Học viên Xem chi tiết bài học
+Code
+UC06
+Description
+Hiển thị trang thông tin đầy đủ về một khóa học cụ thể, bao gồm nội dung chương trình học, thông tin giảng viên và trạng thái đăng ký.
+Actor
+Học viên / Khách
+Trigger
+Người dùng nhấn vào thẻ khóa học từ danh sách.
+Pre-condition
+Khóa học tồn tại và có trạng thái Published.
+Post condition
+Trang chi tiết khóa học được hiển thị với đầy đủ thông tin.
+Business Rules
+UC06 sử dụng QD06.1 → QD06.
+Activities
+Actor
+System
+Main Flow: Xem chi tiết bài học
+1
+Người dùng nhấn vào thẻ khóa học.
+2
+Hệ thống gọi API lấy thông tin chi tiết khóa học theo ID.
+3
+Hệ thống kiểm tra trạng thái Published (QD06.1).
+4
+Hệ thống hiển thị trang chi tiết (QD06.2).
+5
+Hệ thống kiểm tra trạng thái đăng ký của người dùng (QD06.3).
+6
+Hiển thị nút hành động phù hợp và rating (QD06.5).
+Actor
+System
+Alternative Flow: Người dùng chưa đăng nhập nhấn “Đăng ký ngay”
+1
+Người dùng chưa đăng nhập nhấn “Đăng ký ngay”
+2
+Chuyển hướng đến trang đăng nhập/đăng ký.
+Alternative Flow: Người dùng đã đăng ký
+1
+Người dùng đã đăng ký
+2
+Nhấn “Tiếp tục học” chuyển sang trang học
+Tên quy định
+Nội dung
+QD06.1
+Chỉ hiển thị chi tiết khóa học còn hoạt động, không hiển thị Draft/Deleted.
+QD06.2
+Trang chi tiết phải hiển thị: tiêu đề, mô tả, thumbnail, giảng viên, danh sách bài học, trình độ, số lượng học viên.
+QD06.3
+Nếu đã đăng ký → hiển thị nút "Tiếp tục học". Nếu chưa → hiển thị nút "Đăng ký ngay".
+QD06.4
+Bài học đầu tiên có thể xem trước mà không cần đăng ký (free preview).
+QD06.5
+Hiển thị điểm đánh giá trung bình và số lượt đánh giá của khóa học.
+Usecase UC07: Học viên Xem danh sách bài
+Name
+Học viên Xem danh sách bài
+Code
+UC07
+Description
+Hiển thị toàn bộ danh sách các bài học trong một khóa học theo thứ tự, kèm trạng thái hoàn thành của từng bài.
+Actor
+Học viên đã đăng ký khóa học
+Trigger
+Học viên nhấn vào khóa học đã đăng ký để bắt đầu/tiếp tục học.
+Pre-condition
+Học viên đã đăng ký khóa học và đang đăng nhập.
+Post condition
+Danh sách bài học được hiển thị đầy đủ kèm trạng thái tiến độ.
+Business Rules
+UC07 sử dụng QD07.1 → QD07.5
+Activities
+Actor
+System
+Main Flow: Xem hồ sơ cá nhân
+1
+Học viên nhấn vào khóa học đã đăng ký.
+2
+Hệ thống xác thực quyền truy cập (QD07.1).
+3
+Hệ thống gọi API lấy danh sách Lessons theo thứ tự (QD07.2).
+4
+Hệ thống lấy trạng thái hoàn thành từ Firebase (QD07.3).
+5
+Hiển thị danh sách bài học với thông tin đầy đủ (QD07.4).
+6
+Áp dụng khóa tuần tự nếu giảng viên bật (QD07.5).
+Actor
+System
+Alternative Flow: Người dùng chưa đăng nhập nhấn “Đăng ký ngay”
+1
+Người dùng chưa đăng nhập nhấn “Đăng ký ngay”
+2
+Chuyển hướng đến trang đăng nhập/đăng ký.
+Alternative Flow: Người dùng đã đăng ký
+1
+Người dùng đã đăng ký
+2
+Nhấn “Tiếp tục học” chuyển sang trang học
+Tên quy định
+Nội dung
+QD07.1
+Chỉ học viên đã đăng ký khóa học mới xem được toàn bộ danh sách bài học.
+QD07.2
+Danh sách bài học sắp xếp theo thứ tự số thứ tự (order) do giảng viên định nghĩa.
+QD07.3
+Mỗi bài học hiển thị trạng thái: "Chưa học", "Đang học", "Đã hoàn thành" kèm dấu tích xanh.
+QD07.4
+Hiển thị: tên bài học, thời lượng video, loại tài nguyên (video/tài liệu).
+QD07.5
+Bài học chỉ mở khi bài trước đó đã hoàn thành (nếu giảng viên bật tuần tự).
+Usecase UC08: Học viên Xem thông tin về khóa học
+Name
+Học viên Xem thông tin về khóa học
+Code
+UC08
+Description
+Hiển thị nội dung mô tả, transcript hoặc tài liệu kèm theo bên dưới video bài giảng.
+Actor
+Học viên đã đăng ký khóa học
+Trigger
+Học viên chọn một bài học và trang bài học được tải.
+Pre-condition
+Học viên đã đăng ký và đang trong trang xem bài học.
+Post condition
+Nội dung bài học được hiển thị đầy đủ bên dưới video.
+Business Rules
+UC08 sử dụng QD08.1 → QD08.5
+Activities
+Actor
+System
+Main Flow: Xem thông tin về khóa học
+1
+Học viên chọn bài học từ danh sách.
+2
+Hệ thống tải trang bài học kèm video iframe.
+3
+Hệ thống gọi API để lấy nội dung chữ (description/transcript) từ Strapi.
+4
+Nội dung được render dưới dạng Rich Text bên dưới video (QD08.2).
+5
+Hiển thị trong vòng 2 giây (QD08.4).
+Actor
+System
+Alternative Flow: Bài học có file đính kèm
+1
+Bài học có file đính kèm
+2
+Hiển thị nút tải xuống bên cạnh nội dung.
+Tên quy định
+Nội dung
+QD08.1
+Mô tả nội dung bài học (transcript/description) phải tương ứng với video đang phát.
+QD08.2
+Nội dung chữ hỗ trợ định dạng Rich Text (in đậm, danh sách, code block).
+QD08.3
+Mỗi bài học phải có ít nhất nội dung mô tả ngắn (tối thiểu 20 ký tự).
+QD08.4
+Nội dung chữ phải tải trong vòng 2 giây sau khi trang bài học mở.
+QD08.5
+Nội dung chi tiết bài học chỉ hiển thị cho học viên đã đăng ký khóa học.
+Usecase UC09: Học viên Xem tổng số bài
+Name
+Học viên Xem tổng số bài
+Code
+UC09
+Description
+Hiển thị tổng số bài học trong khóa học và số bài đã hoàn thành của học viên.
+Actor
+Học viên / Khách
+Trigger
+Người dùng truy cập trang chi tiết khóa học hoặc trang danh sách bài học.
+Pre-condition
+Khóa học tồn tại và có ít nhất một bài học.
+Post condition
+Thông tin số lượng bài học được hiển thị chính xác.
+Error situations
+BR09-1: Khóa học không có bài nào – hiển thị "0 bài học".
+System state in error situations
+API lỗi: Hiển thị "-- bài học" (dấu gạch ngang) thay cho số cụ thể.
+Activities
+Actor
+System
+Main Flow: Học viên Xem tổng số bài
+1
+Người dùng truy cập trang chi tiết khóa học.
+2
+Hệ thống gọi API đếm số bài học từ Strapi (QD09.1).
+3
+Nếu học viên đang đăng nhập, lấy số bài đã hoàn thành từ Firebase (QD09.4).
+4
+Hiển thị “bài đã hoàn thành” hoặc “bài học” nếu chưa đăng ký.
+Actor
+System
+Alternative Flow: Khách chưa đăng nhập
+1
+Khách chưa đăng nhập
+2
+Chỉ hiển thị tổng số bài, không hiển thị tiến độ.
+Tên quy định
+Nội dung
+QD09.1
+Số lượng bài học hiển thị phải đồng bộ với số bài thực tế trong database.
+QD09.2
+Tổng số bài bao gồm cả bài đã hoàn thành và chưa hoàn thành.
+QD09.3
+Khi giảng viên thêm/xóa bài, số hiển thị phải cập nhật ngay lần tải tiếp theo.
+QD09.4
+Hiển thị dưới dạng "X/Y bài" (đã hoàn thành / tổng số).
+QD09.5
+Tổng số bài có thể hiển thị trên trang chi tiết khóa học cho cả khách chưa đăng nhập.
+Usecase UC10: Học viên Xem gợi ý học
+Name
+Học viên Xem gợi ý học
+Code
+UC10
+Description
+Hiển thị danh sách các khóa học cùng chủ đề được gợi ý dựa trên khóa học hiện tại đang xem.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên đang xem chi tiết hoặc học một khóa học.
+Pre-condition
+Hệ thống có ít nhất một khóa học Published cùng chủ đề mà học viên chưa đăng ký.
+Post condition
+Danh sách gợi ý khóa học liên quan được hiển thị.
+Business Rules
+UC10 sử dụng QD10.1 → QD10.5
+Activities
+Actor
+System
+Main Flow: Học viên Xem gợi ý học
+1
+Hệ thống xác định chủ đề (Topic) của khóa học hiện tại.
+2
+Hệ thống truy vấn Strapi tìm khóa học cùng chủ đề, trạng thái Published (QD10.1, QD10.4).
+3
+Loại bỏ khóa học mà học viên đã đăng ký (QD10.2).
+4
+Giới hạn tối đa 6 kết quả (QD10.3).
+5
+Hiển thị danh sách gợi ý bên phải hoặc phía dưới trang.
+Tên quy định
+Nội dung
+QD10.1
+Gợi ý dựa trên chủ đề (Topic/Category) của khóa học đang xem.
+QD10.2
+Không hiển thị khóa học mà học viên đã đăng ký hoặc đã hoàn thành.
+QD10.3
+Hiển thị tối đa 6 khóa học gợi ý.
+QD10.4
+Không gợi ý các khóa học đang ở trạng thái Draft.
+QD10.5
+Nếu không có khóa nào phù hợp, hiển thị: "Hiện chưa có gợi ý phù hợp."
+Usecase UC11: Học viên Tìm kiếm khóa học
+Name
+Học viên Tìm kiếm khóa học
+Code
+UC11
+Description
+Cho phép người dùng tìm kiếm khóa học theo từ khóa tiêu đề và hiển thị kết quả phù hợp.
+Actor
+Học viên / Khách
+Trigger
+Người dùng nhập từ khóa vào ô tìm kiếm và nhấn Enter hoặc icon tìm kiếm.
+Pre-condition
+Hệ thống đang hoạt động bình thường; ô tìm kiếm có sẵn trên giao diện.
+Post condition
+Kết quả tìm kiếm được hiển thị tương ứng với từ khóa nhập vào.
+Business Rules
+UC11 sử dụng QD11.1 → QD11.5
+Actor
+System
+Alternative Flow: Người dùng xóa từ khóa
+1
+Người dùng xóa từ khóa.
+2
+Hệ thống hiển thị lại toàn bộ danh sách khóa học.
+Alternative Flow: Không có kết quả
+1
+Không có kết quả.
+2
+Hệ thống hiển thị thông báo theo QD11.5.
+Exception Flow: Từ khóa dưới 2 ký tự
+1
+Từ khóa dưới 2 ký tự.
+2
+Hệ thống hiển thị gợi ý: "Vui lòng nhập ít nhất 2 ký tự."
+Exception Flow: API lỗi
+1
+API lỗi.
+2
+Tìm kiếm không thành công. Vui lòng thử lại.
+Error Situations & System State: Từ khóa quá ngắn
+1
+Từ khóa quá ngắn.
+2
+Không gọi API, hiển thị gợi ý ngay tại ô nhập.
+Error Situations & System State: API lỗi
+1
+API lỗi.
+2
+Hệ thống hiển thị thông báo lỗi, giữ nguyên từ khóa đã nhập.
+Activities
+Actor
+System
+Main Flow: Học viên tìm kiếm khóa học
+1
+Người dùng nhập từ khóa vào ô tìm kiếm (tối thiểu 2 ký tự - QD11.2).
+2
+Người dùng nhấn Enter hoặc nút tìm kiếm
+3
+Hệ thống gọi API Strapi tìm kiếm theo tiêu đề (case-insensitive - QD11.1)
+4
+Lọc kết quả chỉ trả về Published (QD11.3).
+5
+Hiển thị số lượng kết quả và danh sách khóa học (QD11.4)
+Tên quy định
+Nội dung
+QD11.1
+Tìm kiếm dựa trên tiêu đề khóa học, không phân biệt chữ hoa/thường.
+QD11.2
+Từ khóa tìm kiếm phải từ 2 ký tự trở lên.
+QD11.3
+Kết quả tìm kiếm chỉ trả về các khóa học có trạng thái Published.
+QD11.4
+Hiển thị tổng số kết quả tìm được phía trên danh sách.
+QD11.5
+Nếu không tìm thấy, hiển thị: "Không tìm thấy khóa học phù hợp với từ khóa '[keyword]'."
+Usecase UC12: Học viên Xác thực Email
+Name
+Học viên Xác thực Email
+Code
+UC12
+Description
+Xác thực địa chỉ Email của người dùng thông qua link kích hoạt được gửi sau khi đăng ký tài khoản.
+Actor
+Học viên mới đăng ký
+Trigger
+Học viên nhấn vào link xác thực trong Email nhận được sau khi đăng ký.
+Pre-condition
+Tài khoản đã được tạo với trạng thái "Inactive"; Email xác thực đã được gửi.
+Post condition
+Tài khoản chuyển sang trạng thái "Active"; học viên có thể đăng nhập.
+Business Rules
+UC12 sử dụng QD12.1 → QD12.5
+Actor
+System
+Alternative Flow: Học viên chưa nhận được Email
+1
+Học viên chưa nhận được Email.
+2
+Hệ thống nhấn "Gửi lại Email xác thực" (QD12.3).
+Exception Flow: Link hết hạn
+1
+Link hết hạn.
+2
+Hệ thống hiển thị: "Link xác thực đã hết hạn. Vui lòng yêu cầu gửi lại."
+Exception Flow: Link đã được dùng
+1
+Link đã được dùng.
+2
+Hệ thống hiển thị: "Tài khoản đã được xác thực. Vui lòng đăng nhập."
+Exception Flow: Gửi lại quá 3 lần/ngày
+1
+Gửi lại quá 3 lần/ngày.
+2
+Hệ thống hiển thị: "Bạn đã yêu cầu gửi lại quá nhiều lần. Thử lại vào ngày mai."
+Error Situations & System State: Link hết hạn
+1
+Link hết hạn.
+2
+Hệ thống tài khoản vẫn ở Inactive, hiển thị tùy chọn gửi lại.
+Error Situations & System State: Vượt giới hạn gửi lại
+1
+Vượt giới hạn gửi lại.
+2
+Tạm thời khóa chức năng gửi lại, hiển thị thời gian chờ.
+Activities
+Actor
+System
+Main Flow: Học viên Xác thực Email
+1
+Học viên mở Email và nhấn link xác thực.
+2
+Hệ thống xác minh token trong link còn hợp lệ (QD12.1, QD12.2).
+3
+Hệ thống cập nhật trạng thái tài khoản thành “Active” (QD12.4)
+4
+Vô hiệu hóa link xác thực (QD12.2)
+5
+Hiển thị thông báo thành công và chuyển về trang đăng nhập (QD12.5)
+Tên quy định
+Nội dung
+QD12.1
+Link xác thực Email có hiệu lực trong 24 giờ kể từ khi gửi.
+QD12.2
+Link xác thực bị vô hiệu hóa ngay sau khi được sử dụng thành công.
+QD12.3
+Mỗi tài khoản chỉ được yêu cầu gửi lại Email tối đa 3 lần/ngày.
+QD12.4
+Sau khi xác thực thành công, trạng thái tài khoản cập nhật từ "Inactive" sang "Active".
+QD12.5
+Sau khi xác thực, hệ thống hiển thị thông báo thành công và chuyển hướng đến trang đăng nhập.
+Usecase UC13: Học viên Sửa tên hiển thị
+Name
+Học viên Sửa tên hiển thị
+Code
+UC13
+Description
+Cho phép học viên cập nhật tên hiển thị của mình trong hồ sơ cá nhân.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên nhấn "Chỉnh sửa" trên trang hồ sơ cá nhân.
+Pre-condition
+Học viên đang đăng nhập và đang ở trang hồ sơ cá nhân.
+Post condition
+Tên hiển thị được cập nhật thành công trong Strapi và hiển thị ngay lập tức.
+Business Rules
+UC13 sử dụng QD13.1 → QD13.5
+Actor
+System
+Alternative Flow: Học viên nhấn "Hủy"
+1
+Học viên nhấn "Hủy".
+2
+Hệ thống hủy chỉnh sửa, giữ nguyên tên cũ.
+Exception Flow: Tên để trống
+1
+Tên để trống.
+2
+Hệ thống hiển thị: "Tên hiển thị không được để trống."
+Exception Flow: Tên quá ngắn/dài
+1
+Tên quá ngắn/dài.
+2
+Hệ thống hiển thị: "Tên phải từ 2 đến 100 ký tự."
+Exception Flow: Chứa ký tự đặc biệt
+1
+Chứa ký tự đặc biệt.
+2
+Hệ thống hiển thị: "Tên không được chứa ký tự đặc biệt."
+Exception Flow: API Strapi lỗi
+1
+API Strapi lỗi.
+2
+Hệ thống hiển thị: "Không thể cập nhật. Vui lòng thử lại."
+Error Situations & System State: Validate lỗi
+1
+Validate lỗi.
+2
+Highlight trường lỗi, không gửi API.
+Error Situations & System State: API lỗi
+1
+API lỗi.
+2
+Giữ nguyên tên cũ, hiển thị thông báo lỗi.
+Activities
+Actor
+System
+Main Flow: Học viên Sửa tên hiển thị
+1
+Học viên nhấn nút “Chỉnh sửa hồ sơ”
+2
+Hệ thống hiển thị form chỉnh sửa với giá trị hiện tại.
+3
+Học viên sửa tên hiển thị
+4
+Hệ thống validate dữ liệu (QD13.1, QD13.2, QD13.3)
+5
+Học viên nhấn “Lưu thay đổi” (QD13.5)
+6
+Hệ thống gọi API Strapi cập nhật tên.
+7
+Cập nhật tên ngay trên UI (QD13.4)
+8
+Hiển thị thông báo: “Cập nhật tên thành công!”
+Tên quy định
+Nội dung
+QD13.1
+Tên hiển thị từ 2 đến 100 ký tự.
+QD13.2
+Không được chứa các ký tự đặc biệt nguy hiểm: <, >, &, ", ', script, SQL keywords.
+QD13.3
+Tên hiển thị không được để trống hoặc chỉ chứa khoảng trắng.
+QD13.4
+Sau khi lưu thành công, tên hiển thị cập nhật ngay trên thanh điều hướng mà không cần reload.
+QD13.5
+Hiển thị nút "Lưu thay đổi" và "Hủy" để xác nhận hoặc hủy chỉnh sửa.
+Usecase UC14: Học viên Thống kê số khóa
+Name
+Học viên Thống kê số khóa
+Code
+UC14
+Description
+Hiển thị thống kê tổng số khóa học đang học và đã hoàn thành của học viên tại trang hồ sơ cá nhân.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên truy cập trang hồ sơ cá nhân.
+Pre-condition
+Học viên đã đăng ký ít nhất một khóa học.
+Post condition
+Thống kê số khóa học được hiển thị chính xác và cập nhật.
+Business Rules
+UC14 sử dụng QD14.1 → QD14.5
+Actor
+System
+Alternative Flow: Học viên chưa đăng ký khóa nào
+1
+Học viên chưa đăng ký khóa nào.
+2
+Hệ thống hiển thị: "Đang học: 0".
+Exception Flow: Firebase lỗi
+1
+Firebase lỗi.
+2
+Hệ thống hiển thị "--" thay cho số cụ thể, kèm thông báo nhỏ "Không thể tải thống kê."
+Error Situations & System State: Firebase lỗi
+1
+Firebase lỗi.
+2
+Hệ thống hiển thị dữ liệu placeholder, không crash giao diện.
+Activities
+Actor
+System
+Main Flow: Học viên Thống kê số khóa
+1
+Học viên truy cập trang hồ sơ cá nhân
+2
+Hệ thống gọi Firebase lấy dữ liệu tiến độ của học viên (QD14.4)
+3
+Tính toán số khóa đang học và đã hoàn thành (QD14.1, QD14.2)
+4
+Hiển thị thống kê (QD14.3)
+Tên quy định
+Nội dung
+QD14.1
+Thống kê số khóa học đã đăng ký và chưa hoàn thành (tiến độ < 100%).
+QD14.2
+Thống kê số khóa học có tiến độ = 100%.
+QD14.3
+Thống kê hiển thị rõ ràng tại trang hồ sơ cá nhân: "Đang học: X | Hoàn thành: Y".
+QD14.4
+Số liệu thống kê tính dựa trên dữ liệu tiến độ lưu trong Firebase.
+QD14.5
+Thống kê tự cập nhật khi học viên hoàn thành thêm bài học mới.
+Usecase UC15: Học viên Gửi bình luận
+Name
+Học viên Gửi bình luận
+Code
+UC15
+Description
+Cho phép học viên gửi bình luận/câu hỏi bên dưới video bài giảng để tương tác với giảng viên và học viên khác.
+Actor
+Học viên đã đăng ký khóa học
+Trigger
+Học viên nhập bình luận và nhấn "Gửi" bên dưới bài học.
+Pre-condition
+Học viên đang đăng nhập và đang xem một bài học.
+Post condition
+Bình luận được lưu vào Strapi và hiển thị ngay bên dưới bài học.
+Business Rules
+UC15 sử dụng QD15.1 → QD15.5
+Actor
+System
+Alternative Flow: Học viên chưa đăng nhập
+1
+Học viên chưa đăng nhập.
+2
+Ẩn form bình luận, hiển thị: "Đăng nhập để bình luận."
+Exception Flow: Bình luận quá ngắn/dài
+1
+Bình luận quá ngắn/dài.
+2
+Hệ thống hiển thị: "Bình luận phải từ 5 đến 500 ký tự."
+Exception Flow: Nội dung bị lọc
+1
+Nội dung bị lọc.
+2
+Hệ thống hiển thị: "Bình luận chứa nội dung không phù hợp."
+Exception Flow: API lỗi
+1
+API lỗi.
+2
+Hệ thống hiển thị: "Không thể gửi bình luận. Vui lòng thử lại."
+Error Situations & System State: Nội dung không hợp lệ
+1
+Nội dung không hợp lệ.
+2
+Giữ nội dung trong form, không gửi lên server.
+Error Situations & System State: API lỗi
+1
+API lỗi.
+2
+Không thêm bình luận vào danh sách, giữ nguyên nội dung đã nhập.
+Activities
+Actor
+System
+Main Flow: Học viên Gửi bình luận
+1
+Học viên cuộn xuống khu vực bình luận dưới video.
+2
+Học viên nhập nội dung bình luận.
+3
+Hệ thống validate độ dài và nội dung (QD15.2, QD15.3, QD15.4)
+4
+Học viên nhấn “Gửi”
+5
+Hệ thống lưu bình luận kèm timestamp và thông tin người dùng vào Strapi (QD15.5).
+6
+Bình luận hiển thị ngay trong danh sách
+Tên quy định
+Nội dung
+QD15.1
+Chỉ học viên đã đăng nhập mới được gửi bình luận.
+QD15.2
+Bình luận từ 5 đến 500 ký tự.
+QD15.3
+Nội dung bình luận không được rỗng hoặc chỉ chứa khoảng trắng.
+QD15.4
+Hệ thống lọc và từ chối bình luận chứa ngôn từ thô tục hoặc spam (URL trùng lặp).
+QD15.5
+Bình luận phải kèm timestamp hiển thị thời gian gửi.
+Usecase UC16: Học viên lọc theo lộ trình
+Name
+Học viên lọc theo lộ trình
+Code
+UC16
+Description
+Hiển thị lộ trình học tập có cấu trúc với thứ tự bài học rõ ràng và thanh tiến độ tổng thể.
+Actor
+Học viên đã đăng ký khóa học
+Trigger
+Học viên truy cập trang học của một khóa học.
+Pre-condition
+Học viên lọc để chọn các lộ trình mức độ
+Post condition
+Lộ trình học tập được hiển thị đầy đủ với tiến độ chính xác.
+Business Rules
+UC16 sử dụng QD16.1 → QD16.5
+Actor
+System
+Alternative Flow: Học viên nhấn vào bài học trên lộ trình
+1
+Học viên nhấn vào bài học trên lộ trình.
+2
+Hệ thống điều hướng đến bài đó.
+Exception Flow: Học viên chưa đăng ký
+1
+Học viên chưa đăng ký.
+2
+Hệ thống hiển thị preview lộ trình bị mờ, kèm nút "Đăng ký ngay".
+Error Situations & System State: Firebase lỗi
+1
+Firebase lỗi.
+2
+Hệ thống hiển thị lộ trình không có tiến độ (thanh progress = 0%).
+Activities
+Actor
+System
+Main Flow: Học viên Theo dõi lộ trình
+1
+Học viên truy cập trang học của khóa học.
+2
+Hệ thống tải danh sách bài học theo thứ tự (QD16.1)
+3
+Lấy tiến độ từ Firebase để tính % hoàn thành (QD16.2)
+4
+Highlight bài học hiện tại (QD16.4)
+5
+Hiển thị lộ trình kèm thanh tiến độ
+Tên quy định
+Nội dung
+QD16.1
+Hệ thống chỉ hỗ trợ 3 mức: Beginner, Intermediate, Advanced.
+QD16.2
+Người dùng có thể chọn đồng thời nhiều mức trình độ để lọc.
+QD16.3
+Bộ lọc trình độ có thể kết hợp với bộ lọc chủ đề (BM18) và tìm kiếm (BM11).
+QD16.4
+Người dùng có thể xóa bộ lọc để hiển thị tất cả khóa học.
+QD16.5
+Usecase UC17: Học viên Lưu xem dở
+Name
+Học viên Lưu xem dở
+Code
+UC17
+Description
+Tự động lưu và khôi phục vị trí xem video để học viên có thể tiếp tục từ nơi đã dừng.
+Actor
+Học viên đang xem bài học
+Trigger
+Học viên đang xem video và thoát khỏi trang / quay lại bài học sau đó.
+Pre-condition
+Học viên đã đăng nhập và đang xem video bài học.
+Post condition
+Vị trí xem được lưu; khi quay lại, video phát từ điểm đã lưu.
+Business Rules
+UC17 sử dụng QD17.1 → QD17.5
+Actor
+System
+Alternative Flow: Bài học đã hoàn thành
+1
+Bài học đã hoàn thành.
+2
+Hệ thống xóa dữ liệu xem dở (QD23.5), phát từ đầu.
+Alternative Flow: Học viên muốn xem từ đầu
+1
+Học viên muốn xem từ đầu.
+2
+Hệ thống có thể tua về đầu video thủ công.
+Exception Flow: Firebase lỗi khi lưu vị trí
+1
+Firebase lỗi khi lưu vị trí.
+2
+Hệ thống tiếp tục xem bình thường, lần sau phát từ đầu.
+Error Situations & System State: Firebase lỗi
+1
+Firebase lỗi.
+2
+Hệ thống video vẫn phát, chỉ mất chức năng lưu vị trí.
+Activities
+Actor
+System
+Main Flow: Học viên Lưu xem dở
+1
+Học viên phát video bài học
+2
+Hệ thống bắt đầu lưu vị trí xem mỗi 10 giây vào Firebase (QD17.2, QD17.4)
+3
+Học viên thoát khỏi trang bài học
+4
+Lần sau khi học viên quay lại bài học đó, hệ thống đọc vị trí từ Firebase (QD17.2).
+5
+Video tự động seek đến vị trí đã lưu và phát (QD17.3).
+Tên quy định
+Nội dung
+QD17.1
+Hệ thống ghi nhận giây cuối cùng người dùng đang xem (timestamp trong video).
+QD17.2
+Dữ liệu xem dở được lưu vào Firebase theo cặp khóa (userId, lessonId).
+QD17.3
+Khi học viên quay lại bài học, video tự động phát từ vị trí đã lưu.
+QD17.4
+Vị trí xem được cập nhật mỗi 10 giây trong khi video đang phát.
+QD17.5
+Khi bài học được đánh dấu hoàn thành, dữ liệu xem dở bị xóa.
+Usecase UC18: Học viên lọc theo chủ đề
+Name
+Học viên lọc theo chủ đề
+Code
+UC18
+Description
+Hiển thị nhiều chủ đề để học viên có thể lựa chọn
+Actor
+Học viên
+Trigger
+Học viên nhấn lọc theo chủ đề
+Pre-condition
+Học viên có nhu cầu lọc theo chủ đề phù hợp với mình
+Post condition
+Lọc theo khóa học
+Business Rules
+UC18 sử dụng QD18.1 → QD18.5
+Activities
+Actor
+System
+Main Flow: Học viên lọc theo chủ đề
+1
+Học viên muốn lọc theo chủ đề.
+2
+Hệ thống kiếm trong data và lọc.
+Tên quy định
+Nội dung
+QD18.1
+Các chủ đề (Topic) được lấy động từ Strapi, không hard-code.
+QD18.2
+Mỗi lần lọc chỉ được chọn một chủ đề (single select).
+QD18.3
+Bộ lọc chủ đề có thể kết hợp với bộ lọc trình độ (BM16) và tìm kiếm (BM11).
+QD18.4
+Hiển thị số lượng khóa học kèm tên chủ đề: "JavaScript (12)".
+QD18.5
+Danh sách cập nhật ngay sau khi chọn chủ đề, không cần nhấn nút tìm.
+Usecase UC19: Học viên Tải file đính kèm
+Name
+Học viên Tải file đính kèm
+Code
+UC19
+Description
+Cho phép học viên tải xuống tài liệu học tập dưới dạng PDF/DOC được đính kèm trong bài học.
+Actor
+Học viên đã đăng ký khóa học
+Trigger
+Học viên nhấn nút "Tải xuống" bên cạnh file đính kèm trong bài học.
+Pre-condition
+Bài học có file đính kèm; học viên đã đăng ký khóa học.
+Post condition
+File được tải xuống thiết bị của học viên.
+Business Rules
+UC19 sử dụng QD19.1 → QD19.5
+Actor
+System
+Alternative Flow: File có thể xem trước (PDF)
+1
+File có thể xem trước (PDF).
+2
+Hệ thống hiển thị nút "Xem trước" bên cạnh "Tải xuống".
+Exception Flow: Học viên chưa đăng ký
+1
+Học viên chưa đăng ký.
+2
+Vui lòng đăng ký khóa học để tải tài liệu.
+Exception Flow: File không còn tồn tại trên Cloudinary
+1
+File không còn tồn tại trên Cloudinary.
+2
+File không còn khả dụng.
+Exception Flow: Định dạng không hỗ trợ
+1
+Định dạng không hỗ trợ.
+2
+Ẩn nút tải xuống, không hiển thị file.
+Error Situations & System State: File không tồn tại
+1
+File không tồn tại.
+2
+Thông báo lỗi, ẩn nút tải xuống.
+Error Situations & System State: Chưa đăng ký
+1
+Chưa đăng ký.
+2
+Không gửi URL Cloudinary về client.
+Activities
+Actor
+System
+Main Flow: Học viên Tải file đính kèm
+1
+Học viên xem bài học có file đính kèm.
+2
+Hệ thống hiển thị tên file và nút “Tải xuống” (QD19.5).
+3
+Học viên nhấn “Tải xuống”.
+4
+Hệ thống xác thực quyền truy cập (QD19.3).
+5
+Hệ thống lấy URL download từ Cloudinary (QD19.4).
+6
+Trình duyệt tải file về thiết bị học viên
+Tên quy định
+Nội dung
+QD19.1
+Chỉ hỗ trợ tải xuống file định dạng PDF và DOC/DOCX.
+QD19.2
+Mỗi file đính kèm không được vượt quá 50MB.
+QD19.3
+Chỉ học viên đã đăng ký khóa học mới có quyền tải file đính kèm.
+QD19.4
+File được lưu trữ và phục vụ từ Cloudinary, không lưu cục bộ trên server.
+QD19.5
+Tên file hiển thị phải có nghĩa, không được là chuỗi hash ngẫu nhiên.
+Usecase UC20: Học viên Đổi mật khẩu mới
+Name
+Học viên Đổi mật khẩu mới
+Code
+UC20
+Description
+Cho phép học viên cập nhật mật khẩu tài khoản sau khi xác nhận mật khẩu hiện tại.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên truy cập mục "Đổi mật khẩu" trong cài đặt tài khoản.
+Pre-condition
+Học viên đang đăng nhập hợp lệ.
+Post condition
+Mật khẩu được cập nhật; tất cả phiên đăng nhập cũ bị hủy.
+Business Rules
+UC20 sử dụng QD20.1 → QD20.5
+Activities
+Actor
+System
+Main Flow: Học viên Đổi mật khẩu mới
+1
+Học viên truy cập “Cài đặt → Đổi mật khẩu”
+2
+Hệ thống hiển thị form: Mật khẩu hiện tại, Mật khẩu mới, Xác nhận mật khẩu mới
+3
+Học viên điền đầy đủ
+4
+Hệ thống validate mật khẩu cũ (QD20.1), mật khẩu mới (QD20.2, QD20.3, QD20.4).
+5
+Gọi API Strapi cập nhật mật khẩu.
+6
+Hủy tất cả JWT Token cũ (QD20.5)
+7
+Chuyển về trang đăng nhập với thông báo: “Đổi mật khẩu thành công. Vui lòng đăng nhập lại.”
+Actor
+System
+Alternative Flow: Học viên hủy
+1
+Học viên hủy.
+2
+Không thay đổi gì, quay lại trang cài đặt.
+Exception Flow: Mật khẩu cũ sai
+1
+Mật khẩu cũ sai.
+2
+Mật khẩu hiện tại không đúng.
+Exception Flow: Mật khẩu mới trùng cũ
+1
+Mật khẩu mới trùng cũ.
+2
+Mật khẩu mới phải khác mật khẩu hiện tại.
+Exception Flow: Xác nhận không khớp
+1
+Xác nhận không khớp.
+2
+Mật khẩu xác nhận không trùng khớp.
+Exception Flow: Mật khẩu không đủ mạnh
+1
+Mật khẩu không đủ mạnh.
+2
+Mật khẩu phải có ít nhất 8 ký tự, gồm chữ hoa, thường và số.
+Error Situations & System State: Validate lỗi
+1
+Validate lỗi.
+2
+Highlight trường lỗi, không gọi API.
+Error Situations & System State: API lỗi
+1
+API lỗi.
+2
+Không đổi mật khẩu, giữ nguyên phiên hiện tại.
+Tên quy định
+Nội dung
+QD20.1
+Học viên phải nhập mật khẩu hiện tại trước khi đổi mật khẩu mới.
+QD20.2
+Mật khẩu mới từ 8–32 ký tự, có chữ hoa, chữ thường và số (giống QD01.3).
+QD20.3
+Mật khẩu mới không được trùng với mật khẩu hiện tại.
+QD20.4
+Phải nhập lại mật khẩu mới để xác nhận, hai lần phải khớp nhau.
+QD20.5
+Sau khi đổi mật khẩu thành công, tất cả phiên đăng nhập cũ bị vô hiệu hóa, yêu cầu đăng nhập lại.
+Usecase UC21: Học viên Báo lỗi hệ thống
+Name
+Học viên Báo lỗi hệ thống
+Code
+UC29
+Description
+Cho phép học viên gửi báo cáo lỗi kỹ thuật đến bộ phận hỗ trợ kèm thông tin thiết bị tự động.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên nhấn nút "Báo lỗi" trên giao diện.
+Pre-condition
+Học viên đang đăng nhập; hệ thống Email SMTP đang hoạt động.
+Post condition
+Báo cáo lỗi được gửi đến bộ phận kỹ thuật và lưu vào hệ thống.
+Business Rules
+UC21 sử dụng QD21.1 → QD21.5
+Actor
+System
+Main Flow:Học viên Báo lỗi hệ thống
+1
+Học viên nhấn “Báo lỗi”
+2
+Hệ thống mở form báo lỗi
+3
+Hệ thống tự động điền thông tin thiết bị
+4
+Học viên mô tả lỗi (tối thiểu 20 ký tự)
+5
+Nhấn “Gửi báo cáo”
+6
+Hệ thống kiểm tra giới hạn gửi
+7
+Gửi Email đến kỹ thuật
+8
+Hiển thị thông báo thành công
+Actor
+System
+Alternative Flow: Học viên hủy
+1
+Học viên hủy
+2
+Đóng form, không gửi
+Alternative Flow: Mô tả lỗi quá ngắn 
+1
+Mô tả lỗi quá ngắn 
+2
+Hiển thị: “Vui lòng mô tả lỗi chi tiết hơn (tối thiểu 20 ký tự).”
+Alternative Flow: Vượt giới hạn 5 báo cáo/ngày
+1
+Vượt giới hạn 5 báo cáo/ngày
+2
+ Hiển thị: “Bạn đã gửi quá số báo cáo cho phép hôm nay.”
+Alternative Flow: Email SMTP lỗi
+1
+Email SMTP lỗi
+2
+Lưu báo cáo vào DB để xử lý sau, hiển thị: “Báo cáo đã lưu, sẽ được xử lý sớm.”
+Tên quy định
+Nội dung
+QD21.1
+Học viên phải mô tả lỗi gặp phải, tối thiểu 20 ký tự.
+QD21.2
+Hệ thống tự động đính kèm: trình duyệt, OS, URL trang đang gặp lỗi.
+QD21.3
+Mỗi học viên tối đa 5 báo cáo lỗi/ngày để tránh spam.
+QD21.4
+Báo cáo được gửi đến địa chỉ Email kỹ thuật qua SMTP.
+QD21.5
+Sau khi gửi, hiển thị thông báo: “Báo cáo lỗi đã được gửi. Cảm ơn bạn!”
+Usecase UC22: Học viên Nhận chứng chỉ
+Name
+Học viên Nhận chứng chỉ
+Code
+UC30
+Description
+Cấp và tải chứng chỉ hoàn thành khóa học dưới dạng PDF cho học viên đã học xong 100%.
+Actor
+Học viên đã hoàn thành khóa học
+Trigger
+Học viên nhấn "Nhận chứng chỉ" sau khi hoàn thành 100% bài học.
+Pre-condition
+Học viên đã xem đủ 100% bài học trong khóa; tiến độ được xác nhận từ Firebase.
+Post condition
+Chứng chỉ PDF được tạo, lưu vào Firebase và tải xuống thiết bị học viên.
+Busines Rules
+UC11 sử dụng QD22.1 → QD22.5
+Actor
+System
+Học viên Nhận chứng chỉ
+1
+Hệ thống phát hiện tiến độ đạt 100%
+2
+Hiển thị nút “Nhận chứng chỉ”
+3
+Học viên nhấn nút
+4
+Hệ thống tạo mã xác thực duy nhất 
+5
+Tạo file PDF với đầy đủ thông tin
+6
+Lưu thông tin chứng chỉ vào Firebase
+7
+Tải xuống file PDF cho học viên
+Actor
+System
+Alternative Flow: Học viên đã nhận chứng chỉ trước đó
+1
+Học viên đã nhận chứng chỉ trước đó
+2
+Cho phép tải lại chứng chỉ đã cấp.
+Alternative Flow: Tiến độ chưa đạt 100%
+1
+Tiến độ chưa đạt 100%
+2
+Ẩn nút “Nhận chứng chỉ”.
+Alternative Flow: Lỗi tạo PDF
+1
+Lỗi tạo PDF
+2
+Hiển thị: “Không thể tạo chứng chỉ. Vui lòng thử lại.”
+Tên quy định
+Nội dung
+QD22.1
+Chứng chỉ chỉ được cấp khi học viên hoàn thành 100% bài học trong khóa học.
+QD22.2
+Chứng chỉ ghi rõ: Họ tên học viên, tên khóa học, ngày hoàn thành, mã xác thực.
+QD22.3
+Mỗi chứng chỉ có mã hash duy nhất để có thể xác thực tính hợp lệ.
+QD22.4
+Chứng chỉ được xuất dưới dạng file PDF có thể tải xuống.
+QD22.5
+Thông tin chứng chỉ được lưu vào Firebase theo (userId, courseId).
+Usecase UC23: Học viên Lưu yêu thích *
+Name
+Học viên Lưu yêu thích
+Code
+UC31
+Description
+Cho phép học viên đánh dấu khóa học vào danh sách yêu thích để truy cập nhanh sau này.
+Actor
+Học viên / Khách
+Trigger
+Học viên nhấn icon trái tim trên thẻ khóa học.
+Pre-condition
+Người dùng đang xem danh sách hoặc chi tiết khóa học.
+Post condition
+Trạng thái yêu thích của khóa học được cập nhật và lưu vào LocalStorage.
+Business Rules
+UC23 sử dụng QD23.1 → QD23.5
+Actor
+System
+Main Flow: Lưu yêu thích
+1
+Học viên nhấn icon trái tim trên thẻ khóa học.
+ 
+ 
+ 
+ 
+2
+Hệ thống kiểm tra khóa học đã trong danh sách yêu thích chưa (QD31.3).
+3
+Nếu chưa → Thêm courseId vào LocalStorage, đổi icon sang màu đỏ (QD31.1, QD31.4).
+ 
+ 
+4
+Nếu đã có → Xóa courseId khỏi LocalStorage, đổi icon sang xám (QD31.3, QD31.4).
+ 
+ 
+ 
+Actor
+System
+Alternative Flow: Danh sách yêu thích đã đầy (50 items)
+1
+Danh sách yêu thích đã đầy (50 items)
+2
+ Hiển thị: “Danh sách yêu thích đã đầy. Xóa bớt để thêm.”
+Alternative Flow: LocalStorage bị vô hiệu hóa (private browsing)
+1
+LocalStorage bị vô hiệu hóa (private browsing)
+2
+Chức năng không hoạt động, ẩn icon tim.
+                                                        
+Tên quy định
+Nội dung
+QD23.1
+Danh sách yêu thích được lưu vào LocalStorage của trình duyệt.
+QD23.2
+Tối đa 50 khóa học trong danh sách yêu thích.
+QD23.3
+Nhấn lần đầu → thêm vào yêu thích; nhấn lần hai → xóa khỏi yêu thích.
+QD23.4
+Icon trái tim hiển thị màu đỏ (đã yêu thích) hoặc xám (chưa yêu thích).
+QD23.5
+Do dùng LocalStorage, danh sách yêu thích không đồng bộ giữa các thiết bị.
+Usecase UC24: Học viên Ghi chú cá nhân
+Name
+Học viên Ghi chú cá nhân
+Code
+UC32
+Description
+Cho phép học viên viết và lưu ghi chú riêng tư tại mỗi bài học để ôn tập sau.
+Actor
+Học viên đang học
+Trigger
+Học viên nhấn vào khu vực ghi chú hoặc bắt đầu gõ trong textarea ghi chú.
+Pre-condition
+Học viên đã đăng nhập và đang xem một bài học.
+Post condition
+Ghi chú được lưu tự động vào Firebase và hiển thị khi quay lại.
+Business Rule
+UC11 sử dụng QD24.1 → QD24.5
+Actor
+System
+Main Flow: Ghi chú cá nhân
+1
+Học viên xem bài học và nhấn vào khu vực ghi chú.
+ 
+ 
+ 
+ 
+2
+Hệ thống tải ghi chú cũ từ Firebase nếu có (QD32.5).
+3
+Học viên gõ ghi chú mới.
+ 
+ 
+ 
+ 
+4
+Sau 2 giây không gõ thêm, hệ thống tự động lưu vào Firebase (QD32.4).
+ 
+ 
+5
+Hiển thị trạng thái “Đã lưu” sau khi lưu thành công.
+ 
+Actor
+System
+Alternative Flow:Học viên xóa toàn bộ ghi chú
+1
+Học viên xóa toàn bộ ghi chú
+2
+Lưu chuỗi rỗng, xóa ghi chú khỏi Firebase.
+Alternative Flow: Ghi chú vượt 1000 ký tự
+1
+Ghi chú vượt 1000 ký tự
+2
+Ngừng cho phép nhập thêm, hiển thị số ký tự còn lại
+Alternative Flow: Firebase lỗi khi lưu
+1
+Firebase lỗi khi lưu
+2
+Hiển thị “Lưu thất bại”, retry sau 5 giây.
+Tên quy định
+Nội dung
+QD24.1
+Mỗi ghi chú liên kết với một bài học cụ thể (lessonId).
+QD24.2
+Ghi chú được lưu vào Firebase theo cặp (userId, lessonId).
+QD24.3
+Ghi chú tối đa 1000 ký tự.
+QD24.4
+Hệ thống tự động lưu ghi chú sau 2 giây kể từ lần gõ cuối cùng (auto-save debounce).
+QD24.5
+Khi học viên quay lại bài học, ghi chú cũ được tải và hiển thị trong textarea.
+Usecase UC25: Học viên Làm trắc nghiệm
+Name
+Học viên Làm trắc nghiệm
+Code
+UC33
+Description
+Cho phép học viên thực hiện bài kiểm tra trắc nghiệm để đánh giá kiến thức sau khi học xong.
+Actor
+Học viên đã đăng ký khóa học
+Trigger
+Học viên nhấn "Bắt đầu làm quiz" trong bài học.
+Pre-condition
+Bài học có quiz; học viên đã đăng ký khóa học.
+Post condition
+Kết quả quiz được lưu; nếu đạt, bài học được tính hoàn thành.
+Business Rules
+UC25 sử dụng QD25.1 → QD25.5
+Actor
+System
+Main Flow: Làm trắc nghiệm
+1
+Học viên nhấn “Bắt đầu làm quiz”.
+ 
+ 
+ 
+ 
+2
+Hệ thống tải câu hỏi từ Strapi (QD33.1)
+3
+Học viên trả lời từng câu (single choice).
+ 
+ 
+4
+Học viên nhấn “Nộp bài”.
+ 
+ 
+ 
+ 
+5
+Hệ thống kiểm tra tất cả câu đã được trả lời (QD33.2).
+ 
+ 
+6
+Tính điểm và hiển thị kết quả (QD33.3, QD33.4).
+ 
+ 
+7
+Nếu đạt ≥ 70% → Đánh dấu hoàn thành bài học.
+ 
+Actor
+System
+Alternative Flow:Học viên chưa đạt
+1
+Học viên chưa đạt
+2
+Hiển thị nút “Làm lại” (tối đa 3 lần - QD33.5).
+Alternative Flow: Học viên đã đạt
+1
+Học viên đã đạt
+2
+ Hiển thị kết quả và nút “Tiếp tục”.
+Alternative Flow: Học viên chưa trả lời hết câu hỏi 
+1
+Học viên chưa trả lời hết câu hỏi 
+2
+Highlight câu chưa trả lời, không cho nộp.
+Alternative Flow:Đã làm quá 3 lần
+1
+Đã làm quá 3 lần
+2
+Ẩn nút “Làm lại”, hiển thị: “Bạn đã hết lượt làm lại.”
+Alternative Flow:API Strapi lỗi khi tải câu hỏi
+1
+API Strapi lỗi khi tải câu hỏi
+2
+Hiển thị: “Không thể tải quiz. Vui lòng thử lại.”
+Tên quy định
+Nội dung
+QD25.1
+Quiz gồm câu hỏi dạng trắc nghiệm một đáp án đúng (single choice).
+QD25.2
+Học viên phải trả lời tất cả câu hỏi trước khi nộp bài.
+QD25.3
+Điểm đạt tối thiểu là 70% số câu đúng.
+QD25.4
+Sau khi nộp, hiển thị ngay điểm số và đáp án đúng/sai từng câu.
+QD25.5
+Học viên có thể làm lại quiz tối đa 3 lần nếu chưa đạt điểm tối thiểu.
+Usecase UC26: Học viên Thấy Leaderboard
+Name
+Học viên Thấy Leaderboard
+Code
+UC34
+Description
+Hiển thị bảng xếp hạng thành tích học tập của học viên dựa trên số khóa hoàn thành.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên truy cập trang Leaderboard.
+Pre-condition
+Hệ thống có ít nhất 1 học viên đã hoàn thành khóa học.
+Post condition
+Bảng xếp hạng được hiển thị với dữ liệu cập nhật mới nhất.
+Business Rules
+UC26 sử dụng QD26.1 → QD26.5
+Actor
+System
+Main Flow: Thấy Leaderboard
+1
+Học viên truy cập trang Leaderboard.
+ 
+ 
+ 
+ 
+2
+Hệ thống lấy dữ liệu xếp hạng từ Firebase (QD34.3).
+ 
+ 
+3
+Tính toán điểm theo tiêu chí (QD34.1).
+ 
+ 
+4
+Hiển thị Top 10 (QD34.2) kèm tên và ảnh đại diện (QD34.5).
+ 
+ 
+5
+Hiển thị vị trí của học viên đang đăng nhập (QD34.4).
+ 
+Actor
+System
+Alternative Flow:Học viên chưa có thành tích
+1
+Học viên chưa có thành tích
+2
+Vẫn hiển thị vị trí của họ ở cuối bảng.
+Alternative Flow: Firebase lỗi
+1
+Firebase lỗi
+2
+Hiển thị: “Không thể tải bảng xếp hạng. Vui lòng thử lại sau.”
+Tên quy định
+Nội dung
+QD26.1
+Xếp hạng dựa trên tổng số khóa học đã hoàn thành, thứ hai là số huy hiệu.
+QD26.2
+Leaderboard hiển thị Top 10 học viên.
+QD26.3
+Bảng xếp hạng cập nhật mỗi 24 giờ từ Firebase.
+QD26.4
+Nếu học viên không trong Top 10, vẫn hiển thị vị trí của họ ở cuối bảng.
+QD26.5
+Chỉ hiển thị tên hiển thị và ảnh đại diện, không hiển thị Email.
+Usecase UC27: Học viên Biết lý lịch GV *
+Name
+Học viên Biết lý lịch GV
+Code
+UC35
+Description
+Cho phép học viên xem thông tin hồ sơ và kinh nghiệm của giảng viên dạy khóa học.
+Actor
+Học viên / Khách
+Trigger
+Học viên nhấn vào tên hoặc ảnh giảng viên trên trang chi tiết khóa học.
+Pre-condition
+Giảng viên có hồ sơ đầy đủ trên hệ thống.
+Post condition
+Trang hồ sơ giảng viên được hiển thị với thông tin công khai.
+Business Rules
+UC27 sử dụng QD27.1 → QD27.5
+Actor
+System
+Main Flow: Biết lý lịch GV
+1
+Học viên nhấn vào tên giảng viên.
+ 
+ 
+ 
+ 
+2
+Hệ thống gọi API Strapi lấy thông tin hồ sơ giảng viên.
+ 
+ 
+3
+Hiển thị: Họ tên, ảnh, chuyên môn, kinh nghiệm (QD35.1, QD35.5).
+ 
+ 
+4
+Hiển thị danh sách khóa học Published của giảng viên (QD35.4).
+ 
+Actor
+System
+Alternative Flow:Học viên nhấn vào khóa học trong danh sách
+1
+Học viên nhấn vào khóa học trong danh sách
+2
+Điều hướng đến trang chi tiết khóa học.
+Alternative Flow: Giảng viên không có hồ sơ
+1
+Giảng viên không có hồ sơ
+2
+Hiển thị thông tin tối thiểu: “Thông tin giảng viên đang được cập nhật.”
+Alternative Flow: Học viên chưa trả lời hết câu hỏi 
+1
+Học viên chưa trả lời hết câu hỏi 
+2
+Highlight câu chưa trả lời, không cho nộp.
+Alternative Flow:API lỗi
+1
+API lỗi
+2
+Hiển thị thông báo lỗi.
+Tên quy định
+Nội dung
+QD27.1
+Hồ sơ giảng viên phải có: Họ tên, ảnh đại diện, chuyên môn, mô tả kinh nghiệm.
+QD27.2
+Thông tin giảng viên xuất hiện trên trang chi tiết khóa học.
+QD27.3
+Bất kỳ ai cũng có thể xem hồ sơ giảng viên (public).
+QD27.4
+Từ trang hồ sơ giảng viên, hiển thị danh sách khóa học của giảng viên đó.
+QD27.5
+Không hiển thị Email, số điện thoại hay thông tin cá nhân nhạy cảm.
+Usecase UC28: Học viên Xem tổng giờ học
+Name
+Học viên Xem tổng giờ học
+Code
+UC37
+Description
+Hiển thị tổng thời gian học thực tế của học viên dựa trên các bài học đã hoàn thành.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên truy cập trang hồ sơ cá nhân.
+Pre-condition
+Học viên đã hoàn thành ít nhất một bài học.
+Post condition
+Tổng giờ học được hiển thị chính xác trên trang hồ sơ.
+Business Rules
+UC28 sử dụng QD28.1 → QD28.5
+Actor
+System
+Main Flow :Học viên Xem tổng giờ học
+1
+Học viên truy cập trang hồ sơ.
+2
+Hệ thống lấy danh sách bài học đã hoàn thành từ Firebase 
+3
+Tính tổng thời lượng từ metadata bài học trên Strapi
+4
+Hiển thị “X giờ Y phút”
+Actor
+System
+Alternative Flow:Học viên chưa học bài nào
+1
+Học viên chưa học bài nào
+2
+Hiển thị “0 giờ 0 phút”.
+Alternative Flow: Giảng viên không có hồ sơ
+1
+Firebase lỗi
+2
+Hiển thị “– giờ –phút” thay cho số liệu
+Tên quy định
+Nội dung
+QD28.1
+Tổng giờ học tính dựa trên tổng thời lượng các video bài học đã hoàn thành.
+QD28.2
+Hiển thị theo định dạng “X giờ Y phút”.
+QD28.3
+Dữ liệu thời gian học được lưu và truy vấn từ Firebase.
+QD28.4
+Thống kê cập nhật ngay khi học viên hoàn thành thêm một bài học.
+QD28.5
+Tổng giờ học hiển thị tại trang hồ sơ cá nhân của học viên.
+Usecase UC29: Học viên Đánh giá khóa học (Rating)
+Name
+Học viên Đánh giá khóa học (Rating)
+Code
+UC38
+Description
+Cho phép học viên đánh giá chất lượng khóa học bằng thang điểm sao kèm nhận xét.
+Actor
+Học viên đã đăng ký khóa học
+Trigger
+Học viên nhấn "Đánh giá khóa học" trên trang chi tiết hoặc sau khi hoàn thành.
+Pre-condition
+Học viên đã đăng ký khóa học và đang đăng nhập.
+Post condition
+Đánh giá được lưu; điểm trung bình rating được cập nhật trên trang khóa học.
+Business Rules
+UC11 sử dụng QD29.1 → QD29.5
+Actor
+System
+Main Flow : Học viên đánh giá khóa học 
+1
+Học viên nhấn “Đánh giá khóa học”.
+2
+Hệ thống kiểm tra quyền đánh giá 
+3
+Hiển thị form rating: 1-5 sao + textarea nhận xét
+4
+Học viên chọn số sao và nhập nhận xét
+5
+Nhấn “Gửi đánh giá”
+6
+Lưu vào Strapi, cập nhật điểm trung bình
+Actor
+System
+Alternative Flow:Học viên đã đánh giá trước đó
+1
+Học viên đã đánh giá trước đó
+2
+Hiển thị form chỉnh sửa với dữ liệu cũ
+Alternative Flow:Học viên chưa chọn sao
+1
+Học viên chưa chọn sao
+2
+Hiển thị: “Vui lòng chọn số sao đánh giá.”
+Alternative Flow: Học viên chưa đăng ký khóa
+1
+Học viên chưa đăng ký khóa
+2
+Ẩn nút đánh giá.
+Alternative Flow:Nhận xét quá dài
+1
+Nhận xét quá dài
+2
+Giới hạn 300 ký tự, không cho nhập thêm.
+Tên quy định
+Nội dung
+QD29.1
+Chỉ học viên đã đăng ký khóa học mới có quyền đánh giá.
+QD29.2
+Học viên chọn từ 1 đến 5 sao, không được để trống.
+QD29.3
+Mỗi học viên chỉ đánh giá một khóa học một lần, có thể chỉnh sửa.
+QD29.4
+Học viên có thể thêm nhận xét tối đa 300 ký tự kèm rating.
+QD29.5
+Hệ thống tính và hiển thị điểm trung bình rating trên trang chi tiết khóa học.
+Usecase UC30: Học viên Thấy bài phù hợp
+Name
+Học viên Thấy bài phù hợp
+Code
+UC39
+Description
+Hiển thị gợi ý khóa học cá nhân hóa dựa trên lịch sử học tập của học viên.
+Actor
+Học viên đang đăng nhập
+Trigger
+Học viên truy cập trang Dashboard sau khi đăng nhập.
+Pre-condition
+Học viên đã đăng nhập; hệ thống có dữ liệu lịch sử học.
+Post condition
+Danh sách gợi ý được hiển thị phù hợp với lịch sử học tập.
+Business Rules
+UC30 sử dụng QD30.1 → QD30.5
+Actor
+System
+Main Flow : Học viên Thấy bài phù hợp
+1
+Học viên đăng nhập, truy cập Dashboard.
+2
+Hệ thống lấy lịch sử khóa học đã đăng ký từ Firebase
+3
+Truy vấn Strapi tìm khóa cùng chủ đề chưa đăng ký 
+4
+Lọc Published và giới hạn 4 kết quả
+5
+Hiển thị danh sách gợi ý
+Actor
+System
+Alternative Flow:Chưa có lịch sử học
+1
+Chưa có lịch sử học
+2
+Hiển thị khóa học phổ biến nhất 
+Alternative Flow:API lỗi
+1
+API lỗi
+2
+Ẩn section gợi ý, không ảnh hưởng trang chính
+Tên quy định
+Nội dung
+QD30.1
+Gợi ý dựa trên các chủ đề của khóa học đã học hoặc đang học.
+QD30.2
+Không gợi ý khóa học mà học viên đã đăng ký.
+QD30.3
+Hiển thị tối đa 4 khóa học gợi ý tại trang Dashboard.
+QD30.4
+Chỉ gợi ý khóa học đang Published.
+QD30.5
+Nếu học viên chưa có lịch sử học, hiển thị các khóa học phổ biến nhất.
+BM01: [User đăng ký thành viên] 
+Tên quy định
+Nội dung
+QD01.1
+Email không được để trống, phải chứa ký tự "@" và tên miền hợp lệ (vd: abc@gmail.com).
+QD01.2
+Email đã được đăng ký trong hệ thống thì không được tạo tài khoản mới.
+QD01.3
+Mật khẩu dài từ 8–32 ký tự, phải có ít nhất 1 chữ hoa, 1 chữ thường và 1 chữ số.
+QD01.4
+Họ tên từ 2–100 ký tự, không chứa ký tự đặc biệt (<, >, script, SQL injection...).
+QD01.5
+Tài khoản chỉ được kích hoạt và cho phép đăng nhập sau khi người dùng xác thực Email qua link kích hoạt.
+BM02: [Học viên đăng nhập hệ thống]
+Tên quy định
+Nội dung
+QD02.1
+Cả hai trường Email và mật khẩu đều không được để trống.
+QD02.2
+Chỉ tài khoản có trạng thái "Active" mới được phép đăng nhập.
+QD02.3
+Sau 5 lần nhập sai mật khẩu liên tiếp, tài khoản bị khóa tạm thời 15 phút.
+QD02.4
+Token xác thực có hiệu lực tối đa 7 ngày kể từ thời điểm đăng nhập.
+QD02.5
+Token được lưu trong HttpOnly Cookie để ngăn chặn tấn công XSS.
+BM03: [Học viên đăng xuất tài khoản]
+Tên quy định
+Nội dung
+QD03.1
+Khi đăng xuất, JWT Token phải bị vô hiệu hóa tại server (thêm vào blacklist hoặc xóa khỏi store).
+QD03.2
+Cookie lưu token phải được xóa hoàn toàn khỏi trình duyệt.
+QD03.3
+Hệ thống hiển thị popup xác nhận để tránh đăng xuất nhầm.
+QD03.4
+Sau khi đăng xuất thành công, hệ thống chuyển hướng về trang chủ.
+QD03.5
+Sau khi đăng xuất, mọi yêu cầu truy cập trang yêu cầu xác thực đều bị từ chối và chuyển hướng về trang đăng nhập.
+BM04: [Học viên xem hồ sơ cá nhân]
+Tên quy định
+Nội dung
+QD04.1
+Chỉ người dùng đang đăng nhập mới được xem hồ sơ cá nhân của mình.
+QD04.2
+Trang hồ sơ phải hiển thị: Họ tên, Email, ảnh đại diện, ngày tham gia, số khóa học đã đăng ký.
+QD04.3
+Người dùng chỉ xem được hồ sơ của chính mình, không xem được hồ sơ người khác qua URL.
+QD04.4
+Thông tin hiển thị phải được lấy từ server (Strapi), không dùng dữ liệu cache cũ quá 5 phút.
+QD04.5
+Nếu chưa có ảnh đại diện, hiển thị ảnh mặc định (avatar placeholder).
+BM05: [Học viên xem danh mục học]  
+Tên quy định
+Nội dung
+QD05.1
+Chỉ hiển thị các khóa học có trạng thái "Published" (đã được Admin phê duyệt).
+QD05.2
+Danh sách khóa học phải phân trang, mỗi trang hiển thị tối đa 12 khóa học.
+QD05.3
+Mỗi thẻ khóa học phải hiển thị: thumbnail, tiêu đề, tên giảng viên, số bài học, trình độ.
+QD05.4
+Danh sách được sắp xếp theo ngày xuất bản mới nhất (newest first).
+QD05.5
+Trang danh mục có thể xem mà không cần đăng nhập (public access).
+BM06: [Học viên xem chi tiết bài học] 
+Tên quy định
+Nội dung
+QD06.1
+Chỉ hiển thị chi tiết khóa học còn hoạt động, không hiển thị Draft/Deleted.
+QD06.2
+Trang chi tiết phải hiển thị: tiêu đề, mô tả, thumbnail, giảng viên, danh sách bài học, trình độ, số lượng học viên.
+QD06.3
+Nếu đã đăng ký → hiển thị nút "Tiếp tục học". Nếu chưa → hiển thị nút "Đăng ký ngay".
+QD06.4
+Bài học đầu tiên có thể xem trước mà không cần đăng ký (free preview).
+QD06.5
+Hiển thị điểm đánh giá trung bình và số lượt đánh giá của khóa học.
+BM07: [Học viên xem danh sách bài học] 
+Tên quy định
+Nội dung
+QD07.1
+Chỉ học viên đã đăng ký khóa học mới xem được toàn bộ danh sách bài học.
+QD07.2
+Danh sách bài học sắp xếp theo thứ tự số thứ tự (order) do giảng viên định nghĩa.
+QD07.3
+Mỗi bài học hiển thị trạng thái: "Chưa học", "Đang học", "Đã hoàn thành" kèm dấu tích xanh.
+QD07.4
+Hiển thị: tên bài học, thời lượng video, loại tài nguyên (video/tài liệu).
+QD07.5
+Bài học chỉ mở khi bài trước đó đã hoàn thành (nếu giảng viên bật tuần tự).
+BM08: [Học viên xem thông tin về khóa học] 
+Tên quy định
+Nội dung
+QD08.1
+Mô tả nội dung bài học (transcript/description) phải tương ứng với video đang phát.
+QD08.2
+Nội dung chữ hỗ trợ định dạng Rich Text (in đậm, danh sách, code block).
+QD08.3
+Mỗi bài học phải có ít nhất nội dung mô tả ngắn (tối thiểu 20 ký tự).
+QD08.4
+Nội dung chữ phải tải trong vòng 2 giây sau khi trang bài học mở.
+QD08.5
+Nội dung chi tiết bài học chỉ hiển thị cho học viên đã đăng ký khóa học.
+BM09: [Học viên xem tổng số bài] 
+Tên quy định
+Nội dung
+QD09.1
+Số lượng bài học hiển thị phải đồng bộ với số bài thực tế trong database.
+QD09.2
+Tổng số bài bao gồm cả bài đã hoàn thành và chưa hoàn thành.
+QD09.3
+Khi giảng viên thêm/xóa bài, số hiển thị phải cập nhật ngay lần tải tiếp theo.
+QD09.4
+Hiển thị dưới dạng "X/Y bài" (đã hoàn thành / tổng số).
+QD09.5
+Tổng số bài có thể hiển thị trên trang chi tiết khóa học cho cả khách chưa đăng nhập.
+ BM10: [Học viên xem gợi ý học] 
+Tên quy định
+Nội dung
+QD10.1
+Gợi ý dựa trên chủ đề (Topic/Category) của khóa học đang xem.
+QD10.2
+Không hiển thị khóa học mà học viên đã đăng ký hoặc đã hoàn thành.
+QD10.3
+Hiển thị tối đa 6 khóa học gợi ý.
+QD10.4
+Không gợi ý các khóa học đang ở trạng thái Draft.
+QD10.5
+Nếu không có khóa nào phù hợp, hiển thị: "Hiện chưa có gợi ý phù hợp."
+ BM11: [Học viên tìm kiếm khóa học] 
+Tên quy định
+Nội dung
+QD11.1
+Tìm kiếm dựa trên tiêu đề khóa học, không phân biệt chữ hoa/thường.
+QD11.2
+Từ khóa tìm kiếm phải từ 2 ký tự trở lên.
+QD11.3
+Kết quả tìm kiếm chỉ trả về các khóa học có trạng thái Published.
+QD11.4
+Hiển thị tổng số kết quả tìm được phía trên danh sách.
+QD11.5
+Nếu không tìm thấy, hiển thị: "Không tìm thấy khóa học phù hợp với từ khóa '[keyword]'."
+ BM12: [Học viên xác thực Email]
+Tên quy định
+Nội dung
+QD12.1
+Link xác thực Email có hiệu lực trong 24 giờ kể từ khi gửi.
+QD12.2
+Link xác thực bị vô hiệu hóa ngay sau khi được sử dụng thành công.
+QD12.3
+Mỗi tài khoản chỉ được yêu cầu gửi lại Email tối đa 3 lần/ngày.
+QD12.4
+Sau khi xác thực thành công, trạng thái tài khoản cập nhật từ "Inactive" sang "Active".
+QD12.5
+Sau khi xác thực, hệ thống hiển thị thông báo thành công và chuyển hướng đến trang đăng nhập.
+ BM13: [Học viên sửa tên hiển thị]
+Tên quy định
+Nội dung
+QD13.1
+Tên hiển thị từ 2 đến 100 ký tự.
+QD13.2
+Không được chứa các ký tự đặc biệt nguy hiểm: <, >, &, ", ', script, SQL keywords.
+QD13.3
+Tên hiển thị không được để trống hoặc chỉ chứa khoảng trắng.
+QD13.4
+Sau khi lưu thành công, tên hiển thị cập nhật ngay trên thanh điều hướng mà không cần reload.
+QD13.5
+Hiển thị nút "Lưu thay đổi" và "Hủy" để xác nhận hoặc hủy chỉnh sửa.
+ BM14: [Học viên thống kê số khóa]
+GI
+Tên quy định
+Nội dung
+QD14.1
+Thống kê số khóa học đã đăng ký và chưa hoàn thành (tiến độ < 100%).
+QD14.2
+Thống kê số khóa học có tiến độ = 100%.
+QD14.3
+Thống kê hiển thị rõ ràng tại trang hồ sơ cá nhân: "Đang học: X | Hoàn thành: Y".
+QD14.4
+Số liệu thống kê tính dựa trên dữ liệu tiến độ lưu trong Firebase.
+QD14.5
+Thống kê tự cập nhật khi học viên hoàn thành thêm bài học mới.
+ BM15: [Học viên gửi bình luận]
+Tên quy định
+Nội dung
+QD15.1
+Chỉ học viên đã đăng nhập mới được gửi bình luận.
+QD15.2
+Bình luận từ 5 đến 500 ký tự.
+QD15.3
+Nội dung bình luận không được rỗng hoặc chỉ chứa khoảng trắng.
+QD15.4
+Hệ thống lọc và từ chối bình luận chứa ngôn từ thô tục hoặc spam (URL trùng lặp).
+QD15.5
+Bình luận phải kèm timestamp hiển thị thời gian gửi.
+ BM16: [Học viên lọc theo trình độ] 
+Tên quy định
+Nội dung
+QD16.1
+Hệ thống chỉ hỗ trợ 3 mức: Beginner, Intermediate, Advanced.
+QD16.2
+Người dùng có thể chọn đồng thời nhiều mức trình độ để lọc.
+QD16.3
+Bộ lọc trình độ có thể kết hợp với bộ lọc chủ đề (BM18) và tìm kiếm (BM11).
+QD16.4
+Người dùng có thể xóa bộ lọc để hiển thị tất cả khóa học.
+QD16.5
+Cập nhật số lượng kết quả theo thời gian thực khi thay đổi bộ lọc.
+ BM17: [Học viên lưu xem dở]
+Tên quy định
+Nội dung
+QD17.1
+Hệ thống ghi nhận giây cuối cùng người dùng đang xem (timestamp trong video).
+QD17.2
+Dữ liệu xem dở được lưu vào Firebase theo cặp khóa (userId, lessonId).
+QD17.3
+Khi học viên quay lại bài học, video tự động phát từ vị trí đã lưu.
+QD17.4
+Vị trí xem được cập nhật mỗi 10 giây trong khi video đang phát.
+QD17.5
+Khi bài học được đánh dấu hoàn thành, dữ liệu xem dở bị xóa.
+ BM18: [Học viên lọc theo chủ đề]
+Tên quy định
+Nội dung
+QD18.1
+Các chủ đề (Topic) được lấy động từ Strapi, không hard-code.
+QD18.2
+Mỗi lần lọc chỉ được chọn một chủ đề (single select).
+QD18.3
+Bộ lọc chủ đề có thể kết hợp với bộ lọc trình độ (BM16) và tìm kiếm (BM11).
+QD18.4
+Hiển thị số lượng khóa học kèm tên chủ đề: "JavaScript (12)".
+QD18.5
+Danh sách cập nhật ngay sau khi chọn chủ đề, không cần nhấn nút tìm.
+ BM19: [Học viên tải file đính kèm]
+Tên quy định
+Nội dung
+QD19.1
+Chỉ hỗ trợ tải xuống file định dạng PDF và DOC/DOCX.
+QD19.2
+Mỗi file đính kèm không được vượt quá 50MB.
+QD19.3
+Chỉ học viên đã đăng ký khóa học mới có quyền tải file đính kèm.
+QD19.4
+File được lưu trữ và phục vụ từ Cloudinary, không lưu cục bộ trên server.
+QD19.5
+Tên file hiển thị phải có nghĩa, không được là chuỗi hash ngẫu nhiên.
+ BM20: [Học viên đổi mật khẩu mới]
+Tên quy định
+Nội dung
+QD20.1
+Học viên phải nhập mật khẩu hiện tại trước khi đổi mật khẩu mới.
+QD20.2
+Mật khẩu mới từ 8–32 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt (đồng bộ với QD01.3).
+QD20.3
+Mật khẩu mới không được trùng với mật khẩu hiện tại.
+QD20.4
+Phải nhập lại mật khẩu mới để xác nhận, hai lần phải khớp nhau.
+QD20.5
+Sau khi đổi mật khẩu thành công, tất cả phiên đăng nhập cũ bị vô hiệu hóa, yêu cầu đăng nhập lại.
+ BM21: [Học viên báo lỗi hệ thống]
+Tên quy định
+Nội dung
+QD21.1
+Học viên phải mô tả lỗi gặp phải, tối thiểu 20 ký tự.
+QD21.2
+Hệ thống tự động đính kèm: trình duyệt, OS, URL trang đang gặp lỗi.
+QD21.3
+Mỗi học viên tối đa 5 báo cáo lỗi/ngày để tránh spam.
+QD21.4
+Báo cáo được gửi đến địa chỉ Email kỹ thuật qua SMTP.
+QD21.5
+Sau khi gửi, hiển thị thông báo: "Báo cáo lỗi đã được gửi. Cảm ơn bạn!"
+ BM22: [Học viên nhận chứng chỉ]
+Tên quy định
+Nội dung
+QD22.1
+Chứng chỉ chỉ được cấp khi học viên hoàn thành 100% bài học trong khóa học.
+QD22.2
+Chứng chỉ ghi rõ: Họ tên học viên, tên khóa học, ngày hoàn thành, mã xác thực.
+QD22.3
+Mỗi chứng chỉ có mã hash duy nhất để có thể xác thực tính hợp lệ.
+QD22.4
+Chứng chỉ được xuất dưới dạng file PDF có thể tải xuống.
+QD22.5
+Thông tin chứng chỉ được lưu vào Firebase theo (userId, courseId).
+ BM23: [Học viên lưu khóa học yêu thích]
+Tên quy định
+Nội dung
+QD23.1
+Danh sách yêu thích được lưu vào LocalStorage của trình duyệt.
+QD23.2
+Tối đa 50 khóa học trong danh sách yêu thích.
+QD23.3
+Nhấn lần đầu → thêm vào yêu thích; nhấn lần hai → xóa khỏi yêu thích.
+QD23.4
+Icon trái tim hiển thị màu đỏ (đã yêu thích) hoặc xám (chưa yêu thích).
+QD23.5
+Do dùng LocalStorage, danh sách yêu thích không đồng bộ giữa các thiết bị.
+ BM24: [Học viên ghi chú cá nhân]
+Tên quy định
+Nội dung
+QD24.1
+Mỗi ghi chú liên kết với một bài học cụ thể (lessonId).
+QD24.2
+Ghi chú được lưu vào Firebase theo cặp (userId, lessonId).
+QD24.3
+Ghi chú tối đa 1000 ký tự.
+QD24.4
+Hệ thống tự động lưu ghi chú sau 2 giây kể từ lần gõ cuối cùng (auto-save debounce).
+QD24.5
+Khi học viên quay lại bài học, ghi chú cũ được tải và hiển thị trong textarea.
+ BM25: [Học viên làm trắc nghiệm]
+Tên quy định
+Nội dung
+QD25.1
+Quiz gồm câu hỏi dạng trắc nghiệm một đáp án đúng (single choice).
+QD25.2
+Học viên phải trả lời tất cả câu hỏi trước khi nộp bài.
+QD25.3
+Điểm đạt tối thiểu là 70% số câu đúng.
+QD25.4
+Sau khi nộp, hiển thị ngay điểm số và đáp án đúng/sai từng câu.
+QD25.5
+Học viên có thể làm lại quiz tối đa 3 lần nếu chưa đạt điểm tối thiểu.
+ BM26: [Học viên thấy Leaderboard]
+Tên quy định
+Nội dung
+QD26.1
+Xếp hạng dựa trên tổng số khóa học đã hoàn thành, thứ hai là số huy hiệu.
+QD26.2
+Leaderboard hiển thị Top 10 học viên.
+QD26.3
+Bảng xếp hạng cập nhật mỗi 24 giờ từ Firebase.
+QD26.4
+Nếu học viên không trong Top 10, vẫn hiển thị vị trí của họ ở cuối bảng.
+QD26.5
+Chỉ hiển thị tên hiển thị và ảnh đại diện, không hiển thị Email.
+ BM27: [Học viên biết lý lịch GV]
+Tên quy định
+Nội dung
+QD27.1
+Hồ sơ giảng viên phải có: Họ tên, ảnh đại diện, chuyên môn, mô tả kinh nghiệm.
+QD27.2
+Thông tin giảng viên xuất hiện trên trang chi tiết khóa học.
+QD27.3
+Bất kỳ ai cũng có thể xem hồ sơ giảng viên (public).
+QD27.4
+Từ trang hồ sơ giảng viên, hiển thị danh sách khóa học của giảng viên đó.
+QD27.5
+Không hiển thị Email, số điện thoại hay thông tin cá nhân nhạy cảm.
+ BM28: [Học viên xem tổng giờ học]
+Tên quy định
+Nội dung
+QD28.1
+Tổng giờ học tính dựa trên tổng thời lượng các video bài học đã hoàn thành.
+QD28.2
+Hiển thị theo định dạng "X giờ Y phút".
+QD28.3
+Dữ liệu thời gian học được lưu và truy vấn từ Firebase.
+QD28.4
+Thống kê cập nhật ngay khi học viên hoàn thành thêm một bài học.
+QD28.5
+Tổng giờ học hiển thị tại trang hồ sơ cá nhân của học viên.
+ BM29: [Học viên đánh giá khóa học (Rating)]
+Tên quy định
+Nội dung
+QD29.1
+Chỉ học viên đã đăng ký khóa học mới có quyền đánh giá.
+QD29.2
+Học viên chọn từ 1 đến 5 sao, không được để trống.
+QD29.3
+Mỗi học viên chỉ đánh giá một khóa học một lần, có thể chỉnh sửa.
+QD29.4
+Học viên có thể thêm nhận xét tối đa 300 ký tự kèm rating.
+QD29.5
+Hệ thống tính và hiển thị điểm trung bình rating trên trang chi tiết khóa học.
+ BM30: [Học viên thấy bài phù hợp]
+Tên quy định
+Nội dung
+QD30.1
+Gợi ý dựa trên các chủ đề của khóa học đã học hoặc đang học.
+QD30.2
+Không gợi ý khóa học mà học viên đã đăng ký.
+QD30.3
+Hiển thị tối đa 4 khóa học gợi ý tại trang Dashboard.
+QD30.4
+Chỉ gợi ý khóa học đang Published.
+QD30.5
+Nếu học viên chưa có lịch sử học, hiển thị các khóa học phổ biến nhất.

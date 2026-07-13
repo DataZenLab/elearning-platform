@@ -11,6 +11,11 @@ export interface EnrolledCourseWithProgress {
   progressPercent: number;
 }
 
+/**
+ * Hook (Frontend): Lấy danh sách các khóa học mà người dùng hiện tại đã đăng ký.
+ * Đồng thời tự động tính toán tiến độ phần trăm (%) hoàn thành của từng khóa học
+ * để có thể dễ dàng hiển thị lên giao diện (ví dụ: thanh Progress Bar).
+ */
 export function useEnrollments() {
   const { user } = useAuthStore();
   const [data, setData] = useState<EnrolledCourseWithProgress[]>([]);

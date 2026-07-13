@@ -28,6 +28,9 @@ function groupByChapter(lessons: LessonItem[]) {
   return Object.entries(groups).map(([title, lessons]) => ({ title, lessons }));
 }
 
+/**
+ * Danh sách nội dung chương trình học (các chương và bài giảng).
+ */
 export function Curriculum({ lessons = [] }: CurriculumProps) {
   const chapters = groupByChapter(lessons);
 

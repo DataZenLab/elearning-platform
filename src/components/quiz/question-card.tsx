@@ -19,6 +19,9 @@ interface QuestionCardProps {
   total: number;
 }
 
+/**
+ * Thẻ hiển thị nội dung một câu hỏi trắc nghiệm và các đáp án A/B/C/D.
+ */
 export function QuestionCard({ 
   question, 
   options, 

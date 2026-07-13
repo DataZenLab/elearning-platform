@@ -2,6 +2,9 @@ import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { APP_NAME } from '@/lib/constants';
 
+/**
+ * Trang Liên Hệ: Hiển thị thông tin liên hệ và form gửi tin nhắn hỗ trợ.
+ */
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">

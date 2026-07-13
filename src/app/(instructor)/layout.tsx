@@ -4,6 +4,9 @@ import { InstructorGuard } from '@/components/auth/instructor-guard';
 import { InstructorSidebar } from '@/components/layout/instructor-sidebar';
 import { DashboardHeader } from '@/components/layout/dashboard-header';
 
+/**
+ * Layout Giảng Viên: Bao bọc khu vực dành riêng cho giảng viên, chứa thanh điều hướng chuyên biệt.
+ */
 export default function InstructorLayout({ children }: { children: React.ReactNode }) {
   return (
     <InstructorGuard>

@@ -16,6 +16,9 @@ import { History, User as UserIcon, ReceiptText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
+/**
+ * Trang Hồ Sơ Cá Nhân: Nơi người dùng chỉnh sửa thông tin (Tên, Ảnh đại diện, Mật khẩu).
+ */
 export default function ProfilePage() {
   const { user, setUser } = useAuthStore();
   const [isLoading, setIsLoading] = useState(false);

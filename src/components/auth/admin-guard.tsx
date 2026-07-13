@@ -5,6 +5,9 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useAuthStore } from '@/stores/auth-store';
 import { LoadingSkeleton } from '@/components/shared/loading-skeleton';
 
+/**
+ * Component bảo vệ Route Admin (Chỉ cho phép tài khoản có role='admin' truy cập).
+ */
 export function AdminGuard({ children }: { children: React.ReactNode }) {
   const { user, initialized } = useAuthStore();
   const router = useRouter();

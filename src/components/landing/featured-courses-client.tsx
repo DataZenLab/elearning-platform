@@ -16,6 +16,9 @@ const difficultyConfig: Record<string, { label: string; className: string }> = {
   advanced: { label: 'Nâng cao', className: 'bg-destructive/10 text-destructive border-destructive/20' },
 };
 
+/**
+ * Thành phần Client render danh sách các khóa học nổi bật trên trang chủ.
+ */
 export function FeaturedCoursesClient({ courses }: { courses: CourseCard[] }) {
   return (
     <section className="py-24 lg:py-32 bg-muted/20 border-y border-border">

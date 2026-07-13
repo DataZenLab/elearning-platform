@@ -11,6 +11,9 @@ interface SocialAuthButtonsProps {
   onError?: (error: string) => void;
 }
 
+/**
+ * Các nút bấm đăng nhập nhanh qua Mạng xã hội (Google, Facebook...).
+ */
 export function SocialAuthButtons({ isLoading, onLoadingChange, onError }: SocialAuthButtonsProps) {
   const { handleRedirect } = useAuthRedirect();
   const [isLocalLoading, setIsLocalLoading] = useState(false);

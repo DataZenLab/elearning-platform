@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description: "Học lập trình, thiết kế, marketing từ các chuyên gia hàng đầu.",
 };
 
+/**
+ * Layout Gốc (Root): Bao bọc toàn bộ ứng dụng Next.js, chứa các cấu hình Provider toàn cục (Theme, Auth, Query).
+ * Nơi khai báo font chữ chuẩn (Inter) và cấu hình thẻ <html>, <body> gốc.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

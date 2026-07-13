@@ -20,6 +20,9 @@ const iconMap: Record<string, React.ElementType> = {
   TrendingUp,
 };
 
+/**
+ * Khu vực nêu bật các điểm mạnh, lý do nên chọn nền tảng học tập này.
+ */
 export function WhyChooseUs() {
   return (
     <section className="py-24 lg:py-32 bg-muted/30 border-y border-border">

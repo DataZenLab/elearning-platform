@@ -32,6 +32,9 @@ function downloadCSV(filename: string, rows: Record<string, any>[]) {
   URL.revokeObjectURL(url);
 }
 
+/**
+ * Trang Báo Cáo (Admin): Xem các báo cáo doanh thu, lượt truy cập chi tiết của nền tảng.
+ */
 export default function AdminReportsPage() {
   const [exporting, setExporting] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);

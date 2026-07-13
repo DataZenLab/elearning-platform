@@ -13,6 +13,7 @@ export interface Lesson {
   chapter?: string;
   courseId: number;
   quiz: Quiz | null;
+  attachments?: import('./course.types').StrapiMedia[];
   createdAt: string;
   updatedAt: string;
 }

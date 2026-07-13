@@ -15,6 +15,9 @@ class LessonApi {
         },
         quiz: {
           fields: ['id', 'documentId', 'title']
+        },
+        attachments: {
+          fields: ['id', 'url', 'name', 'ext', 'mime', 'size']
         }
       }
     };

@@ -25,6 +25,9 @@ const iconMap: Record<string, React.ElementType> = {
   Briefcase,
 };
 
+/**
+ * Khu vực hiển thị các danh mục khóa học (Lập trình, Marketing, Thiết kế...) trên trang chủ.
+ */
 export function CategoriesSection() {
   return (
     <section className="py-24 lg:py-32 bg-background">

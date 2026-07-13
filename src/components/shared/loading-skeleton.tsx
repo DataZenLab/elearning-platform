@@ -4,6 +4,9 @@ interface LoadingSkeletonProps {
   type?: 'card' | 'list' | 'dashboard' | 'video';
 }
 
+/**
+ * Khung xương tải trang (Skeleton Layout): Hiển thị hiệu ứng chớp nháy trước khi dữ liệu thật tải xong.
+ */
 export function LoadingSkeleton({ type = 'card' }: LoadingSkeletonProps) {
   if (type === 'dashboard') {
     return (

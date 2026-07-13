@@ -5,6 +5,9 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useAuthStore } from '@/stores/auth-store';
 import { LoadingSkeleton } from '@/components/shared/loading-skeleton';
 
+/**
+ * Component bảo vệ Route Dashboard (Yêu cầu đăng nhập, nếu chưa sẽ đẩy về trang login).
+ */
 export function DashboardGuard({ children }: { children: React.ReactNode }) {
   const { user, initialized } = useAuthStore();
   const router = useRouter();

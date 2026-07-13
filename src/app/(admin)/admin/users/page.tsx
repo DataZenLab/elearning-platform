@@ -18,6 +18,9 @@ interface UserProfile {
   status: 'active' | 'locked';
 }
 
+/**
+ * Trang Quản Lý Người Dùng (Admin): Xem, phân quyền hoặc khóa tài khoản user/giảng viên.
+ */
 export default function AdminUsersPage() {
   const { user: adminUser } = useAuthStore();
   const [users, setUsers] = useState<UserProfile[]>([]);

@@ -26,6 +26,9 @@ interface LessonSidebarProps {
   className?: string;
 }
 
+/**
+ * Danh sách phát bài giảng: Hiển thị các bài học khác để học viên click chuyển bài nhanh.
+ */
 export function LessonSidebar({ courseId, currentLessonId, chapters, className }: LessonSidebarProps) {
   return (
     <div className={cn("flex flex-col h-full bg-card border-l border-border", className)}>

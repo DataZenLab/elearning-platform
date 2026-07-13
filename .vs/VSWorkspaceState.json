@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\(admin)",
+    "\\src\\app\\(admin)\\admin",
+    "\\src\\app\\(dashboard)",
+    "\\src\\app\\(dashboard)\\certificates",
+    "\\src\\app\\(dashboard)\\certificates\\[courseSlug]",
+    "\\strapi",
+    "\\strapi\\public"
+  ],
+  "SelectedNode": "\\src\\app\\(admin)\\admin\\reports",
+  "PreviewInSolutionExplorer": false
+}

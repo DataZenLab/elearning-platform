@@ -15,6 +15,10 @@ export interface CreateLessonData {
   courseId: string;
 }
 
+/**
+ * Nhận dữ liệu từ form để tạo một bài học (lesson/video) mới và liên kết nó vào khóa học.
+ * Gọi API lên CMS Strapi và xóa cache của Next.js để UI cập nhật ngay.
+ */
 export async function createLessonAction(data: CreateLessonData) {
   try {
     const payload = {
@@ -37,6 +41,10 @@ export async function createLessonAction(data: CreateLessonData) {
   }
 }
 
+/**
+ * Cập nhật thông tin bài học (đổi tên, thay link video, sửa nội dung bài giảng...).
+ * Gọi API update của Strapi và xóa cache trang danh sách bài học.
+ */
 export async function updateLessonAction(documentId: string, data: Partial<CreateLessonData>, courseId: string) {
   try {
     const payload = { ...data };
@@ -50,6 +58,9 @@ export async function updateLessonAction(documentId: string, data: Partial<Creat
   }
 }
 
+/**
+ * Xóa một bài học khỏi hệ thống dựa vào documentId của bài học đó.
+ */
 export async function deleteLessonAction(documentId: string, courseId: string) {
   try {
     await strapi.delete(`/lessons/${documentId}`);

@@ -11,6 +11,9 @@ interface AddReviewFormProps {
   onSuccess?: () => void;
 }
 
+/**
+ * Form nhập nội dung đánh giá và chấm điểm sao cho khóa học.
+ */
 export function AddReviewForm({ courseDocumentId, onSuccess }: AddReviewFormProps) {
   const { user } = useAuthStore();
   const [rating, setRating] = useState(5);

@@ -9,6 +9,9 @@ import { ArrowLeft } from 'lucide-react';
 import { createCourseAction } from '@/actions/course.actions';
 import { useAuthStore } from '@/stores/auth-store';
 
+/**
+ * Trang Tạo Khóa Học Mới (Giảng viên): Form điền thông tin để xuất bản một khóa học mới.
+ */
 export default function NewCoursePage() {
   const router = useRouter();
   const { user } = useAuthStore();

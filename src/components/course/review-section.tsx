@@ -32,6 +32,9 @@ function calcDistribution(reviews: ReviewItem[]) {
   }));
 }
 
+/**
+ * Khu vực hiển thị danh sách các bài đánh giá (Review) từ học viên khác.
+ */
 export function ReviewSection({ reviews = [], averageRating = 0, totalReviews = 0 }: ReviewSectionProps) {
   const displayReviews = reviews.slice(0, 5);
   const avg = averageRating || (reviews.length > 0 ? reviews.reduce((s, r) => s + r.rating, 0) / reviews.length : 0);

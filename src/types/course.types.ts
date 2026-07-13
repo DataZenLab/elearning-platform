@@ -65,7 +65,11 @@ export interface CourseQueryParams {
 export interface StrapiMedia {
   id: number;
   url: string;
+  name: string;
   alternativeText: string | null;
+  ext: string;
+  mime: string;
+  size: number;
   width: number;
   height: number;
   formats: {

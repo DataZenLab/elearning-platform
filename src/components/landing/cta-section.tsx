@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
+/**
+ * Khu vực Call-to-action (Kêu gọi hành động) chốt sale trên trang chủ.
+ */
 export function CTASection() {
   return (
     <section className="py-24 lg:py-32 bg-background border-t border-border">

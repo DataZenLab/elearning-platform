@@ -687,6 +687,10 @@ export interface ApiLessonLesson extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachments: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     chapter: Schema.Attribute.String;
     content: Schema.Attribute.RichText;
     course: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;

@@ -12,6 +12,9 @@ import { LoadingSkeleton } from '@/components/shared/loading-skeleton';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#ffc658'];
 
+/**
+ * Trang Tổng Quan (Admin): Thống kê toàn hệ thống (tổng user, tổng doanh thu, khóa học mới).
+ */
 export default function AdminDashboardOverview() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
@@ -34,7 +37,7 @@ export default function AdminDashboardOverview() {
         const users = await firestoreService.getDocuments('users');
         
         // 2. Fetch Enrollments for Revenue
-        const enrollments = await firestoreService.getDocuments<any>('enrollments');
+        const enrollments = await firestoreService.getCollectionGroupDocuments<any>('enrollments');
         const totalRevenue = enrollments.reduce((acc, curr) => acc + (Number(curr.price) || 0), 0);
         
         // 3. Fetch Courses & Categories from Strapi (with preview to include drafts)

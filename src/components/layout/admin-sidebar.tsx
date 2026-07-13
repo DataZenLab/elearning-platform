@@ -24,6 +24,9 @@ const SIDEBAR_LINKS = [
   { href: '/profile', label: 'Cài đặt cá nhân', icon: Settings },
 ];
 
+/**
+ * Thanh Menu điều hướng bên trái dành riêng cho trang quản trị (Admin).
+ */
 export function AdminSidebar() {
   const pathname = usePathname();
 

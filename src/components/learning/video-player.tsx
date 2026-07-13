@@ -8,6 +8,9 @@ interface VideoPlayerProps {
   onEnded?: () => void;
 }
 
+/**
+ * Trình phát Video (hiện tại hỗ trợ nhúng Youtube) có bắt sự kiện kết thúc bài học.
+ */
 export function VideoPlayer({ youtubeVideoId, onEnded }: VideoPlayerProps) {
   // In a real app, you might want to use the YouTube IFrame Player API
   // to track progress (e.g. via an npm package like react-youtube)

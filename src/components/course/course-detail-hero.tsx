@@ -10,6 +10,9 @@ interface CourseDetailHeroProps {
   course: CourseCard;
 }
 
+/**
+ * Banner nổi bật ở phần đầu trang chi tiết khóa học.
+ */
 export function CourseDetailHero({ course }: CourseDetailHeroProps) {
   return (
     <div className="bg-muted/30 text-foreground py-12 lg:py-16 relative overflow-hidden border-b border-border">

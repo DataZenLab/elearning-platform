@@ -5,6 +5,9 @@ import { TESTIMONIALS } from '@/lib/constants';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star } from 'lucide-react';
 
+/**
+ * Khu vực trình chiếu (Carousel) các nhận xét, cảm nhận của học viên cũ.
+ */
 export function Testimonials() {
   return (
     <section className="py-24 lg:py-32 bg-background">

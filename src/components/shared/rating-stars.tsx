@@ -11,6 +11,9 @@ interface RatingStarsProps {
   reviewCount?: number;
 }
 
+/**
+ * Component hiển thị các ngôi sao đánh giá (Ví dụ: 4.5/5 sao) bằng icon.
+ */
 export function RatingStars({ 
   rating, 
   maxStars = 5, 

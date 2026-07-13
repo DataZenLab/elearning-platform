@@ -53,6 +53,9 @@ const itemVariants = {
 
 const COLORS = ['#6366f1', '#8b5cf6', '#a78bfa', '#c4b5fd', '#ddd6fe'];
 
+/**
+ * Trang Tổng Quan (Học viên): Bảng điều khiển cá nhân, thống kê khóa học đang học và tiến độ.
+ */
 export default function DashboardOverviewPage() {
   const { user } = useAuthStore();
   const router = useRouter();

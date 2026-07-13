@@ -12,7 +12,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   useEffect(() => {
+    let currentAuthUid: string | null = null;
+
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      currentAuthUid = firebaseUser?.uid || null;
       try {
         setLoading(true);
         if (firebaseUser) {
@@ -24,19 +27,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             firebaseUser.photoURL || undefined
           );
 
+          // Fix race condition: If auth state changed (e.g. user was signed out due to unverified email) 
+          // while we were fetching the profile, do not set the user state.
+          if (currentAuthUid !== firebaseUser.uid) {
+             return;
+          }
+
           // Fetch points from Firestore
           let points = 0;
           try {
             const userDoc = await firestoreService.getDocument<{ points?: number }>('users', firebaseUser.uid);
             points = userDoc?.points || 0;
           } catch {}
+          
+          if (currentAuthUid !== firebaseUser.uid) return;
 
           // If account is locked, sign out and set user null
           if (status === 'locked') {
             await auth.signOut();
-            setUser(null);
-            alert('Tài khoản của bạn đã bị khóa. Vui lòng liên hệ Admin.');
-            router.push('/login?error=locked');
+            if (currentAuthUid === firebaseUser.uid) {
+               setUser(null);
+               alert('Tài khoản của bạn đã bị khóa. Vui lòng liên hệ Admin.');
+               router.push('/login?error=locked');
+            }
             return;
           }
 

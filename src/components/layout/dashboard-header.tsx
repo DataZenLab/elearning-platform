@@ -13,6 +13,9 @@ import { Sidebar } from './sidebar';
 import { authService } from '@/services/firebase/auth.service';
 import { cn } from '@/lib/utils';
 
+/**
+ * Thanh Header nằm ở phía trên cùng của khu vực Dashboard.
+ */
 export function DashboardHeader() {
   const { user } = useAuthStore();
   const { theme, setTheme } = useTheme();

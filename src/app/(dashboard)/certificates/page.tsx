@@ -11,6 +11,9 @@ import { EmptyState } from '@/components/shared/empty-state';
 import { useEnrollments } from '@/hooks/use-enrollments';
 import { cn } from '@/lib/utils';
 
+/**
+ * Trang Danh Sách Chứng Chỉ: Nơi học viên xem lại toàn bộ chứng chỉ đã đạt được.
+ */
 export default function CertificatesPage() {
   const { data, isLoading } = useEnrollments();
 

@@ -10,6 +10,9 @@ import { authService } from '@/services/firebase/auth.service';
 import { useAuthRedirect } from '@/hooks/use-auth-redirect';
 import { SocialAuthButtons } from '@/components/auth/social-auth-buttons';
 
+/**
+ * Trang Đăng Nhập: Form đăng nhập vào hệ thống bằng Email hoặc Google.
+ */
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

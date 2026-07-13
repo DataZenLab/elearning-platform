@@ -8,6 +8,9 @@ interface CourseGridProps {
   skeletonCount?: number;
 }
 
+/**
+ * Khung lưới (Grid) dùng để dàn trang hiển thị nhiều CourseCard cùng lúc.
+ */
 export function CourseGrid({ courses, isLoading, skeletonCount = 8 }: CourseGridProps) {
   if (isLoading) {
     return (

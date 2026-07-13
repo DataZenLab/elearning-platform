@@ -38,6 +38,9 @@ const MOCK_COMMENTS = [
   },
 ];
 
+/**
+ * Trang Quản Lý Bình Luận (Giảng viên): Xem và trả lời thắc mắc của học viên trong các khóa học.
+ */
 export default function InstructorCommentsPage() {
   const { user } = useAuthStore();
   const [comments, setComments] = useState(MOCK_COMMENTS);

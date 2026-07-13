@@ -57,6 +57,9 @@ const socialLinks = [
   },
 ];
 
+/**
+ * Chân trang (Footer) dùng chung cho toàn bộ hệ thống.
+ */
 export function Footer() {
   return (
     <footer className="bg-background border-t border-border">

@@ -22,6 +22,9 @@ const studentsData = [
   { name: 'Khóa Python', students: 210 },
 ];
 
+/**
+ * Trang Tổng Quan (Giảng viên): Thống kê doanh thu, số lượng học viên và đánh giá tổng thể.
+ */
 export default function InstructorDashboardOverview() {
   const { user } = useAuthStore();
 

@@ -15,6 +15,9 @@ interface LeaderboardUser {
   photoURL?: string;
 }
 
+/**
+ * Trang Bảng Xếp Hạng: Hiển thị xếp hạng học viên dựa trên số tín chỉ/khóa học đã hoàn thành.
+ */
 export default function LeaderboardPage() {
   const { user } = useAuthStore();
   const [leaders, setLeaders] = useState<LeaderboardUser[]>([]);

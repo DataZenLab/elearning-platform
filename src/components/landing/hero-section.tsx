@@ -14,6 +14,9 @@ const stats = [
   { value: '98%', label: 'Hài lòng' },
 ];
 
+/**
+ * Banner giới thiệu chính (Hero Banner) lớn nhất nằm ở đầu trang chủ.
+ */
 export function HeroSection() {
   const { isAuthenticated } = useAuthStore();
   const [mounted, setMounted] = useState(false);

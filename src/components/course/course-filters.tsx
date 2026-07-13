@@ -18,6 +18,9 @@ import { useDebounce } from '@/hooks/use-debounce';
 import { useQuery } from '@tanstack/react-query';
 import { coursesApi } from '@/services/api/courses.api';
 
+/**
+ * Bộ lọc danh sách khóa học (Theo giá, danh mục, đánh giá).
+ */
 export function CourseFilters() {
   const { 
     filters, 

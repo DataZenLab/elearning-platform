@@ -50,6 +50,17 @@
       "relation": "oneToOne",
       "target": "api::quiz.quiz",
       "inversedBy": "lesson"
+    },
+    "attachments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

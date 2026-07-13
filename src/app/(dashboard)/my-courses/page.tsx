@@ -138,6 +138,9 @@ function EnrolledCourseCard({ item }: { item: EnrolledCourseWithProgress }) {
   );
 }
 
+/**
+ * Trang Khóa Học Của Tôi: Danh sách các khóa học học viên đã mua và đang theo học.
+ */
 export default function MyCoursesPage() {
   const { data, isLoading, error } = useEnrollments();
   const [search, setSearch] = useState('');

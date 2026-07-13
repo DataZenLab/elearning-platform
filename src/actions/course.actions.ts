@@ -3,6 +3,10 @@
 import { instructorApi, type CreateCourseData } from '@/services/api/instructor.api';
 import { revalidatePath } from 'next/cache';
 
+/**
+ * Nhận dữ liệu từ form và tạo mới một khóa học.
+ * Chạy trên Server (Server Action). Sau khi tạo xong sẽ yêu cầu Next.js làm mới lại cache danh sách khóa học.
+ */
 export async function createCourseAction(data: CreateCourseData) {
   try {
     const course = await instructorApi.createCourse(data);
@@ -14,6 +18,10 @@ export async function createCourseAction(data: CreateCourseData) {
   }
 }
 
+/**
+ * Chỉnh sửa thông tin của một khóa học đã có (cập nhật tên, giá, trạng thái xuất bản...).
+ * Chạy trên Server (Server Action). Sau khi cập nhật, làm mới lại cache.
+ */
 export async function updateCourseAction(documentId: string, data: Partial<CreateCourseData & { isPublished: boolean }>) {
   try {
     const course = await instructorApi.updateCourse(documentId, data);
@@ -26,6 +34,10 @@ export async function updateCourseAction(documentId: string, data: Partial<Creat
   }
 }
 
+/**
+ * Xóa vĩnh viễn một khóa học khỏi hệ thống dựa trên ID (documentId).
+ * Chạy trên Server (Server Action).
+ */
 export async function deleteCourseAction(documentId: string) {
   try {
     await instructorApi.deleteCourse(documentId);

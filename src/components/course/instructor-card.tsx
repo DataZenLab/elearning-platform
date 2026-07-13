@@ -18,6 +18,9 @@ interface InstructorCardProps {
   }
 }
 
+/**
+ * Thẻ hiển thị thông tin sơ lược về giảng viên của khóa học.
+ */
 export function InstructorCard({ instructor }: InstructorCardProps) {
   return (
     <div className="space-y-6">

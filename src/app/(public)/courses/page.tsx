@@ -94,6 +94,9 @@ function CoursesContent() {
   );
 }
 
+/**
+ * Trang Danh Sách Khóa Học (Public): Hiển thị tất cả khóa học với bộ lọc tìm kiếm và phân trang.
+ */
 export default function CoursesPage() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-background" />}>

@@ -2,6 +2,9 @@ import { Sidebar } from '@/components/layout/sidebar';
 import { DashboardHeader } from '@/components/layout/dashboard-header';
 import { DashboardGuard } from '@/components/auth/dashboard-guard';
 
+/**
+ * Layout Học Viên (Dashboard): Giao diện bảng điều khiển cá nhân của học viên, chứa Sidebar menu.
+ */
 export default function DashboardLayout({
   children,
 }: {

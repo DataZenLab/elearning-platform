@@ -18,6 +18,9 @@ const difficultyConfig: Record<string, { label: string; className: string }> = {
   advanced: { label: 'Nâng cao', className: 'bg-destructive/10 text-destructive border-destructive/20' },
 };
 
+/**
+ * Thẻ hiển thị thông tin tóm tắt của một khóa học (Ảnh, tên, giá, giảng viên).
+ */
 export function CourseCard({ course, className }: CourseCardProps) {
   return (
     <Link href={`/courses/${course.slug}`} className={cn("block group h-full", className)}>

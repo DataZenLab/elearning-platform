@@ -1,6 +1,9 @@
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 
+/**
+ * Layout Public: Bao bọc các trang không cần đăng nhập (Trang chủ, Đăng nhập, Khóa học). Chứa Header và Footer chung.
+ */
 export default function PublicLayout({
   children,
 }: {

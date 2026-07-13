@@ -13,6 +13,9 @@ interface AvatarUploadProps {
   onUploadSuccess: (url: string) => void;
 }
 
+/**
+ * Khu vực cho phép người dùng chọn và tải ảnh đại diện (Avatar) lên Firebase Storage.
+ */
 export function AvatarUpload({ currentUrl, userId, userName, onUploadSuccess }: AvatarUploadProps) {
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);

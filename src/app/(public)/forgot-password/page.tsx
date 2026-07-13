@@ -8,6 +8,9 @@ import { GraduationCap, ArrowLeft, MailCheck } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
 import { authService } from '@/services/firebase/auth.service';
 
+/**
+ * Trang Quên Mật Khẩu: Cho phép người dùng nhập email để nhận link khôi phục mật khẩu.
+ */
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');

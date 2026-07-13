@@ -4,6 +4,9 @@ import { AdminGuard } from '@/components/auth/admin-guard';
 import { AdminSidebar } from '@/components/layout/admin-sidebar';
 import { DashboardHeader } from '@/components/layout/dashboard-header';
 
+/**
+ * Layout Quản Trị Viên (Admin): Bao bọc khu vực bảng điều khiển dành cho Admin hệ thống.
+ */
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <AdminGuard>
