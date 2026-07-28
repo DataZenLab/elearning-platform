@@ -21,11 +21,15 @@ export function StickySidebar({ course }: StickySidebarProps) {
   const router = useRouter();
   const { user, isAuthenticated } = useAuthStore();
   const { isFavorite, toggleFavorite } = useFavoritesStore();
-  const favorite = isFavorite(course.slug || '');
+  const currentUserId = user?.uid || 'guest';
+  const favorite = isFavorite(course.slug || '', currentUserId);
 
   const [isEnrolling, setIsEnrolling] = useState(false);
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [isLoadingStatus, setIsLoadingStatus] = useState(true);
+
+  // Check if current user is the instructor of this course
+  const isAuthor = user?.role === 'instructor' && (course.instructor as any)?.name === user?.displayName;
 
   // Check enrollment status when user changes
   useEffect(() => {
@@ -47,8 +51,8 @@ export function StickySidebar({ course }: StickySidebarProps) {
       return;
     }
     
-    if (isEnrolled) {
-      // User already bought this course, go to learn directly
+    if (isAuthor || isEnrolled) {
+      // User already bought this course, or is the author, go to learn directly
       const firstLessonSlug = course.lessons && course.lessons.length > 0 ? course.lessons[0].slug : 'intro';
       router.push(`/learn/${course.slug}/${firstLessonSlug}`);
     } else {
@@ -96,15 +100,15 @@ export function StickySidebar({ course }: StickySidebarProps) {
         <div className="space-y-3 mb-8">
           <Button
             onClick={handleEnrollOrStudy}
-            disabled={isLoadingStatus}
+            disabled={isLoadingStatus && !isAuthor}
             className="w-full h-11 font-semibold rounded-lg"
           >
-            {isLoadingStatus ? 'Đang tải...' : isEnrolled ? 'Vào học ngay' : 'Đăng ký học ngay'}
+            {isAuthor ? 'Xem trước khóa học' : isLoadingStatus ? 'Đang tải...' : isEnrolled ? 'Vào học ngay' : 'Đăng ký học ngay'}
           </Button>
           <Button
             variant={favorite ? 'secondary' : 'outline'}
             className="w-full h-11 font-medium rounded-lg"
-            onClick={() => toggleFavorite(course.slug || '')}
+            onClick={() => toggleFavorite(course.slug || '', currentUserId)}
           >
             {favorite ? 'Đã yêu thích ❤️' : 'Thêm vào yêu thích'}
           </Button>

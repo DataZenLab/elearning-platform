@@ -37,12 +37,18 @@ class AuthService {
         credentials.password!
       );
       
-      const { role } = await firestoreService.getOrCreateUserProfile(
+      const { role, status } = await firestoreService.getOrCreateUserProfile(
         userCredential.user.uid,
         userCredential.user.email || '',
         userCredential.user.displayName || 'Học viên',
         userCredential.user.photoURL || undefined
       );
+
+      // Kiểm tra tài khoản có bị khóa không
+      if (status === 'locked') {
+        await signOut(auth);
+        throw new Error('Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên để được hỗ trợ.');
+      }
 
       if (role === 'student' && !userCredential.user.emailVerified) {
         await signOut(auth);
@@ -52,7 +58,7 @@ class AuthService {
       return userCredential.user;
     } catch (error: any) {
       console.error('Firebase Email Login Error:', error);
-      if (error.message.includes('xác minh tài khoản')) {
+      if (error.message.includes('xác minh tài khoản') || error.message.includes('bị khóa')) {
         throw error;
       }
       throw new Error(this.getAuthErrorMessage(error.code));

@@ -9,6 +9,7 @@ export interface User {
   avatarUrl: string | null;
   role: UserRole;
   points: number;
+  completedCourses?: number;
   createdAt: string;
   emailVerified: boolean;
 }

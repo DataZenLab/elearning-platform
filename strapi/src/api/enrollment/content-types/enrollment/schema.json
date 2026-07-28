@@ -37,6 +37,12 @@
         "completed",
         "cancelled"
       ]
+    },
+    "certificate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::certificate.certificate",
+      "mappedBy": "enrollment"
     }
   }
 }

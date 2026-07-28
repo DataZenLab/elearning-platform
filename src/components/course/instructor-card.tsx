@@ -42,7 +42,7 @@ export function InstructorCard({ instructor }: InstructorCardProps) {
           <div className="hidden md:flex flex-col gap-2 w-full mt-2">
             <div className="flex items-center gap-2 text-sm">
               <Star className="w-4 h-4 fill-amber-400 text-amber-400 flex-shrink-0" />
-              <span className="font-semibold">{instructor.stats.rating} Đánh giá</span>
+              <span className="font-semibold">{Number(instructor.stats.rating).toFixed(1)} Đánh giá</span>
               <span className="text-muted-foreground">({instructor.stats.reviews})</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
@@ -88,7 +88,7 @@ export function InstructorCard({ instructor }: InstructorCardProps) {
         {/* Stats on mobile */}
         <div className="flex justify-around md:hidden pt-6 border-t border-border w-full">
           <div className="text-center">
-            <div className="font-bold text-lg">{instructor.stats.rating}</div>
+            <div className="font-bold text-lg">{Number(instructor.stats.rating).toFixed(1)}</div>
             <div className="text-xs text-muted-foreground">Đánh giá</div>
           </div>
           <div className="text-center">

@@ -55,6 +55,34 @@ export default function AdminUsersPage() {
     const newStatus = currentStatus === 'active' ? 'locked' : 'active';
     await firestoreService.updateDocument('users', userId, { status: newStatus });
     setUsers(prev => prev.map(u => u.id === userId ? { ...u, status: newStatus } : u));
+
+    if (newStatus === 'locked') {
+      const user = users.find(u => u.id === userId);
+      if (user?.email) {
+        try {
+          await fetch('/api/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              to: user.email,
+              subject: 'Thông báo: Tài khoản của bạn đã bị khóa',
+              html: `
+                <div style="font-family: sans-serif; padding: 20px;">
+                  <h2>Xin chào ${user.name || 'bạn'},</h2>
+                  <p>Chúng tôi xin thông báo rằng tài khoản của bạn trên nền tảng học trực tuyến đã bị khóa bởi quản trị viên.</p>
+                  <p>Nếu bạn cho rằng đây là một sự nhầm lẫn, vui lòng liên hệ với Admin để được hỗ trợ và giải quyết.</p>
+                  <br/>
+                  <p>Trân trọng,</p>
+                  <p>Ban Quản Trị</p>
+                </div>
+              `
+            })
+          });
+        } catch (error) {
+          console.error('Lỗi khi gửi email thông báo khóa tài khoản:', error);
+        }
+      }
+    }
   };
 
   const handleCreateInstructor = async (e: React.FormEvent) => {

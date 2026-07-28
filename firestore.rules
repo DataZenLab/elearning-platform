@@ -9,8 +9,19 @@ service cloud.firestore {
     function isOwner(userId) {
       return isAuthenticated() && request.auth.uid == userId;
     }
+
+    // FIX: Kiểm tra document tồn tại trước khi đọc .data.role
+    // tránh crash khi user vừa đăng ký, document chưa được tạo
     function isAdmin() {
-      return isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      return isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isInstructor() {
+      return isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'instructor';
     }
 
     // Cấp quyền cho Admin đọc mọi dữ liệu enrollments trên hệ thống
@@ -22,18 +33,21 @@ service cloud.firestore {
     match /users/{userId} {
       // Bất kỳ ai đã đăng nhập đều có thể đọc profile (dùng để hiển thị giảng viên, bảng xếp hạng)
       allow read: if isAuthenticated();
-      // Chỉ có chính chủ mới có quyền sửa đổi profile của họ
-      allow write: if isOwner(userId);
+      // Chỉ có chính chủ hoặc admin mới có quyền sửa đổi profile
+      allow write: if isOwner(userId) || isAdmin();
 
       // 2. Danh sách khóa học đã mua (Enrollments Subcollection)
       match /enrollments/{courseId} {
         // User chỉ được quyền xem và cập nhật dữ liệu khóa học của riêng mình
-        allow read, write: if isOwner(userId);
+        // Admin cũng có quyền đọc để thống kê
+        allow read: if isOwner(userId) || isAdmin();
+        allow write: if isOwner(userId);
       }
 
       // 3. Tiến độ học tập khóa học (Progress Subcollection)
       match /progress/{courseId} {
-        allow read, write: if isOwner(userId);
+        allow read: if isOwner(userId) || isAdmin();
+        allow write: if isOwner(userId);
       }
       
       // 4. Ghi chú cá nhân của học viên (Notes Subcollection)
@@ -57,6 +71,17 @@ service cloud.firestore {
     // Danh sách khóa học yêu thích (Wishlist)
     match /wishlist/{userId} {
       allow read, write: if isOwner(userId);
+    }
+
+    // Hỏi đáp & Bình luận (Comments)
+    match /comments/{commentId} {
+      // Cho phép mọi user đã đăng nhập đọc comment
+      allow read: if isAuthenticated();
+      // Cho phép tạo/xóa comment nếu là user đó
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      // Việc update (like, đánh dấu đã trả lời) cho phép nếu đã đăng nhập
+      allow update: if isAuthenticated();
+      allow delete: if isAuthenticated() && (resource.data.userId == request.auth.uid || isInstructor() || isAdmin());
     }
   }
 }

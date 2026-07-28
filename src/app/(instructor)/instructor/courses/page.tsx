@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Plus, Edit, Eye, ListVideo } from 'lucide-react';
+import { Plus, Edit, Eye, ListVideo, PlayCircle } from 'lucide-react';
 import { EmptyState } from '@/components/shared/empty-state';
 import Link from 'next/link';
+import Image from 'next/image';
 import { instructorApi } from '@/services/api/instructor.api';
 import { DeleteCourseButton } from './delete-course-button';
 
@@ -36,14 +37,25 @@ export default async function InstructorCoursesPage() {
             const isPublished = course.publishedAt !== null && course.isPublished !== false;
             return (
               <Card key={course.id} className="p-4 flex items-center justify-between border-border/50 shadow-sm">
-                <div>
-                  <h3 className="font-semibold text-lg">{course.title}</h3>
-                  <div className="flex gap-4 text-sm text-muted-foreground mt-1">
-                    <span className={isPublished ? 'text-success' : 'text-warning'}>
-                      {isPublished ? 'Đã xuất bản' : 'Bản nháp'}
-                    </span>
-                    <span>• {course.totalStudents || 0} học viên</span>
-                    <span>• {course.price === 0 ? 'Miễn phí' : `${course.price?.toLocaleString() || 0}đ`}</span>
+                <div className="flex items-center gap-4">
+                  <div className="w-24 h-16 bg-muted rounded-md overflow-hidden flex-shrink-0 relative hidden sm:block">
+                    {course.thumbnail ? (
+                      <Image src={course.thumbnail.url} alt={course.title} fill className="object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-muted-foreground bg-secondary/50">
+                        <PlayCircle className="w-6 h-6" />
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">{course.title}</h3>
+                    <div className="flex gap-4 text-sm text-muted-foreground mt-1">
+                      <span className={isPublished ? 'text-success' : 'text-warning'}>
+                        {isPublished ? 'Đã xuất bản' : 'Bản nháp'}
+                      </span>
+                      <span>• {course.totalStudents || 0} học viên</span>
+                      <span>• {course.price === 0 ? 'Miễn phí' : `${course.price?.toLocaleString() || 0}đ`}</span>
+                    </div>
                   </div>
                 </div>
                 <div className="flex gap-2">

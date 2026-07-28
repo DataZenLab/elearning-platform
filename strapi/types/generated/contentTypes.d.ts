@@ -530,6 +530,10 @@ export interface ApiCertificateCertificate extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     downloadUrl: Schema.Attribute.String;
+    enrollment: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::enrollment.enrollment'
+    >;
     firebaseUid: Schema.Attribute.String;
     instructorName: Schema.Attribute.String;
     issuedAt: Schema.Attribute.DateTime;
@@ -613,6 +617,10 @@ export interface ApiEnrollmentEnrollment extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    certificate: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::certificate.certificate'
+    >;
     course: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

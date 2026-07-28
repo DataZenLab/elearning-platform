@@ -6,20 +6,18 @@ import { useAuthStore } from '@/stores/auth-store';
 import { LoadingSkeleton } from '@/components/shared/loading-skeleton';
 
 /**
- * Component bảo vệ Route Admin (Chỉ cho phép tài khoản có role='admin' truy cập).
+ * Guard cho trang học (Learn): Yêu cầu đăng nhập.
+ * Cho phép cả student, instructor (xem trước) và admin truy cập.
  */
-export function AdminGuard({ children }: { children: React.ReactNode }) {
+export function LearnGuard({ children }: { children: React.ReactNode }) {
   const { user, initialized } = useAuthStore();
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    if (initialized) {
-      if (!user) {
-        router.push(`/login?redirect=${encodeURIComponent(pathname)}`);
-      } else if (user.role !== 'admin') {
-        router.push(user.role === 'instructor' ? '/instructor' : '/dashboard');
-      }
+    if (!initialized) return;
+    if (!user) {
+      router.replace(`/login?redirect=${encodeURIComponent(pathname)}`);
     }
   }, [user, initialized, router, pathname]);
 
@@ -31,9 +29,8 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
     );
   }
 
-  if (!user || user.role !== 'admin') {
-    return null;
-  }
+  if (!user) return null;
 
+  // Allow all authenticated roles (student, instructor, admin)
   return <>{children}</>;
 }

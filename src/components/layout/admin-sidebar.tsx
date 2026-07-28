@@ -21,7 +21,7 @@ const SIDEBAR_LINKS = [
   { href: '/admin/users', label: 'Quản lý Người dùng', icon: Users },
   { href: '/admin/courses', label: 'Quản lý Khóa học', icon: BookOpen },
   { href: '/admin/reports', label: 'Báo cáo & Thống kê', icon: FileBarChart },
-  { href: '/profile', label: 'Cài đặt cá nhân', icon: Settings },
+  { href: '/admin/profile', label: 'Cài đặt cá nhân', icon: Settings },
 ];
 
 /**

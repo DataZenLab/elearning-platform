@@ -9,12 +9,13 @@ interface SocialAuthButtonsProps {
   isLoading?: boolean;
   onLoadingChange?: (isLoading: boolean) => void;
   onError?: (error: string) => void;
+  redirectUrl?: string | null;
 }
 
 /**
  * Các nút bấm đăng nhập nhanh qua Mạng xã hội (Google, Facebook...).
  */
-export function SocialAuthButtons({ isLoading, onLoadingChange, onError }: SocialAuthButtonsProps) {
+export function SocialAuthButtons({ isLoading, onLoadingChange, onError, redirectUrl }: SocialAuthButtonsProps) {
   const { handleRedirect } = useAuthRedirect();
   const [isLocalLoading, setIsLocalLoading] = useState(false);
 
@@ -28,7 +29,7 @@ export function SocialAuthButtons({ isLoading, onLoadingChange, onError }: Socia
 
     try {
       const firebaseUser = await authService.loginWithGoogle();
-      await handleRedirect(firebaseUser);
+      await handleRedirect(firebaseUser, redirectUrl);
     } catch (err: any) {
       if (onError) onError(err.message);
     } finally {

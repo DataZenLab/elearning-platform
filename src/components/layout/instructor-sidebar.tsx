@@ -21,7 +21,7 @@ const SIDEBAR_LINKS = [
   { href: '/instructor/courses', label: 'Quản lý khóa học', icon: BookOpen },
   { href: '/instructor/students', label: 'Học viên', icon: Users },
   { href: '/instructor/comments', label: 'Hỏi đáp & Bình luận', icon: MessageSquare },
-  { href: '/profile', label: 'Cài đặt cá nhân', icon: Settings },
+  { href: '/instructor/profile', label: 'Cài đặt cá nhân', icon: Settings },
 ];
 
 /**

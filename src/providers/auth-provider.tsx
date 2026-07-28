@@ -33,11 +33,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
              return;
           }
 
-          // Fetch points from Firestore
+          // Fetch points and completedCourses from Firestore
           let points = 0;
+          let completedCourses = 0;
           try {
-            const userDoc = await firestoreService.getDocument<{ points?: number }>('users', firebaseUser.uid);
+            const userDoc = await firestoreService.getDocument<{ points?: number; completedCourses?: number }>('users', firebaseUser.uid);
             points = userDoc?.points || 0;
+            completedCourses = userDoc?.completedCourses || 0;
           } catch {}
           
           if (currentAuthUid !== firebaseUser.uid) return;
@@ -60,6 +62,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             avatarUrl: firebaseUser.photoURL || null,
             role,
             points,
+            completedCourses,
             createdAt: firebaseUser.metadata.creationTime || new Date().toISOString(),
             emailVerified: firebaseUser.emailVerified,
           });

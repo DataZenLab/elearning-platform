@@ -47,15 +47,35 @@ export default function AdminReportsPage() {
   const handleExportRevenue = async () => {
     setExporting('revenue');
     try {
-      const enrollments = await firestoreService.getDocuments<any>('enrollments');
-      const rows = enrollments.map(e => ({
-        'Tên người dùng': e.displayName || e.userId || '',
-        'Email': e.email || '',
-        'Khóa học': e.courseSlug || e.courseId || '',
-        'Giá (VNĐ)': e.price || 0,
-        'Ngày đăng ký': e.createdAt?.toDate?.()?.toLocaleDateString('vi-VN') || e.createdAt || '',
-        'Trạng thái': e.status || 'active',
-      }));
+      // Fetch enrollments using collection group
+      const enrollments = await firestoreService.getCollectionGroupDocuments<any>('enrollments');
+      
+      // Fetch courses from Strapi to map courseId to title and price
+      const coursesRes = await strapi.findMany<any>('courses', { 
+        pagination: { pageSize: 1000 }, 
+        fields: ['slug', 'documentId', 'price', 'title'],
+        publicationState: 'preview' 
+      }, { token: process.env.NEXT_PUBLIC_STRAPI_TOKEN });
+      
+      const courseMap = new Map();
+      if (coursesRes.data) {
+        coursesRes.data.forEach((c: any) => {
+          courseMap.set(c.slug, c);
+          courseMap.set(c.documentId, c);
+        });
+      }
+
+      const rows = enrollments.map(e => {
+        const course = courseMap.get(e.courseId);
+        const timeVal = e.enrolledAt || e.createdAt;
+        return {
+          'Mã Khóa học': e.courseId || '',
+          'Tên Khóa học': course?.title || 'Không rõ',
+          'Doanh thu (VNĐ)': course?.price || 0,
+          'Ngày đăng ký': timeVal?.toDate?.()?.toLocaleDateString('vi-VN') || timeVal || '',
+          'Trạng thái': e.status || 'active',
+        };
+      });
       downloadCSV('bao-cao-doanh-thu.csv', rows);
       showSuccess('revenue');
     } catch (err) {

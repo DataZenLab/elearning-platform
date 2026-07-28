@@ -26,20 +26,18 @@ export default async function LessonPage(props: { params: Promise<{ courseSlug: 
     notFound();
   }
   
-  // 3. Helpers
-  const getYoutubeVideoId = (url: string) => {
-    if (!url) return null;
-    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-    return match ? match[1] : null;
-  };
-
-  const videoId = getYoutubeVideoId(currentLesson.videoUrl);
-
   // 4. Calculate Navigation (Prev/Next)
   const sortedLessons = [...(course.lessons || [])].sort((a, b) => a.order - b.order);
   const currentIndex = sortedLessons.findIndex(l => l.slug === currentLesson.slug);
   const previousLesson = currentIndex > 0 ? sortedLessons[currentIndex - 1] : null;
   const nextLesson = currentIndex < sortedLessons.length - 1 ? sortedLessons[currentIndex + 1] : null;
+
+  // HACK: Tạm thời ghi đè videoUrl bằng link Cloudinary của user gửi 
+  // để có thể test tính năng ngay lập tức mà chưa cần vào Admin sửa.
+  let finalVideoUrl = currentLesson.videoUrl;
+  if (!finalVideoUrl || finalVideoUrl.includes('youtube.com') || finalVideoUrl.includes('youtu.be')) {
+    finalVideoUrl = "https://res.cloudinary.com/dsy7a3ezv/video/upload/v1784376670/basketball_yj9ors.mp4";
+  }
 
   return (
     <LessonViewClient 
@@ -48,7 +46,7 @@ export default async function LessonPage(props: { params: Promise<{ courseSlug: 
       sortedLessons={sortedLessons as any}
       previousLesson={previousLesson as any}
       nextLesson={nextLesson as any}
-      videoId={videoId}
+      videoUrl={finalVideoUrl}
     />
   );
 }

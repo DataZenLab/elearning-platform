@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Search, Filter, PlayCircle, Clock, CheckCircle2, Award } from 'lucide-react';
+import { BookOpen, Search, Filter, PlayCircle, Clock, CheckCircle2, Award, RotateCcw } from 'lucide-react';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -10,11 +10,15 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { EmptyState } from '@/components/shared/empty-state';
 import { useEnrollments } from '@/hooks/use-enrollments';
+import { useAuthStore } from '@/stores/auth-store';
+import { enrollmentService } from '@/services/firebase/enrollment.service';
 import { cn, formatDuration } from '@/lib/utils';
 import type { EnrolledCourseWithProgress } from '@/hooks/use-enrollments';
 
-function EnrolledCourseCard({ item }: { item: EnrolledCourseWithProgress }) {
+function EnrolledCourseCard({ item, onReset }: { item: EnrolledCourseWithProgress; onReset: (courseId: string) => void }) {
   const { course, progress, progressPercent } = item;
+  const [resetting, setResetting] = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
 
   if (!course) {
     return (
@@ -115,6 +119,41 @@ function EnrolledCourseCard({ item }: { item: EnrolledCourseWithProgress }) {
               </div>
 
               <div className="flex gap-2">
+                {progressPercent > 0 && (
+                  confirmReset ? (
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs text-destructive font-medium">Xác nhận reset?</span>
+                      <Button
+                        size="sm"
+                        variant="destructive"
+                        className="rounded-lg h-7 text-xs"
+                        disabled={resetting}
+                        onClick={async () => {
+                          setResetting(true);
+                          await onReset(course.slug);
+                          setResetting(false);
+                          setConfirmReset(false);
+                        }}
+                      >
+                        {resetting ? '...' : 'Có'}
+                      </Button>
+                      <Button size="sm" variant="ghost" className="rounded-lg h-7 text-xs" onClick={() => setConfirmReset(false)}>
+                        Không
+                      </Button>
+                    </div>
+                  ) : (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="rounded-lg h-8 gap-1.5 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                      onClick={() => setConfirmReset(true)}
+                      title="Reset tiến độ về 0"
+                    >
+                      <RotateCcw className="w-3.5 h-3.5" />
+                      Reset
+                    </Button>
+                  )
+                )}
                 {progressPercent === 100 && (
                   <Link href={`/certificates/${course.slug}`}>
                     <Button size="sm" variant="outline" className="rounded-lg h-8 border-success/30 text-success hover:bg-success/10 gap-1.5">
@@ -143,8 +182,16 @@ function EnrolledCourseCard({ item }: { item: EnrolledCourseWithProgress }) {
  */
 export default function MyCoursesPage() {
   const { data, isLoading, error } = useEnrollments();
+  const { user } = useAuthStore();
   const [search, setSearch] = useState('');
   const [tab, setTab] = useState<'all' | 'not-started' | 'in-progress' | 'completed'>('all');
+
+  const handleReset = async (courseId: string) => {
+    if (!user?.uid) return;
+    await enrollmentService.resetCourseProgress(user.uid, courseId);
+    // Reload page to fetch fresh progress data
+    window.location.reload();
+  };
 
   const filtered = data
     .filter(item => {
@@ -237,7 +284,7 @@ export default function MyCoursesPage() {
       ) : (
         <div className="grid gap-4">
           {filtered.map(item => (
-            <EnrolledCourseCard key={item.enrollment.id} item={item} />
+            <EnrolledCourseCard key={item.enrollment.id} item={item} onReset={handleReset} />
           ))}
         </div>
       )}

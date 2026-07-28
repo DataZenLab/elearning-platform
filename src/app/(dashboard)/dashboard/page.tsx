@@ -60,7 +60,7 @@ export default function DashboardOverviewPage() {
   const { user } = useAuthStore();
   const router = useRouter();
   const { data: enrollments, isLoading } = useEnrollments();
-  const { favoriteSlugs } = useFavoritesStore();
+  const { favoritesByUser } = useFavoritesStore();
   const [favoriteCourses, setFavoriteCourses] = useState<CourseCard[]>([]);
   const [isLoadingFavorites, setIsLoadingFavorites] = useState(false);
 
@@ -71,6 +71,9 @@ export default function DashboardOverviewPage() {
 
   useEffect(() => {
     async function fetchFavorites() {
+      const currentUserId = user?.uid || 'guest';
+      const favoriteSlugs = favoritesByUser[currentUserId] || [];
+      
       if (favoriteSlugs.length === 0) {
         setFavoriteCourses([]);
         return;
@@ -88,7 +91,7 @@ export default function DashboardOverviewPage() {
       }
     }
     fetchFavorites();
-  }, [favoriteSlugs]);
+  }, [favoritesByUser, user?.uid]);
 
   // Derived stats
   const totalEnrolled = enrollments.length;

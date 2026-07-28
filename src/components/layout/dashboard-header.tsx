@@ -46,6 +46,19 @@ export function DashboardHeader() {
     }
   };
 
+  const getProfileLink = () => {
+    if (user?.role === 'admin') return '/admin/profile';
+    if (user?.role === 'instructor') return '/instructor/profile';
+    return '/profile';
+  };
+
+  const getDashboardLink = () => {
+    if (user?.role === 'admin') return '/admin';
+    if (user?.role === 'instructor') return '/instructor';
+    return '/dashboard';
+  };
+
+
   return (
     <header className="h-16 bg-card border-b border-border flex items-center justify-between px-4 sm:px-6 lg:px-8 sticky top-0 z-40">
       <div className="flex items-center gap-4">
@@ -101,8 +114,12 @@ export function DashboardHeader() {
               </AvatarFallback>
             </Avatar>
             <div className="hidden sm:block text-sm text-left">
-              <p className="font-semibold leading-none mb-1">{user?.displayName || 'Học viên'}</p>
-              <p className="text-xs text-muted-foreground leading-none">{user?.points || 0} điểm</p>
+              <p className="font-semibold leading-none mb-1">
+                {user?.displayName || (user?.role === 'admin' ? 'Admin' : user?.role === 'instructor' ? 'Giảng viên' : 'Học viên')}
+              </p>
+              <p className="text-xs text-muted-foreground leading-none">
+                {user?.role === 'admin' ? 'Admin' : user?.role === 'instructor' ? 'Giảng viên' : 'Học viên'}
+              </p>
             </div>
           </button>
 
@@ -119,7 +136,7 @@ export function DashboardHeader() {
               <div className="py-1">
                 <button
                   type="button"
-                  onClick={() => { setOpen(false); router.push('/profile'); }}
+                  onClick={() => { setOpen(false); router.push(getProfileLink()); }}
                   className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-foreground hover:bg-muted transition-colors"
                 >
                   <User className="w-4 h-4 text-muted-foreground" />
@@ -127,7 +144,7 @@ export function DashboardHeader() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => { setOpen(false); router.push('/dashboard'); }}
+                  onClick={() => { setOpen(false); router.push(getDashboardLink()); }}
                   className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-foreground hover:bg-muted transition-colors"
                 >
                   <LayoutDashboard className="w-4 h-4 text-muted-foreground" />

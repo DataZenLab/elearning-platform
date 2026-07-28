@@ -46,7 +46,8 @@ export default function AdminCoursesPage() {
     if (!confirm(`Duyệt và xuất bản khóa học "${title}"?`)) return;
     setActionLoading(documentId);
     try {
-      await strapi.put(`/courses/${documentId}`, { isPublished: true });
+      // Cập nhật custom flag VÀ built-in field
+      await strapi.put(`/courses/${documentId}`, { isPublished: true, publishedAt: new Date().toISOString() });
       // Strapi v5: publish the document
       await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'}/api/courses/${documentId}/actions/publish`, {
         method: 'POST',
@@ -56,7 +57,7 @@ export default function AdminCoursesPage() {
     } catch {
       // Try simpler approach: just update isPublished flag
       try {
-        await strapi.put(`/courses/${documentId}`, { isPublished: true });
+        await strapi.put(`/courses/${documentId}`, { isPublished: true, publishedAt: new Date().toISOString() });
         await fetchCourses();
       } catch {
         alert('Duyệt thất bại. Vui lòng kiểm tra quyền API trong Strapi.');
@@ -70,10 +71,25 @@ export default function AdminCoursesPage() {
     if (!confirm(`Thu hồi (đưa về Nháp) khóa học "${title}"?`)) return;
     setActionLoading(documentId);
     try {
-      await strapi.put(`/courses/${documentId}`, { isPublished: false });
+      // Update custom flag AND the built-in Strapi publishedAt field
+      await strapi.put(`/courses/${documentId}`, { isPublished: false, publishedAt: null });
+      
+      // Strapi v5: unpublish the document explicitly just in case
+      const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'}/api/courses/${documentId}/actions/unpublish`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN || ''}`, 'Content-Type': 'application/json' },
+      });
+      
       await fetchCourses();
-    } catch {
-      alert('Thao tác thất bại. Vui lòng kiểm tra quyền API trong Strapi.');
+    } catch (err) {
+      console.error(err);
+      // Fallback
+      try {
+        await strapi.put(`/courses/${documentId}`, { isPublished: false, publishedAt: null });
+        await fetchCourses();
+      } catch {
+        alert('Thao tác thất bại. Vui lòng kiểm tra quyền API trong Strapi.');
+      }
     } finally {
       setActionLoading(null);
     }

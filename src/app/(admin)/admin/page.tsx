@@ -38,12 +38,16 @@ export default function AdminDashboardOverview() {
         
         // 2. Fetch Enrollments for Revenue
         const enrollments = await firestoreService.getCollectionGroupDocuments<any>('enrollments');
-        const totalRevenue = enrollments.reduce((acc, curr) => acc + (Number(curr.price) || 0), 0);
+
         
         // 3. Fetch Courses & Categories from Strapi (with preview to include drafts)
         const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
         const [coursesRes, categoriesRes, pendingRes] = await Promise.all([
-          strapi.findMany<any>('courses', { pagination: { pageSize: 1 }, publicationState: 'preview' }, { token }),
+          strapi.findMany<any>('courses', { 
+            pagination: { pageSize: 1000 }, 
+            fields: ['slug', 'documentId', 'price'],
+            publicationState: 'preview' 
+          }, { token }),
           strapi.findMany<any>('categories', { populate: ['courses'] }),
           strapi.findMany<any>('courses', {
             pagination: { pageSize: 5 },
@@ -57,6 +61,17 @@ export default function AdminDashboardOverview() {
         
         setPendingCourses(drafts.slice(0, 5));
         setRecentUsers(users.filter(u => (u as any).role !== 'admin').slice(0, 5));
+        
+        // Map courses to get prices
+        const coursePriceMap = new Map();
+        if (coursesRes.data) {
+          coursesRes.data.forEach((c: any) => {
+            coursePriceMap.set(c.slug, c.price || 0);
+            coursePriceMap.set(c.documentId, c.price || 0);
+          });
+        }
+        
+        const totalRevenue = enrollments.reduce((acc, curr) => acc + (coursePriceMap.get(curr.courseId) || 0), 0);
         
         setStats({
           users: users.filter(u => (u as any).role !== 'admin').length,
@@ -83,11 +98,13 @@ export default function AdminDashboardOverview() {
           monthlyData[key] = { users: 0, revenue: 0 };
         }
         enrollments.forEach((e: any) => {
-          const ts = e.createdAt?.toDate?.() || (e.createdAt ? new Date(e.createdAt) : null);
+          // Fallback to createdAt if enrolledAt is missing, but typically it is enrolledAt
+          const timeVal = e.enrolledAt || e.createdAt;
+          const ts = timeVal?.toDate?.() || (timeVal ? new Date(timeVal) : null);
           if (ts) {
             const key = `T${ts.getMonth() + 1}/${ts.getFullYear().toString().slice(2)}`;
             if (monthlyData[key]) {
-              monthlyData[key].revenue += Number(e.price) || 0;
+              monthlyData[key].revenue += (coursePriceMap.get(e.courseId) || 0);
               monthlyData[key].users += 1;
             }
           }

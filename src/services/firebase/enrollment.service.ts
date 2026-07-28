@@ -1,5 +1,5 @@
 import { db } from '@/lib/firebase';
-import { doc, getDoc, setDoc, serverTimestamp, arrayUnion, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, getDoc, setDoc, deleteDoc, serverTimestamp, arrayUnion, collection, query, where, getDocs } from 'firebase/firestore';
 
 export interface CourseProgress {
   courseId: string;
@@ -140,6 +140,29 @@ class EnrollmentService {
     } catch (error) {
       console.error('Error getting all progress:', error);
       return [];
+    }
+  }
+
+  /**
+   * Reset all progress for a course (learn from scratch).
+   * Deletes the progress document and resets enrollment status to 'active'.
+   */
+  async resetCourseProgress(uid: string, courseId: string): Promise<void> {
+    if (!uid || !courseId) return;
+    try {
+      // Delete progress document entirely so completedLessons becomes []
+      const progressRef = doc(db, 'users', uid, 'progress', courseId);
+      await deleteDoc(progressRef);
+
+      // Reset enrollment status back to active
+      const enrollmentRef = doc(db, 'users', uid, 'enrollments', courseId);
+      await setDoc(enrollmentRef, {
+        status: 'active',
+        resetAt: serverTimestamp(),
+      }, { merge: true });
+    } catch (error) {
+      console.error('Error resetting course progress:', error);
+      throw error;
     }
   }
 }
