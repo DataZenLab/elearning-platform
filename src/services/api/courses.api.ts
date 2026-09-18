@@ -8,8 +8,25 @@ import {
   MOCK_CATEGORIES,
 } from '@/data/mock-courses';
 
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
+const isLocalhostStrapi = STRAPI_URL.includes('localhost') || STRAPI_URL.includes('127.0.0.1');
+
+function shouldBypassStrapi(): boolean {
+  if (typeof window !== 'undefined') {
+    // If running on HTTPS (like Vercel), browser blocks http://localhost requests (Mixed Content)
+    if (window.location.protocol === 'https:' && isLocalhostStrapi) {
+      return true;
+    }
+  }
+  return false;
+}
+
 class CoursesApi {
   async getCourses(params: CourseQueryParams): Promise<StrapiResponse<CourseCard[]>> {
+    if (shouldBypassStrapi()) {
+      return getMockCourses(params);
+    }
+
     try {
       const filters: Record<string, any> = {};
       if (params.search) {
@@ -54,6 +71,10 @@ class CoursesApi {
   }
 
   async getFeaturedCourses(): Promise<CourseCard[]> {
+    if (shouldBypassStrapi()) {
+      return getMockFeaturedCourses();
+    }
+
     try {
       const params = {
         sort: ['averageRating:desc', 'totalStudents:desc'],
@@ -73,6 +94,10 @@ class CoursesApi {
   }
 
   async getCategories(): Promise<Category[]> {
+    if (shouldBypassStrapi()) {
+      return MOCK_CATEGORIES;
+    }
+
     try {
       const res = await strapi.findMany<Category>('categories', { sort: ['name:asc'] }, { cache: 'no-store' });
       if (res && res.data && res.data.length > 0) return res.data;
@@ -83,6 +108,10 @@ class CoursesApi {
   }
 
   async getCourseBySlug(slug: string): Promise<Course | null> {
+    if (shouldBypassStrapi()) {
+      return getMockCourseBySlug(slug);
+    }
+
     try {
       const params = {
         filters: { slug: { $eq: slug } },

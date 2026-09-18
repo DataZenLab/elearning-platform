@@ -2,11 +2,24 @@ import type { Lesson, Quiz } from '@/types';
 import { strapi } from '@/lib/strapi';
 import { getMockLessonBySlug, getMockQuizById } from '@/data/mock-courses';
 
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
+const isLocalhostStrapi = STRAPI_URL.includes('localhost') || STRAPI_URL.includes('127.0.0.1');
+
+function shouldBypassStrapi(): boolean {
+  if (typeof window !== 'undefined') {
+    if (window.location.protocol === 'https:' && isLocalhostStrapi) {
+      return true;
+    }
+  }
+  return false;
+}
+
 class LessonApi {
-  /**
-   * Fetch a specific lesson by slug
-   */
   async getLessonBySlug(slug: string): Promise<Lesson | null> {
+    if (shouldBypassStrapi()) {
+      return getMockLessonBySlug(slug);
+    }
+
     try {
       const params = {
         filters: { slug: { $eq: slug } },
@@ -32,10 +45,11 @@ class LessonApi {
     }
   }
 
-  /**
-   * Fetch a quiz with full questions & options by documentId
-   */
   async getQuizByDocumentId(documentId: string): Promise<Quiz | null> {
+    if (shouldBypassStrapi()) {
+      return getMockQuizById(documentId);
+    }
+
     try {
       const params = {
         populate: {
@@ -57,10 +71,11 @@ class LessonApi {
     }
   }
 
-  /**
-   * Fetch a quiz by numeric id (filter)
-   */
   async getQuizById(quizId: string): Promise<Quiz | null> {
+    if (shouldBypassStrapi()) {
+      return getMockQuizById(quizId);
+    }
+
     try {
       const params = {
         filters: { id: { $eq: quizId } },
