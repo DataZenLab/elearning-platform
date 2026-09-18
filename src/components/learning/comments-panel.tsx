@@ -43,7 +43,7 @@ export function CommentsPanel({ lessonId, courseId, courseTitle, instructorName 
         lessonId,
         courseId: courseId || '',
         courseTitle: courseTitle || '',
-        instructorName: instructorName || null,
+        instructorName: instructorName || undefined,
         userId: user.uid,
         userName: user.displayName || 'Học viên',
         userAvatar: user.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.email}`,

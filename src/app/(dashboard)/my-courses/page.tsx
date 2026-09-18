@@ -12,7 +12,7 @@ import { EmptyState } from '@/components/shared/empty-state';
 import { useEnrollments } from '@/hooks/use-enrollments';
 import { useAuthStore } from '@/stores/auth-store';
 import { enrollmentService } from '@/services/firebase/enrollment.service';
-import { cn, formatDuration } from '@/lib/utils';
+import { cn, formatDuration, getCourseImage } from '@/lib/utils';
 import type { EnrolledCourseWithProgress } from '@/hooks/use-enrollments';
 
 function EnrolledCourseCard({ item, onReset }: { item: EnrolledCourseWithProgress; onReset: (courseId: string) => void }) {
@@ -28,6 +28,7 @@ function EnrolledCourseCard({ item, onReset }: { item: EnrolledCourseWithProgres
     );
   }
 
+  const imageUrl = getCourseImage(course);
   const firstLesson = course.lessons?.[0];
   const currentLessonId = progress?.currentLessonId;
   const matchedLesson = course.lessons?.find(l => l.id.toString() === currentLessonId);
@@ -47,22 +48,11 @@ function EnrolledCourseCard({ item, onReset }: { item: EnrolledCourseWithProgres
         <div className="flex flex-col sm:flex-row">
           {/* Thumbnail */}
           <div className="w-full sm:w-52 h-36 sm:h-auto flex-shrink-0 relative bg-muted">
-            {course.thumbnail ? (
-              <img
-                src={course.thumbnail.url}
-                alt={course.title}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl shadow-sm"
-                  style={{ backgroundColor: course.category?.color || 'var(--primary)' }}
-                >
-                  {(course.category?.name || 'C').charAt(0)}
-                </div>
-              </div>
-            )}
+            <img
+              src={imageUrl}
+              alt={course.title}
+              className="w-full h-full object-cover"
+            />
             {/* Progress overlay */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/20">
               <div

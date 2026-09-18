@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Star, Clock, Users, Globe, PlayCircle, Award } from 'lucide-react';
 import type { CourseCard } from '@/types';
-import { formatDuration } from '@/lib/utils';
+import { formatDuration, getCourseImage } from '@/lib/utils';
 
 interface CourseDetailHeroProps {
   course: CourseCard;
@@ -84,15 +84,7 @@ export function CourseDetailHero({ course }: CourseDetailHeroProps) {
           {/* Right Video Preview (Visible only on mobile/tablet here, Desktop shows in Sticky Sidebar) */}
           <div className="lg:hidden block">
             <div className="aspect-video bg-muted rounded-xl border border-border relative overflow-hidden group cursor-pointer">
-              {course.thumbnail ? (
-                <img src={course.thumbnail.url} alt="Course Preview" className="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity" />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center bg-primary/10">
-                  <div className="w-16 h-16 rounded-lg bg-background/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
-                    <PlayCircle className="w-8 h-8 text-foreground" />
-                  </div>
-                </div>
-              )}
+              <img src={getCourseImage(course)} alt="Course Preview" className="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity" />
             </div>
           </div>
 

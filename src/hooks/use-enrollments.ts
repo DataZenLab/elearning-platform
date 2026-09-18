@@ -9,6 +9,7 @@ export interface EnrolledCourseWithProgress {
   course: Course | null;
   progress: CourseProgress | null;
   progressPercent: number;
+  completedLessonCount: number;
 }
 
 /**
@@ -54,11 +55,20 @@ export function useEnrollments() {
 
             const progress = progressMap.get(enrollment.courseId) ?? null;
             const totalLessons = course?.lessons?.length ?? 0;
-            const completed = progress?.completedLessons?.length ?? 0;
-            const progressPercentRaw = totalLessons > 0 ? Math.round((completed / totalLessons) * 100) : 0;
+            
+            // Filter completed lessons so only valid unique lessons for this course are counted
+            const validCompletedCount = course?.lessons && course.lessons.length > 0
+              ? new Set(
+                  (progress?.completedLessons || []).filter(lId =>
+                    course.lessons.some(l => String(l.id) === String(lId) || l.slug === String(lId))
+                  )
+                ).size
+              : new Set(progress?.completedLessons || []).size;
+
+            const progressPercentRaw = totalLessons > 0 ? Math.round((validCompletedCount / totalLessons) * 100) : 0;
             const progressPercent = Math.min(progressPercentRaw, 100);
 
-            return { enrollment, course, progress, progressPercent };
+            return { enrollment, course, progress, progressPercent, completedLessonCount: validCompletedCount };
           })
         );
 

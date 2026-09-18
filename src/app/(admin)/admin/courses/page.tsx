@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Trash2, CheckCircle2, XCircle, Filter } from 'lucide-react';
+import { Search, Trash2, CheckCircle2, XCircle, Filter, Ban } from 'lucide-react';
 import { strapi } from '@/lib/strapi';
 import type { Course } from '@/types';
 
@@ -43,8 +43,11 @@ export default function AdminCoursesPage() {
   useEffect(() => { fetchCourses(); }, []);
 
   const handleApprove = async (documentId: string, title: string) => {
-    if (!confirm(`Duyệt và xuất bản khóa học "${title}"?`)) return;
-    setActionLoading(documentId);
+    if (!confirm(`Duyệt và xuất bản khóa học "${title}"?`)) {
+      setActionLoading(null);
+      return;
+    }
+    // actionLoading đã được set ở onClick với key docId + '-approve'
     try {
       // Cập nhật custom flag VÀ built-in field
       await strapi.put(`/courses/${documentId}`, { isPublished: true, publishedAt: new Date().toISOString() });
@@ -67,9 +70,12 @@ export default function AdminCoursesPage() {
     }
   };
 
-  const handleReject = async (documentId: string, title: string) => {
-    if (!confirm(`Thu hồi (đưa về Nháp) khóa học "${title}"?`)) return;
-    setActionLoading(documentId);
+  const handleReject = async (documentId: string, title: string, mode: 'reject' | 'revoke' = 'revoke') => {
+    const msg = mode === 'reject'
+      ? `Từ chối và trả về Nháp khóa học "${title}"?`
+      : `Thu hồi (đưa về Nháp) khóa học "${title}"?`;
+    if (!confirm(msg)) return;
+    setActionLoading(documentId + '-' + mode);
     try {
       // Update custom flag AND the built-in Strapi publishedAt field
       await strapi.put(`/courses/${documentId}`, { isPublished: false, publishedAt: null });
@@ -97,7 +103,7 @@ export default function AdminCoursesPage() {
 
   const handleDelete = async (documentId: string, title: string) => {
     if (!confirm(`Bạn có chắc muốn XÓA VĨNH VIỄN khóa học "${title}"?`)) return;
-    setActionLoading(documentId);
+    setActionLoading(documentId + '-delete');
     try {
       await strapi.delete(`/courses/${documentId}`);
       setCourses(prev => prev.filter(c => (c as any).documentId !== documentId));
@@ -108,17 +114,19 @@ export default function AdminCoursesPage() {
     }
   };
 
+  const isCoursePublished = (c: Course) => c.isPublished === true && Boolean(c.publishedAt);
+
   const filtered = courses.filter(c => {
     const matchSearch = c.title?.toLowerCase().includes(search.toLowerCase());
-    const isPublished = !!c.publishedAt;
+    const isPublished = isCoursePublished(c);
     const matchFilter = filter === 'all' || (filter === 'published' ? isPublished : !isPublished);
     return matchSearch && matchFilter;
   });
 
   const stats = {
     total: courses.length,
-    published: courses.filter(c => !!c.publishedAt).length,
-    draft: courses.filter(c => !c.publishedAt).length,
+    published: courses.filter(c => isCoursePublished(c)).length,
+    draft: courses.filter(c => !isCoursePublished(c)).length,
   };
 
   return (
@@ -183,9 +191,13 @@ export default function AdminCoursesPage() {
                 <tr><td colSpan={5} className="px-6 py-12 text-center text-muted-foreground">Không có khóa học nào.</td></tr>
               ) : (
                 filtered.map((course) => {
-                  const isPublished = !!course.publishedAt;
+                  const isPublished = isCoursePublished(course);
                   const docId = String((course as any).documentId || course.id);
-                  const isActing = actionLoading === docId;
+                  const isApproving = actionLoading === docId + '-approve';
+                  const isRejecting = actionLoading === docId + '-reject';
+                  const isRevoking = actionLoading === docId + '-revoke';
+                  const isDeleting = actionLoading === docId + '-delete';
+                  const isActing = isApproving || isRejecting || isRevoking || isDeleting;
                   return (
                     <tr key={course.id} className="bg-card hover:bg-muted/20 transition-colors">
                       <td className="px-6 py-4">
@@ -202,30 +214,50 @@ export default function AdminCoursesPage() {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-right">
-                        <div className="flex justify-end gap-2">
-                          {!isPublished ? (
+                        <div className="flex justify-end gap-2 flex-wrap">
+                          {/* Nút Duyệt: chỉ hiện khi chưa publish */}
+                          {!isPublished && (
                             <Button
                               variant="outline"
                               size="sm"
                               disabled={isActing}
-                              onClick={() => handleApprove(docId, course.title)}
+                              onClick={() => {
+                                setActionLoading(docId + '-approve');
+                                handleApprove(docId, course.title);
+                              }}
                               className="text-success border-success/30 hover:bg-success/10 rounded-lg text-xs"
                             >
                               <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
-                              {isActing ? '...' : 'Duyệt'}
+                              {isApproving ? '...' : 'Duyệt'}
                             </Button>
-                          ) : (
+                          )}
+                          {/* Nút Từ chối: chỉ hiện khi chưa publish (chờ duyệt) */}
+                          {!isPublished && (
                             <Button
                               variant="outline"
                               size="sm"
                               disabled={isActing}
-                              onClick={() => handleReject(docId, course.title)}
+                              onClick={() => handleReject(docId, course.title, 'reject')}
+                              className="text-destructive border-destructive/30 hover:bg-destructive/10 rounded-lg text-xs"
+                            >
+                              <Ban className="w-3.5 h-3.5 mr-1" />
+                              {isRejecting ? '...' : 'Từ chối'}
+                            </Button>
+                          )}
+                          {/* Nút Thu hồi: chỉ hiện khi đã publish */}
+                          {isPublished && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              disabled={isActing}
+                              onClick={() => handleReject(docId, course.title, 'revoke')}
                               className="text-warning border-warning/30 hover:bg-warning/10 rounded-lg text-xs"
                             >
                               <XCircle className="w-3.5 h-3.5 mr-1" />
-                              {isActing ? '...' : 'Thu hồi'}
+                              {isRevoking ? '...' : 'Thu hồi'}
                             </Button>
                           )}
+                          {/* Nút Xóa: luôn hiện */}
                           <Button
                             variant="outline"
                             size="icon"
@@ -233,7 +265,7 @@ export default function AdminCoursesPage() {
                             className="h-8 w-8 text-destructive hover:bg-destructive/10 border-destructive/20"
                             onClick={() => handleDelete(docId, course.title)}
                           >
-                            <Trash2 className="w-4 h-4" />
+                            {isDeleting ? <span className="text-xs">...</span> : <Trash2 className="w-4 h-4" />}
                           </Button>
                         </div>
                       </td>

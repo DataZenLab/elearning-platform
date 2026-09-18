@@ -29,6 +29,7 @@ class InstructorApi {
       category: data.categoryId,
       instructor: data.instructorId,
       isPublished: false,
+      publishedAt: null,
     };
     
     // Strapi POST format: { data: { ...fields } }

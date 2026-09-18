@@ -72,9 +72,7 @@ function RegisterForm() {
           <p className="text-muted-foreground text-sm">
             Đăng ký thành công! Vui lòng kiểm tra hộp thư email (và mục Spam) để xác minh tài khoản của bạn trước khi đăng nhập.
           </p>
-          <Button asChild className="w-full h-11 font-bold rounded-xl mt-6">
-            <Link href={loginLink}>Đi tới Đăng nhập</Link>
-          </Button>
+          <Link href={loginLink} className="inline-flex w-full h-11 items-center justify-center rounded-xl bg-primary text-primary-foreground font-bold mt-6 hover:bg-primary/80 transition-colors">Đi tới Đăng nhập</Link>
         </div>
       ) : (
         <>

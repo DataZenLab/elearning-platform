@@ -9,6 +9,7 @@ import type { Course } from '@/types';
 import { Loader2, ShieldCheck, PlayCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getCourseImage } from '@/lib/utils';
 
 interface CheckoutClientProps {
   course: Course;
@@ -110,13 +111,7 @@ export function CheckoutClient({ course }: CheckoutClientProps) {
               {/* Course preview */}
               <div className="flex gap-3 mb-5 pb-5 border-b border-border">
                 <div className="w-20 h-14 bg-muted rounded-lg overflow-hidden flex-shrink-0 relative">
-                  {course.thumbnail ? (
-                    <Image src={course.thumbnail.url} alt={course.title} fill className="object-cover" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                      <PlayCircle className="w-5 h-5" />
-                    </div>
-                  )}
+                  <img src={getCourseImage(course)} alt={course.title} className="w-full h-full object-cover" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="text-sm font-medium text-foreground line-clamp-2 leading-snug">{course.title}</h3>

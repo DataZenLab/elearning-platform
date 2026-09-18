@@ -6,8 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Clock, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { formatPrice, formatDuration } from "@/lib/utils";
-import { cn } from "@/lib/utils";
+import { formatPrice, formatDuration, getCourseImage, cn } from "@/lib/utils";
 import type { CourseCard } from "@/types";
 
 const difficultyConfig: Record<string, { label: string; className: string }> = {
@@ -69,22 +68,11 @@ export function FeaturedCoursesClient({ courses }: { courses: CourseCard[] }) {
 
                     {/* Thumbnail */}
                     <div className="aspect-video relative overflow-hidden bg-muted flex-shrink-0">
-                      {course.thumbnail ? (
-                        <img
-                          src={course.thumbnail.url}
-                          alt={course.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div
-                            className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-base"
-                            style={{ backgroundColor: course.category?.color || 'var(--primary)' }}
-                          >
-                            {(course.category?.name || 'C').charAt(0)}
-                          </div>
-                        </div>
-                      )}
+                      <img
+                        src={getCourseImage(course)}
+                        alt={course.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                       {course.originalPrice && (
                         <div className="absolute top-2.5 right-2.5">
                           <Badge className="bg-destructive text-destructive-foreground border-0 text-xs font-semibold px-2">

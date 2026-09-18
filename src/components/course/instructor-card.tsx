@@ -68,12 +68,18 @@ export function InstructorCard({ instructor }: InstructorCardProps) {
           </p>
           
           <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground leading-relaxed">
-            <p>
-              {instructor.bio || `Với hơn 10 năm kinh nghiệm trong ngành phần mềm, ${instructor.name} đã làm việc tại nhiều tập đoàn công nghệ lớn. Phương pháp giảng dạy tập trung vào thực hành và giải quyết các bài toán thực tế giúp học viên nhanh chóng áp dụng kiến thức vào công việc.`}
-            </p>
-            <p className="mt-2">
-              Ngoài công việc giảng dạy, tôi còn là một open source contributor và thường xuyên viết blog chia sẻ kiến thức công nghệ.
-            </p>
+            {instructor.bio ? (
+              <div dangerouslySetInnerHTML={{ __html: instructor.bio }} />
+            ) : (
+              <>
+                <p>
+                  Với hơn 10 năm kinh nghiệm trong ngành, {instructor.name} đã làm việc tại nhiều tập đoàn công nghệ lớn. Phương pháp giảng dạy tập trung vào thực hành và giải quyết các bài toán thực tế giúp học viên nhanh chóng áp dụng kiến thức vào công việc.
+                </p>
+                <p className="mt-2">
+                  Ngoài công việc giảng dạy, giảng viên còn thường xuyên chia sẻ kiến thức cộng đồng và tư vấn cho các doanh nghiệp.
+                </p>
+              </>
+            )}
           </div>
           
           {/* Tags */}

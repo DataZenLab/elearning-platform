@@ -39,7 +39,7 @@ export default function InstructorCommentsPage() {
         lessonId: comment.lessonId,
         courseId: comment.courseId,
         courseTitle: comment.courseTitle,
-        instructorName: comment.instructorName || null,
+        instructorName: comment.instructorName || undefined,
         userId: user.uid,
         userName: user.displayName || 'Giảng viên',
         userAvatar: user.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.email}`,

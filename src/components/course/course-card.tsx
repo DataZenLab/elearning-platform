@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, Clock, Users } from 'lucide-react';
 import type { CourseCard as CourseCardType } from '@/types';
-import { cn, formatPrice, formatDuration } from '@/lib/utils';
+import { cn, formatPrice, formatDuration, getCourseImage } from '@/lib/utils';
 
 interface CourseCardProps {
   course: CourseCardType;
@@ -22,27 +22,18 @@ const difficultyConfig: Record<string, { label: string; className: string }> = {
  * Thẻ hiển thị thông tin tóm tắt của một khóa học (Ảnh, tên, giá, giảng viên).
  */
 export function CourseCard({ course, className }: CourseCardProps) {
+  const imageUrl = getCourseImage(course);
+
   return (
     <Link href={`/courses/${course.slug}`} className={cn("block group h-full", className)}>
       <Card className="overflow-hidden border border-border/50 bg-card hover:border-primary/30 card-hover h-full flex flex-col">
         {/* Thumbnail */}
         <div className="aspect-video relative overflow-hidden bg-muted flex-shrink-0">
-          {course.thumbnail ? (
-            <img 
-              src={course.thumbnail.url} 
-              alt={course.title} 
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm"
-                style={{ backgroundColor: course.category?.color || 'var(--primary)' }}
-              >
-                {(course.category?.name || 'C').charAt(0)}
-              </div>
-            </div>
-          )}
+          <img 
+            src={imageUrl} 
+            alt={course.title} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
           
           {/* Discount Badge */}
           {course.originalPrice && (

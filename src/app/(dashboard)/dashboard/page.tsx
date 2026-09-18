@@ -98,7 +98,7 @@ export default function DashboardOverviewPage() {
   const inProgress = enrollments.filter(e => e.progressPercent > 0 && e.progressPercent < 100).length;
   const completed = enrollments.filter(e => e.progressPercent === 100).length;
   const totalLessonsCompleted = enrollments.reduce(
-    (acc, e) => acc + (e.progress?.completedLessons?.length ?? 0), 0
+    (acc, e) => acc + (e.completedLessonCount ?? 0), 0
   );
 
   const weeklyData = buildWeeklyChart(enrollments);

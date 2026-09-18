@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
-import { formatPrice, formatDuration } from "@/lib/utils";
+import { formatPrice, formatDuration, getCourseImage } from "@/lib/utils";
 import { PlayCircle, Infinity, FileText, Smartphone, Trophy } from "lucide-react";
 import type { Course } from "@/types";
 import { useRouter } from "next/navigation";
@@ -19,44 +19,65 @@ interface StickySidebarProps {
  */
 export function StickySidebar({ course }: StickySidebarProps) {
   const router = useRouter();
-  const { user, isAuthenticated } = useAuthStore();
+  const { user } = useAuthStore();
   const { isFavorite, toggleFavorite } = useFavoritesStore();
   const currentUserId = user?.uid || 'guest';
   const favorite = isFavorite(course.slug || '', currentUserId);
+  const imageUrl = getCourseImage(course);
 
-  const [isEnrolling, setIsEnrolling] = useState(false);
+  const [enrolling, setEnrolling] = useState(false);
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [isLoadingStatus, setIsLoadingStatus] = useState(true);
 
-  // Check if current user is the instructor of this course
-  const isAuthor = user?.role === 'instructor' && (course.instructor as any)?.name === user?.displayName;
+  // Check if user is author or enrolled
+  const isAuthor = !!(user && course.instructor && typeof course.instructor === 'object'
+    && 'email' in course.instructor && (course.instructor as any).email === user.email);
 
-  // Check enrollment status when user changes
   useEffect(() => {
-    async function checkStatus() {
-      if (user?.uid && course.slug) {
-        const enrolled = await enrollmentService.checkEnrollment(user.uid, course.slug);
-        setIsEnrolled(enrolled);
-      } else {
-        setIsEnrolled(false);
-      }
+    if (!user) {
       setIsLoadingStatus(false);
+      setIsEnrolled(false);
+      return;
     }
-    checkStatus();
+    setIsLoadingStatus(true);
+    enrollmentService.checkEnrollment(user.uid, course.slug || '').then((enrolled) => {
+      setIsEnrolled(enrolled);
+      setIsLoadingStatus(false);
+    }).catch(() => {
+      setIsLoadingStatus(false);
+    });
   }, [user, course.slug]);
 
   const handleEnrollOrStudy = async () => {
-    if (!isAuthenticated || !user) {
+    if (!user) {
       router.push(`/login?redirect=/courses/${course.slug}`);
       return;
     }
-    
-    if (isAuthor || isEnrolled) {
-      // User already bought this course, or is the author, go to learn directly
-      const firstLessonSlug = course.lessons && course.lessons.length > 0 ? course.lessons[0].slug : 'intro';
-      router.push(`/learn/${course.slug}/${firstLessonSlug}`);
+
+    if (isAuthor) {
+      const firstLessonSlug = course.lessons?.[0]?.slug;
+      router.push(firstLessonSlug ? `/learn/${course.slug}/${firstLessonSlug}` : `/learn/${course.slug}`);
+      return;
+    }
+
+    if (isEnrolled) {
+      const firstLessonSlug = course.lessons?.[0]?.slug;
+      router.push(firstLessonSlug ? `/learn/${course.slug}/${firstLessonSlug}` : `/learn/${course.slug}`);
+      return;
+    }
+
+    if (course.price === 0) {
+      try {
+        setEnrolling(true);
+        await enrollmentService.enrollUser(user.uid, course.slug || '');
+        const firstLessonSlug = course.lessons?.[0]?.slug;
+        router.push(firstLessonSlug ? `/learn/${course.slug}/${firstLessonSlug}` : `/learn/${course.slug}`);
+      } catch (err) {
+        console.error('Enroll error:', err);
+      } finally {
+        setEnrolling(false);
+      }
     } else {
-      // User needs to buy, go to fake checkout
       router.push(`/checkout/${course.slug}`);
     }
   };
@@ -64,16 +85,12 @@ export function StickySidebar({ course }: StickySidebarProps) {
   return (
     <div className="sticky top-24 bg-card border border-border rounded-xl overflow-hidden flex flex-col">
       {/* Video Preview Area */}
-      <div className="aspect-video bg-slate-900 relative group cursor-pointer border-b border-border/50">
-        {course.thumbnail ? (
-          <img 
-            src={course.thumbnail.url} 
-            alt={course.title} 
-            className="w-full h-full object-cover opacity-80 group-hover:opacity-50 transition-opacity duration-300" 
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
-        )}
+      <div className="aspect-video bg-slate-900 relative group cursor-pointer border-b border-border/50" onClick={handleEnrollOrStudy}>
+        <img 
+          src={imageUrl} 
+          alt={course.title} 
+          className="w-full h-full object-cover opacity-80 group-hover:opacity-50 transition-opacity duration-300" 
+        />
         
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg border border-white/30">
@@ -100,10 +117,18 @@ export function StickySidebar({ course }: StickySidebarProps) {
         <div className="space-y-3 mb-8">
           <Button
             onClick={handleEnrollOrStudy}
-            disabled={isLoadingStatus && !isAuthor}
+            disabled={(isLoadingStatus || enrolling) && !isAuthor}
             className="w-full h-11 font-semibold rounded-lg"
           >
-            {isAuthor ? 'Xem trước khóa học' : isLoadingStatus ? 'Đang tải...' : isEnrolled ? 'Vào học ngay' : 'Đăng ký học ngay'}
+            {isAuthor
+              ? 'Xem trước khóa học'
+              : isLoadingStatus
+              ? 'Đang tải...'
+              : enrolling
+              ? 'Đang đăng ký...'
+              : isEnrolled
+              ? 'Vào học ngay'
+              : 'Đăng ký học ngay'}
           </Button>
           <Button
             variant={favorite ? 'secondary' : 'outline'}

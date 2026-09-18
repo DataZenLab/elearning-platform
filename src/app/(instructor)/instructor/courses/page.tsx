@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { instructorApi } from '@/services/api/instructor.api';
 import { DeleteCourseButton } from './delete-course-button';
+import { getCourseImage } from '@/lib/utils';
 
 export default async function InstructorCoursesPage() {
   const courses = await instructorApi.getCourses();
@@ -39,13 +40,7 @@ export default async function InstructorCoursesPage() {
               <Card key={course.id} className="p-4 flex items-center justify-between border-border/50 shadow-sm">
                 <div className="flex items-center gap-4">
                   <div className="w-24 h-16 bg-muted rounded-md overflow-hidden flex-shrink-0 relative hidden sm:block">
-                    {course.thumbnail ? (
-                      <Image src={course.thumbnail.url} alt={course.title} fill className="object-cover" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-muted-foreground bg-secondary/50">
-                        <PlayCircle className="w-6 h-6" />
-                      </div>
-                    )}
+                    <img src={getCourseImage(course)} alt={course.title} className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">{course.title}</h3>

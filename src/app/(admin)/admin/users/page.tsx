@@ -39,7 +39,28 @@ export default function AdminUsersPage() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const data = await firestoreService.getDocuments<UserProfile>('users');
+      let data = await firestoreService.getDocuments<UserProfile>('users');
+
+      // Auto seed default instructors into Firestore if missing
+      const defaultInstructors = [
+        { uid: 'inst_nguyen_van_an', name: 'Nguyễn Văn An', email: 'nguyen.van.an@elearning.com', role: 'instructor' as const, status: 'active' as const },
+        { uid: 'inst_pham_thi_lan', name: 'Phạm Thị Lan', email: 'pham.thi.lan@elearning.com', role: 'instructor' as const, status: 'active' as const },
+        { uid: 'inst_tran_duc_nam', name: 'Trần Đức Nam', email: 'tran.duc.nam@elearning.com', role: 'instructor' as const, status: 'active' as const },
+        { uid: 'inst_le_hoang_mai', name: 'Lê Hoàng Mai', email: 'le.hoang.mai@elearning.com', role: 'instructor' as const, status: 'active' as const },
+      ];
+
+      let seededNew = false;
+      for (const inst of defaultInstructors) {
+        if (!data.some(u => u.email === inst.email || u.uid === inst.uid)) {
+          await firestoreService.setDocument('users', inst.uid, inst);
+          seededNew = true;
+        }
+      }
+
+      if (seededNew) {
+        data = await firestoreService.getDocuments<UserProfile>('users');
+      }
+
       // Don't show admin account in the list
       setUsers(data.filter(u => u.role !== 'admin'));
     } catch (e) {

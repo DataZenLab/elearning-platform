@@ -32,7 +32,7 @@ class CoursesApi {
       pagination: { page: params.page || 1, pageSize: params.pageSize || 12 },
       populate: {
         category: { fields: ['id', 'name', 'slug', 'color'] },
-        instructor: { fields: ['id', 'name', 'title'] },
+        instructor: true,
         thumbnail: true,
       },
     };
@@ -64,7 +64,7 @@ class CoursesApi {
       publicationState: 'preview',
       populate: {
         category: true,
-        instructor: { fields: ['id', 'name', 'title'] },
+        instructor: true,
         thumbnail: true,
         lessons: {
           fields: ['id', 'title', 'slug', 'duration', 'order', 'isFree', 'chapter'],

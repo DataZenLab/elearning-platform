@@ -31,8 +31,11 @@ export default async function CourseDetailPage({ params }: CourseDetailPageProps
   }
   if (!course) notFound();
 
-  const instructorName = (course.instructor as any)?.name || "Giảng viên EduFlow";
-  const instructorAvatar = (course.instructor as any)?.avatar || null;
+  const instObj = (course.instructor as any);
+  const instructorName = instObj?.name || "Giảng viên EduFlow";
+  const instructorTitle = instObj?.title || "Chuyên gia đào tạo";
+  const instructorBio = instObj?.bio || null;
+  const instructorAvatar = instObj?.avatar?.url || instObj?.avatar || null;
 
   return (
     <div className="bg-background min-h-screen pb-20">
@@ -41,9 +44,9 @@ export default async function CourseDetailPage({ params }: CourseDetailPageProps
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="flex-1 lg:max-w-[calc(100%-400px)] space-y-16">
             <section className="scroll-mt-24" id="overview">
-              <h2 className="text-2xl font-bold tracking-tight mb-4">Tong quan khoa hoc</h2>
+              <h2 className="text-2xl font-bold tracking-tight mb-4">Tổng quan khóa học</h2>
               <div className="prose prose-slate dark:prose-invert max-w-none">
-                <div dangerouslySetInnerHTML={{ __html: course.description || course.shortDescription || "Chua co mo ta." }} />
+                <div dangerouslySetInnerHTML={{ __html: course.description || course.shortDescription || "Chưa có mô tả." }} />
               </div>
             </section>
             <section className="scroll-mt-24" id="curriculum">
@@ -53,6 +56,8 @@ export default async function CourseDetailPage({ params }: CourseDetailPageProps
               <InstructorCard instructor={{
                 id: course.instructor?.id || 1,
                 name: instructorName,
+                title: instructorTitle,
+                bio: instructorBio,
                 avatar: instructorAvatar,
                 stats: { rating: course.averageRating || 5, reviews: course.totalReviews || 0, students: course.totalStudents || 0, courses: 1 }
               }} />

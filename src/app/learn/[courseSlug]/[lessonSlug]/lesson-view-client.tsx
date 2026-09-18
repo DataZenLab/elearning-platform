@@ -298,10 +298,8 @@ export function LessonViewClient({
                         {file.ext?.replace('.', '').toUpperCase()} • {(file.size || 0).toFixed(2)} KB
                       </p>
                     </div>
-                    <Button variant="ghost" size="icon" className="shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors" asChild>
-                      <span>
-                        <Download className="w-4 h-4" />
-                      </span>
+                    <Button variant="ghost" size="icon" className="shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Download className="w-4 h-4" />
                     </Button>
                   </a>
                 ))}
