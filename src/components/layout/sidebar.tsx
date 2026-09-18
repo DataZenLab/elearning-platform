@@ -24,11 +24,11 @@ export function Sidebar({ className, ...props }: SidebarProps) {
   const pathname = usePathname();
 
   const navigation = [
-    { name: 'Tổng quan', href: '/dashboard', icon: LayoutDashboard },
-    { name: 'Khóa học của tôi', href: '/my-courses', icon: BookOpen },
-    { name: 'Chứng chỉ', href: '/certificates', icon: Award },
-    { name: 'Bảng xếp hạng', href: '/leaderboard', icon: Trophy },
-    { name: 'Cài đặt tài khoản', href: '/profile', icon: Settings },
+    { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+    { name: 'My Courses', href: '/my-courses', icon: BookOpen },
+    { name: 'Certificates', href: '/certificates', icon: Award },
+    { name: 'Leaderboard', href: '/leaderboard', icon: Trophy },
+    { name: 'Settings', href: '/profile', icon: Settings },
   ];
 
   const handleLogout = async () => {
@@ -88,9 +88,7 @@ export function Sidebar({ className, ...props }: SidebarProps) {
           onClick={handleLogout}
           className="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors duration-150"
         >
-          <LogOut className="w-4.5 h-4.5 flex-shrink-0" />
-          Đăng xuất
-        </button>
+          <LogOut className="w-4.5 h-4.5 flex-shrink-0" /> Sign Out</button>
       </div>
     </div>
   );

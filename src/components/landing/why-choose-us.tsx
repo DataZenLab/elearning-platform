@@ -36,11 +36,9 @@ export function WhyChooseUs() {
           className="max-w-2xl mb-16"
         >
           <span className="text-sm font-medium text-primary tracking-wide uppercase inline-flex items-center gap-2">
-            <span className="w-6 h-px bg-primary" />
-            Tại sao chọn chúng tôi
-          </span>
+            <span className="w-6 h-px bg-primary" /> Why Choose EduFlow</span>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-            Được xây dựng cho kết quả thực tế
+Engineered for Tangible Career Resultsế
           </h2>
           <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
             Không chỉ là video bài giảng — đây là môi trường học tập được thiết kế để bạn có thể áp dụng ngay vào công việc.

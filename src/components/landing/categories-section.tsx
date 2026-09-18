@@ -41,11 +41,9 @@ export function CategoriesSection() {
             transition={{ duration: 0.5 }}
           >
             <span className="text-sm font-medium text-primary tracking-wide uppercase inline-flex items-center gap-2">
-              <span className="w-6 h-px bg-primary" />
-              Danh mục
-            </span>
+              <span className="w-6 h-px bg-primary" /> Top Categories</span>
             <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              Khám phá theo lĩnh vực
+              Explore by Industry Domain
             </h2>
           </motion.div>
           <motion.div
@@ -58,7 +56,7 @@ export function CategoriesSection() {
               href="/courses"
               className="text-sm font-medium text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
             >
-              Xem tất cả &rarr;
+              Explore All Categories &rarr;
             </Link>
           </motion.div>
         </div>
@@ -90,7 +88,7 @@ export function CategoriesSection() {
                       {category.name}
                     </div>
                     <div className="text-xs text-muted-foreground mt-0.5">
-                      {category.count} khóa
+                      {category.count} courses
                     </div>
                   </div>
                 </Link>

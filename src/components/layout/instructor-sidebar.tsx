@@ -17,11 +17,11 @@ import { authService } from '@/services/firebase/auth.service';
 import { Button } from '@/components/ui/button';
 
 const SIDEBAR_LINKS = [
-  { href: '/instructor', label: 'Tổng quan', icon: LayoutDashboard },
-  { href: '/instructor/courses', label: 'Quản lý khóa học', icon: BookOpen },
-  { href: '/instructor/students', label: 'Học viên', icon: Users },
-  { href: '/instructor/comments', label: 'Hỏi đáp & Bình luận', icon: MessageSquare },
-  { href: '/instructor/profile', label: 'Cài đặt cá nhân', icon: Settings },
+  { href: '/instructor', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/instructor/courses', label: 'Courses Studio', icon: BookOpen },
+  { href: '/instructor/students', label: 'Students', icon: Users },
+  { href: '/instructor/comments', label: 'Q&A & Discussion', icon: MessageSquare },
+  { href: '/instructor/profile', label: 'Instructor Profile', icon: Settings },
 ];
 
 /**
@@ -52,7 +52,7 @@ export function InstructorSidebar() {
 
       <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
         <div className="px-2 mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Quản lý giảng dạy
+          Teaching Studio
         </div>
         {SIDEBAR_LINKS.map((link) => {
           const Icon = link.icon;
@@ -78,8 +78,8 @@ export function InstructorSidebar() {
 
       <div className="p-4 border-t border-border/50 space-y-4">
         <div className="bg-primary/5 rounded-xl p-4 border border-primary/10 text-sm">
-          <p className="font-semibold text-primary mb-1">Góc giảng viên</p>
-          <p className="text-muted-foreground text-xs">Tham gia cộng đồng giảng viên để trao đổi kinh nghiệm.</p>
+          <p className="font-semibold text-primary mb-1">Instructor Hub</p>
+          <p className="text-muted-foreground text-xs">Connect with fellow educators and share teaching insights.</p>
         </div>
         
         <Button 
@@ -87,9 +87,7 @@ export function InstructorSidebar() {
           className="w-full justify-start text-muted-foreground hover:text-destructive hover:bg-destructive/10"
           onClick={handleLogout}
         >
-          <LogOut className="w-5 h-5 mr-3" />
-          Đăng xuất
-        </Button>
+          <LogOut className="w-5 h-5 mr-3" /> Sign Out</Button>
       </div>
     </div>
   );

@@ -77,7 +77,7 @@ export function DashboardHeader() {
         </div>
 
         <h1 className="text-xl font-bold tracking-tight hidden sm:block">
-          Bảng điều khiển
+          Dashboard
         </h1>
       </div>
 
@@ -115,10 +115,10 @@ export function DashboardHeader() {
             </Avatar>
             <div className="hidden sm:block text-sm text-left">
               <p className="font-semibold leading-none mb-1">
-                {user?.displayName || (user?.role === 'admin' ? 'Admin' : user?.role === 'instructor' ? 'Giảng viên' : 'Học viên')}
+                {user?.displayName || (user?.role === 'admin' ? 'Admin' : user?.role === 'instructor' ? 'Instructor' : 'Student')}
               </p>
               <p className="text-xs text-muted-foreground leading-none">
-                {user?.role === 'admin' ? 'Admin' : user?.role === 'instructor' ? 'Giảng viên' : 'Học viên'}
+                {user?.role === 'admin' ? 'Admin' : user?.role === 'instructor' ? 'Instructor' : 'Student'}
               </p>
             </div>
           </button>
@@ -128,7 +128,7 @@ export function DashboardHeader() {
             <div className="absolute right-0 top-full mt-2 w-52 bg-card border border-border rounded-xl shadow-lg z-[999] overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-150">
               {/* User info header */}
               <div className="px-4 py-3 border-b border-border/50">
-                <p className="text-sm font-semibold">{user?.displayName || 'Học viên'}</p>
+                <p className="text-sm font-semibold">{user?.displayName || 'Student'}</p>
                 <p className="text-xs text-muted-foreground truncate">{user?.email || ''}</p>
               </div>
 
@@ -140,7 +140,7 @@ export function DashboardHeader() {
                   className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-foreground hover:bg-muted transition-colors"
                 >
                   <User className="w-4 h-4 text-muted-foreground" />
-                  Hồ sơ cá nhân
+                  Profile Settings
                 </button>
                 <button
                   type="button"
@@ -148,7 +148,7 @@ export function DashboardHeader() {
                   className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-foreground hover:bg-muted transition-colors"
                 >
                   <LayoutDashboard className="w-4 h-4 text-muted-foreground" />
-                  Bảng điều khiển
+                  Dashboard
                 </button>
               </div>
 
@@ -158,9 +158,7 @@ export function DashboardHeader() {
                   onClick={handleLogout}
                   className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-destructive hover:bg-destructive/10 transition-colors font-medium"
                 >
-                  <LogOut className="w-4 h-4" />
-                  Đăng xuất
-                </button>
+                  <LogOut className="w-4 h-4" /> Sign Out</button>
               </div>
             </div>
           )}

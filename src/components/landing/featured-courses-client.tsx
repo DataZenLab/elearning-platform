@@ -10,9 +10,9 @@ import { formatPrice, formatDuration, getCourseImage, cn } from "@/lib/utils";
 import type { CourseCard } from "@/types";
 
 const difficultyConfig: Record<string, { label: string; className: string }> = {
-  beginner: { label: 'Người mới', className: 'bg-success/10 text-success border-success/20' },
-  intermediate: { label: 'Trung cấp', className: 'bg-warning/10 text-warning border-warning/20' },
-  advanced: { label: 'Nâng cao', className: 'bg-destructive/10 text-destructive border-destructive/20' },
+  beginner: { label: 'Beginner', className: 'bg-success/10 text-success border-success/20' },
+  intermediate: { label: 'Intermediate', className: 'bg-warning/10 text-warning border-warning/20' },
+  advanced: { label: 'Advanced', className: 'bg-destructive/10 text-destructive border-destructive/20' },
 };
 
 /**
@@ -33,10 +33,10 @@ export function FeaturedCoursesClient({ courses }: { courses: CourseCard[] }) {
           >
             <span className="text-sm font-medium text-primary tracking-wide uppercase inline-flex items-center gap-2">
               <span className="w-6 h-px bg-primary" />
-              Khóa học nổi bật
+              Featured Courses
             </span>
             <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              Được yêu thích nhất
+Top Rated by Engineers
             </h2>
           </motion.div>
           <motion.div
@@ -46,7 +46,7 @@ export function FeaturedCoursesClient({ courses }: { courses: CourseCard[] }) {
             transition={{ duration: 0.4, delay: 0.15 }}
           >
             <Link href="/courses" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
-              Xem tất cả &rarr;
+              Explore All Courses &rarr;
             </Link>
           </motion.div>
         </div>

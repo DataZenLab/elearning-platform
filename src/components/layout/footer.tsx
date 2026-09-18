@@ -4,26 +4,26 @@ import { Separator } from '@/components/ui/separator';
 import { APP_NAME } from '@/lib/constants';
 
 const footerLinks = {
-  'Khóa học': [
-    { label: 'Lập trình Web', href: '/courses?category=web-development' },
-    { label: 'Thiết kế UI/UX', href: '/courses?category=ui-ux-design' },
-    { label: 'Data Science', href: '/courses?category=data-science-ai' },
-    { label: 'Marketing', href: '/courses?category=digital-marketing-2' },
-    { label: 'Mobile Dev', href: '/courses?category=mobile-app' },
+  'Courses': [
+    { label: 'Web Development', href: '/courses?category=web-development' },
+    { label: 'UI/UX Design', href: '/courses?category=ui-ux-design' },
+    { label: 'Data Science & AI', href: '/courses?category=data-science-ai' },
+    { label: 'Digital Marketing', href: '/courses?category=digital-marketing-2' },
+    { label: 'Mobile Development', href: '/courses?category=mobile-app' },
   ],
-  'Về chúng tôi': [
-    { label: 'Giới thiệu', href: '/about' },
-    { label: 'Giảng viên', href: '/instructors' },
+  'Company': [
+    { label: 'About Us', href: '/about' },
+    { label: 'Instructors', href: '/instructors' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Tuyển dụng', href: '/careers' },
-    { label: 'Liên hệ', href: '/contact' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Contact', href: '/contact' },
   ],
-  'Hỗ trợ': [
-    { label: 'Trung tâm trợ giúp', href: '/help' },
-    { label: 'Điều khoản', href: '/terms' },
-    { label: 'Bảo mật', href: '/privacy' },
+  'Support': [
+    { label: 'Help Center', href: '/help' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Privacy Policy', href: '/privacy' },
     { label: 'FAQ', href: '/#faq' },
-    { label: 'Phản hồi', href: '/feedback' },
+    { label: 'Feedback', href: '/feedback' },
   ],
 };
 

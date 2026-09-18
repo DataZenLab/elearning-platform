@@ -8,10 +8,10 @@ import { useState, useEffect } from 'react';
 import { useAuthStore } from '@/stores/auth-store';
 
 const stats = [
-  { value: '50K+', label: 'Học viên' },
-  { value: '500+', label: 'Khóa học' },
-  { value: '4.8', label: 'Điểm đánh giá' },
-  { value: '98%', label: 'Hài lòng' },
+  { value: '50K+', label: 'Active Learners' },
+  { value: '500+', label: 'Courses' },
+  { value: '4.8', label: 'Average Rating' },
+  { value: '98%', label: 'Satisfaction' },
 ];
 
 /**
@@ -49,7 +49,7 @@ export function HeroSection() {
           >
             <span className="inline-flex items-center gap-2 text-sm font-medium text-primary tracking-wide uppercase">
               <span className="w-6 h-px bg-primary" />
-              Nền tảng học trực tuyến Việt Nam
+              Enterprise E-Learning Platform
             </span>
           </motion.div>
 
@@ -71,7 +71,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl"
           >
-            Từ lập trình đến thiết kế, từ marketing đến dữ liệu — tất cả các kỹ năng bạn cần để thăng tiến, trong một nền tảng được xây dựng cho người Việt.
+            From software architecture to UI/UX, cloud systems to AI engineering — master high-impact skills with industry leaders.
           </motion.p>
 
           {/* CTAs */}
@@ -83,7 +83,7 @@ export function HeroSection() {
           >
             <Link href="/courses">
               <Button size="lg" className="h-12 px-8 text-base font-semibold rounded-lg group">
-                Khám phá khóa học
+                Explore Courses
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
               </Button>
             </Link>

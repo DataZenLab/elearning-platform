@@ -21,11 +21,9 @@ export function Testimonials() {
           className="max-w-xl mb-16"
         >
           <span className="text-sm font-medium text-primary tracking-wide uppercase inline-flex items-center gap-2">
-            <span className="w-6 h-px bg-primary" />
-            Học viên nói gì
-          </span>
+            <span className="w-6 h-px bg-primary" /> Learner Testimonials</span>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-            Câu chuyện thực từ người học thực
+            Real Stories from Industry Professionals
           </h2>
         </motion.div>
 

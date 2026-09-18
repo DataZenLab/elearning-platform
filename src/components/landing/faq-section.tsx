@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/accordion';
 
 /**
- * Khu vực hiển thị Các câu hỏi thường gặp (Accordion) trên trang chủ.
+ * Khu vực hiển thị Frequently Asked Questions (Accordion) trên trang chủ.
  */
 export function FAQSection() {
   return (
@@ -31,7 +31,7 @@ export function FAQSection() {
             Câu hỏi thường gặp
           </h2>
           <p className="text-muted-foreground mt-3 text-base">
-            Giải đáp những thắc mắc chung về nền tảng và khóa học
+            Everything you need to know about our courses, certifications, and learning model.
           </p>
         </motion.div>
 

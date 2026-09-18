@@ -13,9 +13,9 @@ interface CourseCardProps {
 }
 
 const difficultyConfig: Record<string, { label: string; className: string }> = {
-  beginner: { label: 'Người mới', className: 'bg-success/10 text-success border-success/20' },
-  intermediate: { label: 'Trung cấp', className: 'bg-warning/10 text-warning border-warning/20' },
-  advanced: { label: 'Nâng cao', className: 'bg-destructive/10 text-destructive border-destructive/20' },
+  beginner: { label: 'Beginner', className: 'bg-success/10 text-success border-success/20' },
+  intermediate: { label: 'Intermediate', className: 'bg-warning/10 text-warning border-warning/20' },
+  advanced: { label: 'Advanced', className: 'bg-destructive/10 text-destructive border-destructive/20' },
 };
 
 /**

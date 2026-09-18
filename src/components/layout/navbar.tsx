@@ -80,8 +80,7 @@ export function Navbar() {
                 size="icon"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 className="w-9 h-9 rounded-lg"
-                aria-label="Chuyển chủ đề"
-              >
+                aria-label="Toggle theme">
                 {theme === 'dark' ? (
                   <Sun className="w-4 h-4" />
                 ) : (
@@ -93,9 +92,7 @@ export function Navbar() {
             {mounted && isAuthenticated && user ? (
               <div className="flex items-center gap-2 ml-1">
                 <Link href="/dashboard">
-                  <Button size="sm" className="h-9 px-4 text-sm font-medium rounded-lg">
-                    Bảng điều khiển
-                  </Button>
+                  <Button size="sm" className="h-9 px-4 text-sm font-medium rounded-lg">Dashboard</Button>
                 </Link>
                 <Link href="/dashboard">
                   <Avatar className="w-8 h-8 border border-border cursor-pointer">
@@ -109,9 +106,7 @@ export function Navbar() {
             ) : mounted ? (
               <div className="flex items-center gap-2 ml-1">
                 <Link href="/login">
-                  <Button variant="ghost" size="sm" className="h-9 px-4 text-sm font-medium rounded-lg">
-                    Đăng nhập
-                  </Button>
+                  <Button variant="ghost" size="sm" className="h-9 px-4 text-sm font-medium rounded-lg">Sign In</Button>
                 </Link>
                 <Link href="/register">
                   <Button size="sm" className="h-9 px-5 text-sm font-medium rounded-lg">
@@ -130,8 +125,7 @@ export function Navbar() {
                 size="icon"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 className="w-9 h-9 rounded-lg"
-                aria-label="Chuyển chủ đề"
-              >
+                aria-label="Toggle theme">
                 {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               </Button>
             )}
@@ -142,7 +136,7 @@ export function Navbar() {
                 <Menu className="w-5 h-5" />
               </SheetTrigger>
               <SheetContent side="right" className="w-72 p-0">
-                <SheetTitle className="sr-only">Điều hướng</SheetTitle>
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col h-full">
                   <div className="flex items-center gap-2 p-5 border-b border-border">
                     <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
@@ -177,16 +171,12 @@ export function Navbar() {
                   <div className="p-4 border-t border-border space-y-2">
                     {isAuthenticated ? (
                       <Link href="/dashboard" onClick={() => setMobileOpen(false)}>
-                        <Button className="w-full rounded-lg font-medium">
-                          Bảng điều khiển
-                        </Button>
+                        <Button className="w-full rounded-lg font-medium">Dashboard</Button>
                       </Link>
                     ) : (
                       <>
                         <Link href="/login" onClick={() => setMobileOpen(false)}>
-                          <Button variant="outline" className="w-full rounded-lg font-medium">
-                            Đăng nhập
-                          </Button>
+                          <Button variant="outline" className="w-full rounded-lg font-medium">Sign In</Button>
                         </Link>
                         <Link href="/register" onClick={() => setMobileOpen(false)}>
                           <Button className="w-full rounded-lg font-medium">
